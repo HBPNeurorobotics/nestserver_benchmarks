@@ -68,6 +68,22 @@ setting the kernel property `local_num_threads` to 36 either during
 the call to `startup()` from within the CLE or from within the brain
 simulation script.
 
+## Run the thread pinning tester
+
+A small test program to check the pinning of threads to CPUs/cores is
+available in `misc/`. It can be compiled using
+
+```
+cd misc
+gcc -fopenmp omp_test.c
+```
+
+After compilation, it can be run using
+```
+srun --nodes 2 --ntasks 4 --ntasks-per-node=2 \
+     --mem-bind=local --hint=compute_bound ./a.out
+```
+
 ## Run the BENCHMARKS
 
 The benchmark experiments can be run with the VirtualCoach script
