@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig"
+     xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
+    <name>HPC Benchmark 2 based on Holodeck Husky Braitenberg experiment with NEST Client</name>
+    <thumbnail>thumbnail.jpg</thumbnail>
+    <description>This experiment loads the HPC Balanced Network experiment (2) with a Scale factor of 20 and configured to run in 16 Nodes. The Husky robot template is used in this experiment.
+    </description>
+    <tags>husky robotics holodeck braitenberg nest</tags>
+    <timeout>840</timeout>
+    <configuration type="3d-settings" src="3dsettings.ini"/>
+    <configuration type="brainvisualizer" src="brainvisualizer.json"/>
+    <configuration type="user-interaction-settings" src="usersettings.uis"/>
+    <maturity>production</maturity>
+   <!-- <environmentModel src="virtual_room/virtual_room.sdf">-->
+    <environmentModel src="virtual_room.sdf">
+        <robotPose robotId="husky" x="0.0" y="0.0" z="0.5" roll="0.0" pitch="-0.0" yaw="3.14159265359"/>
+    </environmentModel>
+    <bibiConf src="bibi_config.bibi"/>
+    <cameraPose>
+        <cameraPosition x="5.056825994369357" y="-1.0210998541555323" z="2.697598759953974"/>
+        <cameraLookAt x="0" y="0" z="0.49999"/>
+    </cameraPose>
+</ExD>
