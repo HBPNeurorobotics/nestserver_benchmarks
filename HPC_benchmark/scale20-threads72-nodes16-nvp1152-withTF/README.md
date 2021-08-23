@@ -24,9 +24,9 @@ sarus load nrp_nest_client.tar nrp_nest_client
   ```
   cd $HOME/nrp_launch
   salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=30 term1_nestsrv.sh
-  ```
   (Set account-ID and time accordingly)
-
+  ```
+  
 * In terminal 2, run
   ```
   cd $HOME/nrp_launch
@@ -37,45 +37,45 @@ sarus load nrp_nest_client.tar nrp_nest_client
   ```
   cd $HOME/nrp_launch
   bash term3_nrp.sh
-
+  ```
 
 ## Launch Virtual Coach
 
 2. Copy the compressed (zip) experiment file from your local workstation to your home directory in Piz Daint:
-
+  ```
   scp nrp_experiment.zip bp000xxx@ela.cscs.ch:/users/bp000xxx
   (Where bp000xxx is your user account in Piz Daint)
-
+  ```
 3. in terminal 4, from your home directory run
-   ```
+  ```
   virtualenv pynrp
   source pynrp/bin/activate
   pip install pynrp
   python
   from pynrp.virtual_coach import VirtualCoach
-    vc = VirtualCoach(' http://148.187.96.212', oidc_username='yourusername', oidc_password='yourpassword')
-   ```
+  vc = VirtualCoach("http://148.187.96.212", oidc_username="yourusername", oidc_password="yourpassword")
+  ```
 4. Import your experiment in the NRP
-   ```
+  ```
   vc.import_experiment("/users/bp000xxx/nrp_experiment.zip")
-   ```
+  ```
 5. Verify that your experiment was successfully imported
-   ```
+  ```
   vc.print_cloned_experiments()
-   ```
+  ```
 6. Launch the experiment
-   ```
+  ```
   sim = vc.launch_experiment("nrp_hpc_16nodes_0", profiler='cle_step')
-   ```
+  ```
 7. Start the simulation
-   ```
+  ```
   sim.start()
-   ```
+  ```
 
 8. Stop the simulation
-   ```
+  ```
   sim.stop()
-   ```
+  ```
 
 
   
