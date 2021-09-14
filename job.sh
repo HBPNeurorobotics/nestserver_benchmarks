@@ -21,8 +21,6 @@ if [ $? -eq 1 ]; then
     exit 1
 fi
 
-cp $configfile $datadir
-
 echo "Node zero: $nodezero"
 
 ssh -o StrictHostKeyChecking=no $nodezero bash -s < $datadir/nrp.sh &
