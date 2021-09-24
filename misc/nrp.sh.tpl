@@ -48,4 +48,5 @@ sarus run \
           sed -i 's|--pause|--pause --software_only_rendering|' /home_daint/bbpnrsoa/.opt/bbp/nrp-services/gzserver; \
 	  sed -i 's|NestClientControlAdapter()|NestClientControlAdapter("{nest_master_node}", 5000)|' $NRPSRCSERV/server/ServerConfigurations.py;
           \
-          /etc/init.d/supervisor start;"
+          /etc/init.d/supervisor start;
+	  sleep infinity;"
