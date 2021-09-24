@@ -1,0 +1,14 @@
+datadir: /users/bp000396/nestserver_benchmarks/testdir1
+hbp_password: '********'
+hbp_username: cjimenez
+n_cycles_nest: 100
+n_nodes:
+- 2
+- 4
+- 8
+- 16
+- 32
+nrp_frontend_ip: 148.187.96.212
+testcase: hpcbench_notf
+tunnel_ip: 148.187.96.176
+tunnel_keyfile: $HOME/nrp_launch/key-tunneluser

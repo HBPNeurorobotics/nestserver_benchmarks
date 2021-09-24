@@ -15,17 +15,19 @@ configfile=$1
 datadir=$(grep 'datadir:' $configfile | cut -d: -f2 | tr -d ' ' | tr -d '"')
 datadir=$(eval echo $datadir)
 echo $datadir
-
+echo $configfile
 nodezero=$(python3 prepare_benchmark.py $configfile)
 if [ $? -eq 1 ]; then
+    echo "config file error!"
     exit 1
 fi
 
 echo "Node zero: $nodezero"
 
-ssh -o StrictHostKeyChecking=no $nodezero bash -s < $datadir/nrp.sh &
 ssh -o StrictHostKeyChecking=no $nodezero bash -s < $datadir/tunnel.sh &
+##sleep 10
+ssh -o StrictHostKeyChecking=no $nodezero bash -s < $datadir/nrp.sh &
 
-sleep 10 # Give the NRP and tunnel processes time to start
+sleep 30 # Give the NRP and tunnel processes time to start
 
 python3 run_benchmark.py $configfile

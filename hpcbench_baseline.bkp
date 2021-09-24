@@ -19,7 +19,6 @@
 # You should have received a copy of the GNU General Public License
 # along with NEST.  If not, see <http://www.gnu.org/licenses/>.
 
-
 """
 Random balanced network HPC benchmark
 --------------------------------------
@@ -72,6 +71,8 @@ References
 
 """
 
+nthreads = 36
+scale = 10.0
 
 M_INFO = 10
 M_ERROR = 30
@@ -83,12 +84,13 @@ M_ERROR = 30
 
 
 params = {
-    'nvp': 1152,               # total number of virtual processes
-    'scale': 20,            # scaling factor of the network size 1.
+    'nthreads': nthreads,        # total number of virtual processes
+    
+    'scale': scale,         # scaling factor of the network size
                             # total network size = scale*11250 neurons
-    'simtime': 250.,        # total simulation time in ms (250)
-    'presimtime': 50.,      # simulation time until reaching equilibrium (50)
-    'dt': 0.1,              # simulation step (0.1)
+    'simtime': 250.,        # total simulation time in ms
+    'presimtime': 50.,      # simulation time until reaching equilibrium
+    'dt': 0.1,              # simulation step
     'record_spikes': True,  # switch to record spikes of excitatory
                             # neurons to file
     'path_name': '.',       # path where all files will have to be written
@@ -108,8 +110,8 @@ tau_syn = 0.32582722403722841
 
 
 brunel_params = {
-    'NE': int(9000 * params['scale']),  # number of excitatory neurons 9000
-    'NI': int(2250 * params['scale']),  # number of inhibitory neurons 2250
+    'NE': int(9000 * params['scale']),  # number of excitatory neurons
+    'NI': int(2250 * params['scale']),  # number of inhibitory neurons
 
     'Nrec': 1000,  # number of neurons to record spikes from
 
@@ -162,17 +164,15 @@ brunel_params = {
 # Function Section
 
 
-#def build_network(logger):
 def build_network():
     """Builds the network including setting of simulation and neuron
     parameters, creation of neurons and connections
 
-    Requires an instance of Logger as argument
-
     """
+
     global M_INFO, brunel_params, params, tau_syn
 
-    tic = time.time()  # start timer on construction
+    #tic = time.time()  # start timer on construction
 
     # unpack a few variables for convenience
     NE = brunel_params['NE']
@@ -182,7 +182,7 @@ def build_network():
 
     # set global kernel parameters
     nest.SetKernelStatus({
-        'total_num_virtual_procs': params['nvp'],
+        'local_num_threads': params['nthreads'],
         'resolution': params['dt'],
         'overwrite_files': True})
 
@@ -200,7 +200,8 @@ def build_network():
 
         random_vm = nest.random.normal(brunel_params['mean_potential'],
                                        brunel_params['sigma_potential'])
-        # TODO: The following hangs, printing "_guarded_writes"
+        # TODO: The following hangs when the script is run using the
+        # 'exec' route on NEST Server (printing '_guarded_writes')
         # nest.GetLocalNodeCollection(E_neurons).V_m = random_vm
         # nest.GetLocalNodeCollection(I_neurons).V_m = random_vm
         nest.SetStatus(nest.GetLocalNodeCollection(E_neurons), "V_m", random_vm)
@@ -234,16 +235,16 @@ def build_network():
         alpha_str = str(stdp_params['alpha'])
         recorder_label = filestem + 'alpha_' + alpha_str + '_spikes'
         E_recorder = nest.Create('spike_recorder', params={
-            'record_to': 'ascii',
+            'record_to': 'memory',
             'label': recorder_label
         })
 
-    BuildNodeTime = time.time() - tic
+    #BuildNodeTime = time.time() - tic
 
-    #logger.log(str(BuildNodeTime) + ' # build_time_nodes')
-    #logger.log(str(memory_thisjob()) + ' # virt_mem_after_nodes')
+    #log(f'{BuildNodeTime}\t# build_time_nodes')
+    #log(f'{memory_thisjob()}\t\t\t# virt_mem_after_nodes')
 
-    tic = time.time()
+    #tic = time.time()
 
     nest.SetDefaults('static_synapse_hpc', {'delay': brunel_params['delay']})
     nest.CopyModel('static_synapse_hpc', 'syn_std')
@@ -297,11 +298,12 @@ def build_network():
                  {'synapse_model': 'syn_in'})
 
     if params['record_spikes']:
-        if params['nvp'] != 1:
+        if params['nthreads'] != 1:
             local_neurons = nest.GetLocalNodeCollection(E_neurons)
-            # GetLocalNodeCollection returns a stepped composite NodeCollection, which
-            # cannot be sliced. In order to allow slicing it later on, we're creating a
-            # new regular NodeCollection from the plain node IDs.
+            # GetLocalNodeCollection returns a stepped composite
+            # NodeCollection, which cannot be sliced. In order to
+            # allow slicing it later on, we're creating a new regular
+            # NodeCollection from the plain node IDs.
             local_neurons = nest.NodeCollection(local_neurons.tolist())
         else:
             local_neurons = E_neurons
@@ -319,10 +321,10 @@ def build_network():
                      'all_to_all', 'static_synapse_hpc')
 
     # read out time used for building
-    BuildEdgeTime = time.time() - tic
+    #BuildEdgeTime = time.time() - tic
 
-    #logger.log(str(BuildEdgeTime) + ' # build_edge_time')
-    #logger.log(str(memory_thisjob()) + ' # virt_mem_after_edges')
+    #log(f'{BuildEdgeTime}\t# build_edge_time')
+    #log(f'{memory_thisjob()}\t\t\t# virt_mem_after_edges')
 
     E_recorder = E_recorder if params['record_spikes'] else None
     
@@ -345,82 +347,32 @@ def compute_rate(sr):
     return 1. * n_local_spikes / (n_local_neurons * simtime) * 1e3
 
 
-def memory_thisjob():
-    """Wrapper to obtain current memory usage"""
-    nest.ll_api.sr('memory_thisjob')
-    return nest.ll_api.spp()
-
-
-#class Logger(object):
-#    """Logger context manager used to properly log memory and timing
-#    information from network simulations.
-#
-#    """
-#
-#    def __init__(self, file_name):
-#        # copy output to cout for ranks 0..max_rank_cout-1
-#        self.max_rank_cout = 5
-#        # write to log files for ranks 0..max_rank_log-1
-#        self.max_rank_log = 30
-#        self.line_counter = 0
-#        self.file_name = file_name
-#
-#    def __enter__(self):
-#        if nest.Rank() < self.max_rank_log:
-#
-#            # convert rank to string, prepend 0 if necessary to make
-#            # numbers equally wide for all ranks
-#            rank = '{:0' + str(len(str(self.max_rank_log))) + '}'
-#            fn = '{fn}_{rank}.dat'.format(
-#                fn=self.file_name, rank=rank.format(nest.Rank()))
-#
-#            self.f = open(fn, 'w')
-#
-#        return self
-#
-#    def log(self, value):
-#        if nest.Rank() < self.max_rank_log:
-#            line = '{lc} {rank} {value} \n'.format(
-#                lc=self.line_counter, rank=nest.Rank(), value=value)
-#            self.f.write(line)
-#            self.line_counter += 1
-#
-#        if nest.Rank() < self.max_rank_cout:
-#            print(str(nest.Rank()) + ' ' + value + '\n')
-#
-#    def __exit__(self, exc_type, exc_val, traceback):
-#        if nest.Rank() < self.max_rank_log:
-#            self.f.close()
+#def memory_thisjob():
+#    """Wrapper to obtain current memory usage"""
+#    nest.ll_api.sr('memory_thisjob')
+#    return nest.ll_api.spp()
 
 
 nest.ResetKernel()
 nest.set_verbosity(M_INFO)
 
-#logger.log(str(memory_thisjob()) + ' # virt_mem_0')
+#log(f'{memory_thisjob()}\t\t\t# virt_mem_0')
 
 E_recorder, E_neurons, I_neurons = build_network()
 
 #tic = time.time()
-#nest.SetKernelStatus({"min_delay": 1.0})
 #nest.Simulate(params['presimtime'])
 #PreparationTime = time.time() - tic
 
-#logger.log(str(memory_thisjob()) + ' # virt_mem_after_presim')
-#logger.log(str(PreparationTime) + ' # presim_time')
-
-#tic = time.time()
-#nest.Simulate(params['simtime'])
-#SimCPUTime = time.time() - tic
-
-#logger.log(str(memory_thisjob()) + ' # virt_mem_after_sim')
-#logger.log(str(SimCPUTime) + ' # sim_time')
+#log(f'{PreparationTime}\t# presim_time')
+#log(f'{memory_thisjob()}\t\t\t# virt_mem_after_presim')
 
 #if params['record_spikes']:
-#    logger.log(str(compute_rate(sr)) + ' # average rate')
+#    log(f'{compute_rate(E_recorder)}\t# average rate')
 
-print(nest.GetKernelStatus())
+circuit = E_neurons[:50] + I_neurons[:50]
 
-#circuit = E_neurons[:50] + I_neurons[:50]
-subcircuit = E_neurons[:50] + I_neurons[:50]
-populations = {'circuit':subcircuit}
-
+#for cycle in range(20):
+    #tic = time.time()
+    #nest.Simulate(20.0)
+    #log(f'{time.time()-tic}\t# cycle_time_20ms_{cycle}')

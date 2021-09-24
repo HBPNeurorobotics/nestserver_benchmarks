@@ -1,0 +1,1000 @@
+   27  cat tunnel.sh 
+   28  bash term2_tunnel.sh
+   29  ssh -A daint
+   30  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=10 term1_nestsrv.sh
+   31  module load sarus
+   32  sarus pull christopherbignamini/nest:jougs_nest_server_mpi
+   33  module use /scratch/snx3000/bignamic/EasyBuildInstall/modules/all/
+   34  module load skopeo
+   35  skopeo copy --insecure-policy docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:1dfbe38dae84393402d30e1921cdf2f690beece62498389194ececc6a3aa525b docker-archive:nrp_nest_client.tar
+   36  sarus load nrp_nest_client.tar nrp_nest_client
+   37  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+   38  ls
+   39  ls -l
+   40  ls
+   41  ls -l
+   42  ls
+   43  cd modules/
+   44  ls
+   45  cd ..
+   46  ls -l
+   47  cd benchmarks_072021/
+   48  ls
+   49  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+   50  ssh -A daint
+   51  ls
+   52  ls key-tunneluser
+   53  ls
+   54  chmod 600 key-tunneluser
+   55  ls -l
+   56  bash term2_tunnel.sh
+   57  cd benchmarks_072021/
+   58  bash term2_tunnel.sh
+   59  ls
+   60  cd ..
+   61  ls
+   62  cd benchmarks_072021/
+   63  ls
+   64  cat term2_tunnel.sh 
+   65  cat $HOME/nest_master_node_id
+   66  cat tunnel.sh 
+   67  ls
+   68  bash term2_tunnel.sh
+   69  ls
+   70  vim term2_tunnel.sh
+   71  ls
+   72  cd ..
+   73  ls
+   74  mv benchmarks_072021 nrp_launch
+   75  ls
+   76  cd nrp_launch/
+   77  ls
+   78  bash term2_tunnel.sh
+   79  ls - li
+   80  ls -li
+   81  cd ..
+   82  ls
+   83  mv key-tunneluser nrp_launch/
+   84  cd nrp_launch/
+   85  ls
+   86  bash term2_tunnel.sh
+   87  ssh -A daint
+   88  cd nrp_launch/
+   89  ls
+   90  bash term3_nrp.sh
+   91  ssh -A daint
+   92  ls
+   93  pwd
+   94  cd nrp_launch/
+   95  ls
+   96  bash term2_tunnel.sh
+   97  cat term2_tunnel.sh
+   98  cat tunnel.sh
+   99  vim tunnel.sh 
+  100  cat term1_nestsrv.sh 
+  101  vim term1_nestsrv.sh 
+  102  vim term3_nrp.sh 
+  103  cat nrp.sh 
+  104  cat term1_nestsrv.sh 
+  105  bash term2_tunnel.sh
+  106  cat term2_tunnel.sh
+  107  vim tunnel.sh
+  108  bash term2_tunnel.sh
+  109  ssh -A daint
+  110  sarus load nrp_nest_client.tar nrp_nest_client
+  111  module load sarus
+  112  sarus load nrp_nest_client.tar nrp_nest_client
+  113  cd nrp_launch/
+  114  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  115  scancel 32959376
+  116  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  117  scancel 32959591
+  118  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  119  scancel 32960569
+  120  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  121  scancel 32961019
+  122  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  123  ssh -A daint
+  124  cd nrp_launch/
+  125  bash term3_nrp.sh
+  126  cat term3_nrp.sh
+  127  cat nrp.sh
+  128  cat term3_nrp.sh
+  129  bash term3_nrp.sh
+  130  ls
+  131  cat term2_tunnel.sh 
+  132  cat tunnel.sh 
+  133  cat term3_nrp.sh 
+  134  cat nrp.sh
+  135  bash term3_nrp.sh
+  136  vim term3_nrp.sh
+  137  cat term3_nrp.sh
+  138  vim nrp.sh 
+  139  cat term1_nestsrv.sh 
+  140  cat term2_tunnel.sh 
+  141  cat tunnel.sh 
+  142  cat term2_tunnel.sh 
+  143  cat term3_nrp.sh 
+  144  vim nrp.sh 
+  145  cat term3_nrp.sh 
+  146  bash term3_nrp.sh
+  147  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080  -TN tunneluser@148.187.97.59
+  148  ls
+  149  cd nrp_launch/
+  150  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080  -TN tunneluser@148.187.97.59
+  151  ssh -i key-tunneluser    -TN tunneluser@148.187.97.59
+  152  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080  -TN tunneluser@148.187.97.59
+  153  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080  -TN tunneluser@148.187.97.173
+  154  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080  -TN tunneluser@148.187.97.59
+  155  ssh -A daint
+  156  ls
+  157  cd nrp_launch/
+  158  ls
+  159  cat term2_tunnel.sh 
+  160  cat tunnel.sh
+  161  ls
+  162  bash term2_tunnel.sh
+  163  cat term2_tunnel.sh
+  164  cat tunnel.sh 
+  165  ls
+  166  cat term3_nrp.sh 
+  167  cat nrp.sh 
+  168  bash term2_tunnel.sh
+  169  ssh -A daint
+  170  ls
+  171  cd nrp_launch/
+  172  ls
+  173  cat term2_tunnel.sh 
+  174  cat $HOME/nest_master_node_id
+  175  cat tunnel.sh
+  176  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080     -R 0.0.0.0:5000:localhost:5000     -TN tunneluser@148.187.97.59
+  177  ssh -i key-tunneluser   tunneluser@148.187.97.59
+  178  ssh -i key-tunneluser     -o StrictHostKeyChecking=no -TN tunneluser@148.187.97.59
+  179  ssh -i key-tunneluser   148.187.97.59
+  180  ssh -i key-tunneluser tunneluser@148.187.97.59
+  181  ssh -i key-tunneluser -o StrictHostKeyChecking=no tunneluser@148.187.97.59
+  182  ssh -i key-tunneluser tunneluser@148.187.97.59
+  183  ssh -i key-tunneluser     -o StrictHostKeyChecking=no     -R 0.0.0.0:8080:localhost:8080  -TN tunneluser@148.187.97.59
+  184  ls
+  185  cat tunnel.sh 
+  186  cat term2_tunnel.sh 
+  187  cat $HOME/nest_master_node_id
+  188  ssh nid00260
+  189  cat $HOME/nest_master_node_id
+  190  ssh nid00260
+  191  ls
+  192  cat nrp.sh 
+  193  vim nrp.sh 
+  194  cd /scratch/snx3000/
+  195  ls
+  196  cd $USER
+  197  ls -l
+  198  cd nrp_logs
+  199  ls -l
+  200  grep "This method"
+  201  grep "This method" *
+  202  grep -r "This method" *
+  203  less ros-simulation-factory_app/ros-simulation-factory_app.out
+  204  ssh -A daint
+  205  sarus load nrp_nest_client.tar nrp_nest_client
+  206  module load sarus
+  207  sarus load nrp_nest_client.tar nrp_nest_client
+  208  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  209  cd nrp_launch/
+  210  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  211  scancel 32980206
+  212  scancel 32981391
+  213  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  214  ssh -A daint
+  215  cd nrp_launch/
+  216  ls
+  217  cat term3_nrp.sh 
+  218  ls
+  219  cat nrp.sh
+  220  ls
+  221  bash term2_tunnel.sh 
+  222  bash term3_nrp.sh
+  223  ssh -A daint
+  224  sarus load nrp_nest_client.tar nrp_nest_client
+  225  module load sarus
+  226  sarus load nrp_nest_client.tar nrp_nest_client
+  227  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  228  ls
+  229  cd nrp_launch/
+  230  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  231  ssh -A daint
+  232  ssh -A daint
+  233  cd nrp_launch/
+  234  bash term3_tunnel.sh 
+  235  ls
+  236  bash term3_nrp.sh
+  237  module load sarus
+  238  sarus load nrp_nest_client.tar nrp_nest_client
+  239  ls
+  240  cd nrp_launch/
+  241  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  242  scancel 33143367
+  243  sarus load nrp_nest_client.tar nrp_nest_client
+  244  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.shsalloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  245  pwd
+  246  scancel 33144790
+  247  ls
+  248  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.shsalloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  249  ssh -A daint
+  250  cd nrp_launch/
+  251  bash term2_tunnel.sh
+  252  ssh -A daint
+  253  cd nrp_launch/
+  254  bash term3_nrp.sh
+  255  module load sarus
+  256  sarus load nrp_nest_client.tar nrp_nest_client
+  257  ls
+  258  cd nrp_launch/
+  259  salloc -N 2 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  260  salloc -N 4 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  261  scancel 33149317
+  262  salloc -N 8 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  263  ssh -A daint
+  264  ls
+  265  cd nrp_launch/
+  266  ls
+  267  bash term2_tunnel.sh
+  268  ssh -A daint
+  269  ls
+  270  cd nrp_launch/
+  271  module load sarus
+  272  sarus load nrp_nest_client.tar nrp_nest_client
+  273  salloc -N 8 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=120 term1_nestsrv.sh
+  274  ssh -A daint
+  275  cd nrp_launch/
+  276  bash term2_tunnel.sh
+  277  ssh -A daint
+  278  cd nrp_launch/
+  279  ls
+  280  virtualenv pynrp
+  281  source pynrp/bin/activate
+  282  pip install pynrp
+  283  python
+  284  ssh -A daint
+  285  cd nrp_launch/
+  286  bash term3_nrp.sh
+  287  ls
+  288  mkdir nrp_experiments
+  289  exit
+  290  ssh -A daint
+  291  module load sarus
+  292  sarus load nrp_nest_client.tar nrp_nest_client
+  293  salloc -N 8 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --mem=120GB --time=10 term1_nestsrv.sh
+  294  ls
+  295  cd nrp_launch/
+  296  salloc -N 8 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --mem=120GB --time=10 term1_nestsrv.sh
+  297  salloc -N 8 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --mem=120GB --time=120 term1_nestsrv.sh
+  298  scancel 33231213
+  299  salloc -N 8 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --mem=120GB --time=120 term1_nestsrv.sh
+  300  scancel 33233017
+  301  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --mem=120GB --time=120 term1_nestsrv.sh
+  302  ssh -A daint
+  303  ls
+  304  cd nrp_launch/
+  305  bash term3_nrp.sh
+  306  cat term3_nrp.sh
+  307  cat $HOME/nest_master_node_id
+  308  cat nrp.sh
+  309  cat term3_nrp.sh
+  310  bash term3_nrp.sh
+  311  ssh -A daint
+  312  ls
+  313  cd nrp_launch/
+  314  bash term2_tunnel.sh
+  315  pwd
+  316  ls
+  317  cd nrp_experiments/
+  318  ls
+  319  rm nrp_hpc_12082020_50neurons_8nodes.zip 
+  320  ls
+  321  ls -l
+  322  ls
+  323  snakeviz
+  324  ssh -A daint
+  325  ls
+  326  cd nrp_launch/
+  327  ls
+  328  virtualenv pynrp
+  329  source pynrp/bin/activate
+  330  pip install pynrp
+  331  python
+  332  python --version
+  333  ssh -A daint
+  334  pwd
+  335  ls -l
+  336  cd pynrp
+  337  virtualenv pynrp
+  338  source pynrp/bin/activate
+  339  pip install pynrp
+  340  ssh -A daint
+  341  pwd
+  342  ls
+  343  echo $HOME
+  344  cd /home/nrp_launch
+  345  cd home/nrp_launch
+  346  cd $HOME/nrp_launch
+  347  module load sarus
+  348  sarus load nrp_nest_client.tar nrp_nest_client
+  349  ssh -A daint
+  350  cd nrp_launch/
+  351  bash term2_tunnel.sh
+  352  ssh -A daint
+  353  cd nrp_launch/
+  354  ssh -A daint
+  355  cd ..
+  356  ls
+  357  cd nrp_experiments/
+  358  ls
+  359  cd ..
+  360  virtualenv pynrp
+  361  source pynrp/bin/activate
+  362  pip install pynrp
+  363  python
+  364  vim test.py
+  365  cat test.py 
+  366  python test.py
+  367  vim test.py
+  368  python test.py
+  369  vim test.py
+  370  python test.py
+  371  vim test.py
+  372  python test.py
+  373  vim test.py
+  374  python test.py
+  375  ssh -A daint
+  376  ls
+  377  cd nrp_launch/
+  378  module load sarus
+  379  sarus load nrp_nest_client.tar nrp_nest_clientsarus load nrp_nest_client.tar nrp_nest_client
+  380  sarus load nrp_nest_client.tar nrp_nest_client
+  381  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=30 term1_nestsrv.sh
+  382  scancel 33420687
+  383  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=30 term1_nestsrv.sh
+  384  ssh -A daint
+  385  ssh -A daint
+  386  bash term2_tunnel.sh
+  387  bash term3_nrp.sh
+  388  ssh -A daint
+  389  module load sarus
+  390  ls
+  391  cd nrp_launch/
+  392  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  393  ls
+  394  scancel 33423650
+  395  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  396  scancel 33425077
+  397  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  398  scancel 33428326
+  399  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  400  scancel 33428905
+  401  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  402  scancel 33428964
+  403  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  404  ssh -A daint
+  405  bash term2_tunnel.sh
+  406  ls
+  407  cd nrp_launch/
+  408  bash term2_tunnel.sh
+  409  ssh -A daint
+  410  cd nrp_launch/
+  411  bash term3_nrp.sh
+  412  ls
+  413  vim nrp.sh
+  414  bash term3_nrp.sh
+  415  vim nrp.sh
+  416  bash term3_nrp.sh
+  417  ssh -A daint
+  418  ls
+  419  cd nrp_experiments/
+  420  ls
+  421  virtualenv pynrp
+  422  source pynrp/bin/activate
+  423  pip install pynrp
+  424  python
+  425  ls
+  426  cd ..
+  427  ls
+  428  vim test.py 
+  429  python test.py
+  430  ssh -A daint
+  431  ssh -A 148.187.96.212
+  432  ls
+  433  cd nrp_launch/
+  434  ls
+  435  cat term2_tunnel.sh 
+  436  ls
+  437  cat term3_nrp.sh 
+  438  cat nrp.sh
+  439  vim nrp.sh
+  440  ssh -A daint
+  441  ls
+  442  virtualenv pynrp
+  443  source pynrp/bin/activate
+  444  pip install pynrp
+  445  python
+  446  ls
+  447  cd pynrp
+  448  ls
+  449  cd include/
+  450  ls
+  451  cd ..
+  452  cd bin
+  453  ls
+  454  cd ..
+  455  ls -l
+  456  ls lib64
+  457  ös lib
+  458  ls lib
+  459  ls etc
+  460  ls share
+  461  ls
+  462  cd ..
+  463  ls
+  464  ls modules
+  465  ls pynrp/virtual_coach
+  466  python
+  467  ssh -A daint
+  468  ls
+  469  cd nrp_launch/
+  470  module load sarus
+  471  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  472  ssh -A daint
+  473  cd nrp_launch/
+  474  ls
+  475  bash term2_tunnel.sh 
+  476  ls
+  477  bash term2_tunnel.sh 
+  478  ssh -A daint
+  479  cd nrp_launch/
+  480  bash term3_nrp.sh 
+  481  ssh -A daint
+  482  ls
+  483  cd nrp_experiments/
+  484  ls
+  485  virtualenv pynrp
+  486  source pynrp/bin/activate
+  487  pip install pynrp
+  488  ls
+  489  python
+  490  ls
+  491  rm nrp_hpc_12082020_50neurons_16nodes_1sec.zip
+  492  ls
+  493  python
+  494  ssh -A daint
+  495  module load sarus
+  496  ls
+  497  cd nrp_launch/
+  498  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  499  ls
+  500  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  501  ssh -A daint
+  502  cd nrp_launch/
+  503  bash term2_tunnel.sh 
+  504  ls
+  505  bash term2_tunnel.sh 
+  506  ssh -A daint
+  507  cd nrp_launch/
+  508  bash term3_nrp.sh 
+  509  ls
+  510  bash term3_nrp.sh 
+  511  ssh -A daint
+  512  module load sarus
+  513  cd $HOME/nrp_launch
+  514  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  515  ssh -A daint
+  516  cd $HOME/nrp_launch
+  517  bash term2_tunnel.sh 
+  518  ssh -A daint
+  519  cd $HOME/nrp_launch
+  520  bash term3_nrp.sh 
+  521  ssh -A daint
+  522  cd nrp_launch/
+  523  module load sarus
+  524  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  525  ssh -A daint
+  526  cd nrp_launch/
+  527  bash term2_nrp.sh 
+  528  ls
+  529  bash term2_nrp.sh 
+  530  bash term2_tunnel.sh 
+  531  ssh -A daint
+  532  cd nrp_launch/
+  533  bash term3_nrp.sh 
+  534  ssh -A daint
+  535  ls
+  536  cd nrp_launch/
+  537  module load sarus
+  538  cd $HOME/nrp_launch
+  539  ls
+  540  cd nrp_experiments/
+  541  ls
+  542  cd nrp_launch/
+  543  bash term2_tunnel.sh
+  544  cd nrp_launch/
+  545  bash term3_nrp.sh
+  546  cd nrp_launch/
+  547  ls
+  548  cd ..
+  549  cd nrp_experiments/
+  550  ls
+  551  mkdir HPC_benchmark
+  552  ls
+  553  cd HPC_benchmark/
+  554  ls
+  555  cd ..
+  556  virtualenv pynrp
+  557  source pynrp/bin/activate
+  558  pip install pynrp
+  559  ls
+  560  python
+  561  ls
+  562  rm HPC_benchmark/
+  563  rm -r HPC_benchmark/
+  564  ls
+  565  rm -r HPC_benchmark/
+  566  ls
+  567  python
+  568  ls
+  569  vim config.yaml
+  570  ls
+  571  vim run_benchmark.py
+  572  ls
+  573  ls -l
+  574  cd HPC_benchmark
+  575  cd ..
+  576  ls
+  577  pwd
+  578  ls
+  579  cd nrp_experiments/
+  580  ls -l
+  581  cat HPC_benchmark 
+  582  ls
+  583  cat HPC_benchmark 
+  584  pwd
+  585  ls
+  586  ssh -A daint
+  587  cd nrp_experiments/
+  588  ls
+  589  ls -l
+  590  cat HPC_benchmark 
+  591  ls
+  592  vim HPC_benchmark 
+  593  mv HPC_benchmark job.bkp
+  594  ls -l
+  595  mkdir HPC_benchmark
+  596  ls
+  597  ls -l
+  598  cd HPC_benchmark/
+  599  ls
+  600  cd ..
+  601  virtualenv pynrp
+  602  source pynrp/bin/activate
+  603  python
+  604  cd HPC_benchmark/
+  605  ls
+  606  cd ..
+  607  python
+  608  vim test_vcoach.py
+  609  python test_vcoach.py
+  610  vim test_vcoach.py
+  611  ssh -A daint
+  612  ls
+  613  vim run_benchmark.py
+  614  scancel 33955665
+  615  cd ..
+  616  ls
+  617  cd nrp_launch/
+  618  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  619  ls
+  620  cd nrp_launch/
+  621  module load sarus
+  622  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  623  ls
+  624  module load sarus
+  625  sarus pull christopherbignamini/nest:jougs_nest_server_mpi
+  626  module use /scratch/snx3000/bignamic/EasyBuildInstall/modules/all/
+  627  module load skopeo
+  628  skopeo copy --insecure-policy        docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:1dfbe38dae84393402d30e1921cdf2f690beece62498389194ececc6a3aa525b        docker-archive:nrp_nest_client.tar
+  629  skopeo copy --insecure-policy docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:1dfbe38dae84393402d30e1921cdf2f690beece62498389194ececc6a3aa525b docker-archive:nrp_nest_client.tar
+  630  sarus load nrp_nest_client.tar nrp_nest_client
+  631  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  632  scancel 33951677
+  633  cd ..
+  634  cd nrp_experiments/
+  635  ls
+  636  cat config.yaml
+  637  ls
+  638  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  639  ls -l
+  640  scancel 33952091
+  641  chmod 777 *.sh
+  642  ls -l
+  643  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  644  scancel 33952254
+  645  ls /users/bp000396/nrp_experiments/job.sh
+  646  vim job.sh
+  647  ls
+  648  cd testdir1
+  649  ls
+  650  cd ..
+  651  ls
+  652  scancel 33952254
+  653  ls
+  654  vim job.sh
+  655  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  656  scancel 33954503
+  657  vim job.sh
+  658  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  659  scancel 33954536
+  660  ls -l
+  661  job.sh
+  662  bash job.sh
+  663  vim job.sh
+  664  bash job.sh
+  665  vim job.sh 
+  666  pwd
+  667  /users/bp000396/nrp_experiments/job.sh
+  668  bash /users/bp000396/nrp_experiments/job.sh
+  669  vim job.sh
+  670  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh
+  671  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread $HOME/nrp_experiments/job.sh config.yaml
+  672  cd ..
+  673  ls -l
+  674  cd nrp_experiments/
+  675  ls
+  676  ls -l
+  677  chmod -w job.sh 
+  678  ls job.sh
+  679  ls -l job.sh
+  680  chmod 327 job.sh 
+  681  ls -l job.sh
+  682  chmod 700 job.sh 
+  683  ls -l job.sh
+  684  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread $HOME/nrp_experiments/job.sh config.yaml
+  685  scancel 33954873
+  686  chmod 777 job.sh
+  687  ls
+  688  cp job.sh test.sh
+  689  ls -l
+  690  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread test.sh config.yaml
+  691  cd ..
+  692  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread $HOME/nrp_experiments/job.sh config.yaml
+  693  ls -l
+  694  cd nrp_experiments/
+  695  ls -l
+  696  chmod 777 config.yaml
+  697  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread $HOME/nrp_experiments/job.sh config.yaml
+  698  ls
+  699  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread $HOME/nrp_experiments/job.sh config.yaml
+  700  clear
+  701  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  702  cat /users/bp000396/nrp_experiments/job.sh
+  703  clear
+  704  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh
+  705  ls -l
+  706  ls -l /users/bp000396/nrp_experiments/job.sh
+  707  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread config.yaml
+  708  ls -a
+  709  ls -la
+  710  cp job.sh main_job.sh
+  711  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread main_job.sh config.yaml
+  712  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread bash main_job.sh config.yaml
+  713  vim job.sh
+  714  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread main_job.sh config.yaml
+  715  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  716  ls
+  717  vim job.sh
+  718  cat job.sh 
+  719  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh
+  720  head -1 job.sh | od -c
+  721  vim job.sh
+  722  head -1 job.sh | od -c
+  723  sed -i '1s/^.*#//;s/\r$//' job.sh
+  724  head -1 job.sh | od -c
+  725  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh
+  726  ssh -A daint
+  727  cd nrp_launch/
+  728  bash term2_tunnel.sh
+  729  ls
+  730  cat term2_tunnel.sh 
+  731  cat tunnel.sh 
+  732  ls
+  733  pwd
+  734  ls -a
+  735  ls -l
+  736  bash term2_tunnel.sh
+  737  ls -l
+  738  cd ..
+  739  ls
+  740  cd pynrp
+  741  ls
+  742  cd ..
+  743  ls
+  744  pwd
+  745  ls
+  746  cat /users/bp000396/nrp_experiments/job.sh
+  747  pwd
+  748  bash term2_tunnel.sh
+  749  scancel 33955643
+  750  ls -l
+  751  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  752  cd nrp_launch/
+  753  ssh -A daint
+  754  cd nrp_launch/
+  755  bash term3_nrp.sh
+  756  cd ..
+  757  ls
+  758  pwd
+  759  cd nrp_experiments/
+  760  ls $HOME/nrp_launch/key-tunneluser
+  761  mkdir testdir1
+  762  ls
+  763  ls -l
+  764  ls $HOME/nrp_experiments/testdir1
+  765  cd ..
+  766  cd nrp_launch/
+  767  bash term3_nrp.sh
+  768  echo pwd
+  769  echo $pwd
+  770  ls
+  771  vim term1_nestsrv.sh 
+  772  cd ..
+  773  cd nrp_experiments/
+  774  cat job.sh 
+  775  cd ..
+  776  ls
+  777  ls -l
+  778  cd nrp_launch/
+  779  ls -l
+  780  vim term1_nestsrv.sh
+  781  bash term3_nrp.sh
+  782  scancel 33975606
+  783  ls
+  784  ls -l
+  785  cd ..
+  786  ls
+  787  ls -l
+  788  mkdir old_benchmarks
+  789  mv *.sh old_benchmarks/
+  790  mv *.py old_benchmarks/
+  791  ls -l
+  792  mv *.bkp old_benchmarks/
+  793  mv *.tar old_benchmarks/
+  794  mv *.txt old_benchmarks/
+  795  ls -l
+  796  gh repo clone HBPNeurorobotics/nestserver_benchmarks
+  797  pwd
+  798  git clone https://github.com/HBPNeurorobotics/nestserver_benchmarks.git
+  799  ls -l
+  800  cd nestserver_benchmarks/
+  801  ls
+  802  pwd
+  803  vim job.sh
+  804  ls
+  805  cat job.sh
+  806  ls
+  807  cd HPC_benchmark/
+  808  ls
+  809  cd ..
+  810  ls
+  811  vim config.yaml
+  812  ls -l
+  813  mkdir testdir1
+  814  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  815  scancel 33976733
+  816  ls
+  817  vim prepare_benchmark.py 
+  818  pip install ruamel.yaml
+  819  vim prepare_benchmark.py 
+  820  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  821  python --version
+  822  python3
+  823  cd ..
+  824  source pynrp/bin/activate
+  825  python --version
+  826  cd nestserver_benchmarks/
+  827  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  828  scancel 33977118
+  829  scancel 33976961
+  830  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  831  python --version
+  832  pip install ruamel.yaml.cmd
+  833  scancel 33977226
+  834  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  835  scancel 33977328
+  836  ls /users/bp000396/nestserver_benchmarks/testdir1
+  837  ls /users/bp000396/nestserver_benchmarks/
+  838  vim run_benchmark.py
+  839  vim job.sh
+  840  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  841  vim job.sh
+  842  ls
+  843  vim prepare_benchmark.py
+  844  ls
+  845  cd HPC_benchmark/
+  846  ls
+  847  cd ..
+  848  ls
+  849  rm -r testdir1
+  850  ls
+  851  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  852  ls
+  853  vim prepare_benchmark.py 
+  854  ls
+  855  ssh -A daint
+  856  module load sarus
+  857  cd nrp_launch/
+  858  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  859  scancel 33971186
+  860  salloc -N 16 -J nrp-nest-scaleout -C 'mc&startx' -A ich004m --time=60 term1_nestsrv.sh
+  861  ssh -A daint
+  862  scancel 33975423
+  863  ls
+  864  cat config.yaml 
+  865  cd ..
+  866  ls
+  867  cd nestserver_benchmarks/
+  868  ls
+  869  ls HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF/NRP_experiment
+  870  ls
+  871  cd nrp_experiments/
+  872  ls
+  873  ls -l
+  874  cd HPC_benchmark/
+  875  ls
+  876  cd scale20-threads72-nodes16-nvp1152-withTF/
+  877  ls
+  878  cp NRP_experiment NRP_experiment_0
+  879  cp -r NRP_experiment NRP_experiment_0
+  880  ls
+  881  cd ..
+  882  ls
+  883  cd ..
+  884  ls -l
+  885  vim test_vcoach.py
+  886  cat test_vcoach.py 
+  887  ls
+  888  python test_vcoach.py
+  889  virtualenv pynrp
+  890  source pynrp/bin/activate
+  891  python test_vcoach.py
+  892  python
+  893  ls
+  894  python
+  895  ls
+  896  cat test_vcoach.py 
+  897  ls
+  898  python test_vcoach.py
+  899  ls
+  900  cd HPC_benchmark/
+  901  ls
+  902  cd scale20-threads72-nodes16-nvp1152-withTF/
+  903  ls
+  904  cd ..
+  905  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  906  ssh -A daint
+  907  cd nrp_launch/
+  908  bash term2_tunnel.sh
+  909  ls -l
+  910  cd ..
+  911  ls -l
+  912  cd nrp_launch/
+  913  ls
+  914  ls $HOME/nrp_launch/key-tunneluser
+  915  ssh -A daint
+  916  cd nrp_experiments/
+  917  ls
+  918  cat test_vcoach.py 
+  919  ls
+  920  cd HPC_benchmark/
+  921  ls
+  922  cd scale20-threads72-nodes16-nvp1152-withTF/
+  923  ls
+  924  ssh -A daint
+  925  cd nrp_launch/
+  926  bash term3_nrp.sh
+  927  cd ..
+  928  ls
+  929  git
+  930  git status
+  931  cd nrp_experiments/
+  932  head -1 main_job.sh | od -c
+  933  sed -i '1s/^.*#//;s/\r$//' main_job.sh
+  934  head -1 main_job.sh | od -c
+  935  vim job.sh
+  936  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  937  scancel 33975184
+  938  cat job.sh
+  939  vim job.sh
+  940  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  941  cd ..
+  942  ls
+  943  cd nestserver_benchmarks/
+  944  ls
+  945  salloc --constraint mc -A ich004m --time=200 --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread job.sh config.yaml
+  946  scancel 33977920
+  947  ls /users/bp000396/nestserver_benchmarks/testdir1
+  948  vim job.sh
+  949  python3 --version
+  950  ls
+  951  python3 prepare_benchmark.py
+  952  source pynrp/bin/activate
+  953  cd ..
+  954  source pynrp/bin/activate
+  955  cd nestserver_benchmarks/
+  956  python3 prepare_benchmark.py
+  957  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  958  ls /users/bp000396/nestserver_benchmarks/testdir1
+  959  vim job.sh
+  960  scancel 33978598
+  961  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  962  scancel 33978682
+  963  ls
+  964  python3 prepare_benchmark.py config.yaml
+  965  chmod 600 config.yaml
+  966  python3 prepare_benchmark.py config.yaml
+  967  vim prepare_benchmark.py 
+  968  scancel 33978682
+  969  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  970  scancel 33978726
+  971  vim prepare_benchmark.py
+  972  ls
+  973  vim prepare_benchmark.py
+  974  scancel 33978726
+  975  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  976  vim prepare_benchmark.py
+  977  ls
+  978  vim config.yaml
+  979  cd testdir1/
+  980  ls
+  981  cd ..
+  982  ls
+  983  rm -r testdir1
+  984  ls
+  985  scancel 33978783
+  986  ls
+  987  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+  988  ls -l
+  989  vim run_benchmark.py 
+  990  ls
+  991  cd nestserver_benchmarks/
+  992  ls
+  993  vim prepare_benchmark.py
+  994  ls
+  995  vim run_benchmark.py
+  996  ls
+  997  cd ..
+  998  source pynrp/bin/activate
+  999  python --version
+ 1000  ls
+ 1001  cd nestserver_benchmarks/
+ 1002  ls
+ 1003  ls testdir1
+ 1004  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+ 1005  scancel 33998024
+ 1006  ls
+ 1007  rm -r testdir1
+ 1008  ls
+ 1009  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+ 1010  scancel 33998042
+ 1011  ls
+ 1012  vim run_benchmark.py
+ 1013  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+ 1014  scancel 33998795
+ 1015  ls
+ 1016  rm -r testdir1
+ 1017  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+ 1018  scancel 33998812
+ 1019  vim run_benchmark.py
+ 1020  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+ 1021  scancel 34000020
+ 1022  ls
+ 1023  rm -r testdir1
+ 1024  ls
+ 1025  salloc --constraint mc -A ich004m --time=200        --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread        job.sh config.yaml
+ 1026  history > console_22092021_1156.log

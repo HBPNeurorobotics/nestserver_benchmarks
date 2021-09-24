@@ -83,7 +83,7 @@ M_ERROR = 30
 
 
 params = {
-    'nvp': 1152,               # total number of virtual processes
+    'nthreads': 36,         # local number of threads per process
     'scale': 20,            # scaling factor of the network size 1.
                             # total network size = scale*11250 neurons
     'simtime': 250.,        # total simulation time in ms (250)
@@ -182,7 +182,7 @@ def build_network():
 
     # set global kernel parameters
     nest.SetKernelStatus({
-        'total_num_virtual_procs': params['nvp'],
+        'local_num_threads': params['nthreads'],
         'resolution': params['dt'],
         'overwrite_files': True})
 
@@ -228,22 +228,6 @@ def build_network():
 
     nest.message(M_INFO, 'build_network',
                  'Creating excitatory spike recorder.')
-
-    if params['record_spikes']:
-        filestem = brunel_params['filestem'] + '/'
-        alpha_str = str(stdp_params['alpha'])
-        recorder_label = filestem + 'alpha_' + alpha_str + '_spikes'
-        E_recorder = nest.Create('spike_recorder', params={
-            'record_to': 'ascii',
-            'label': recorder_label
-        })
-
-    BuildNodeTime = time.time() - tic
-
-    #logger.log(str(BuildNodeTime) + ' # build_time_nodes')
-    #logger.log(str(memory_thisjob()) + ' # virt_mem_after_nodes')
-
-    tic = time.time()
 
     nest.SetDefaults('static_synapse_hpc', {'delay': brunel_params['delay']})
     nest.CopyModel('static_synapse_hpc', 'syn_std')
@@ -296,60 +280,8 @@ def build_network():
                   'allow_autapses': False, 'allow_multapses': True},
                  {'synapse_model': 'syn_in'})
 
-    if params['record_spikes']:
-        if params['nvp'] != 1:
-            local_neurons = nest.GetLocalNodeCollection(E_neurons)
-            # GetLocalNodeCollection returns a stepped composite NodeCollection, which
-            # cannot be sliced. In order to allow slicing it later on, we're creating a
-            # new regular NodeCollection from the plain node IDs.
-            local_neurons = nest.NodeCollection(local_neurons.tolist())
-        else:
-            local_neurons = E_neurons
-
-        if len(local_neurons) < brunel_params['Nrec']:
-            nest.message(
-                M_ERROR, 'build_network',
-                """Spikes can only be recorded from local neurons, but the
-                number of local neurons is smaller than the number of neurons
-                spikes should be recorded from. Aborting the simulation!""")
-            exit(1)
-
-        nest.message(M_INFO, 'build_network', 'Connecting spike recorders.')
-        nest.Connect(local_neurons[:brunel_params['Nrec']], E_recorder,
-                     'all_to_all', 'static_synapse_hpc')
-
-    # read out time used for building
-    BuildEdgeTime = time.time() - tic
-
-    #logger.log(str(BuildEdgeTime) + ' # build_edge_time')
-    #logger.log(str(memory_thisjob()) + ' # virt_mem_after_edges')
-
-    E_recorder = E_recorder if params['record_spikes'] else None
     
-    
-    return E_recorder, E_neurons, I_neurons
-
-
-def compute_rate(sr):
-    """Compute local approximation of average firing rate
-
-    This approximation is based on the number of local nodes, number
-    of local spikes and total time. Since this also considers devices,
-    the actual firing rate is usually underestimated.
-
-    """
-
-    n_local_spikes = sr.n_events
-    n_local_neurons = brunel_params['Nrec']
-    simtime = params['simtime']
-    return 1. * n_local_spikes / (n_local_neurons * simtime) * 1e3
-
-
-def memory_thisjob():
-    """Wrapper to obtain current memory usage"""
-    nest.ll_api.sr('memory_thisjob')
-    return nest.ll_api.spp()
-
+    return E_neurons, I_neurons
 
 #class Logger(object):
 #    """Logger context manager used to properly log memory and timing
@@ -396,9 +328,7 @@ def memory_thisjob():
 nest.ResetKernel()
 nest.set_verbosity(M_INFO)
 
-#logger.log(str(memory_thisjob()) + ' # virt_mem_0')
-
-E_recorder, E_neurons, I_neurons = build_network()
+E_neurons, I_neurons = build_network()
 
 #tic = time.time()
 #nest.SetKernelStatus({"min_delay": 1.0})

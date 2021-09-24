@@ -2,7 +2,7 @@
 
 module load sarus
 
-export NRPLOGDIR={nrplogdir}
+export NRPLOGDIR=/users/bp000396/nestserver_benchmarks/testdir1/nrplogs
 
 mkdir -p $NRPLOGDIR/nginx
 mkdir -p $NRPLOGDIR/nrp-services_app
@@ -46,7 +46,7 @@ sarus run \
           sed -i 's|sys.executable|\\\"/home_daint/bbpnrsoa/.opt/platform_venv/bin/python\\\"|' $NRPSRCLNCH/NestLauncher.py; \
           sed -i 's|$VGLRUN|xvfb-run -a --server-args=\\\"-screen 0 1280x1024x24\\\"|' /home_daint/bbpnrsoa/.opt/bbp/nrp-services/gzserver; \
           sed -i 's|--pause|--pause --software_only_rendering|' /home_daint/bbpnrsoa/.opt/bbp/nrp-services/gzserver; \
-	  sed -i 's|NestClientControlAdapter()|NestClientControlAdapter(\"{nest_master_node}\", 5000)|' $NRPSRCSERV/server/ServerConfigurations.py;
+	  sed -i 's|NestClientControlAdapter()|NestClientControlAdapter(\"nid01309\", 5000)|' $NRPSRCSERV/server/ServerConfigurations.py;
           \
           /etc/init.d/supervisor start; \
 	  sleep 365d;"

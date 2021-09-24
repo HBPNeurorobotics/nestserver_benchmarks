@@ -1,0 +1,1966 @@
+/home_daint/bbpnrsoa
+/home_daint/bbpnrsoa/nrp/src/GazeboRosPackages/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/home_daint/bbpnrsoa/nrp/src/GazeboRosPackages/devel/lib/python3.8/dist-packages:/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle:/home_daint/bbpnrsoa/nrp/src/ExperimentControl/hbp_nrp_excontrol:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_backend:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_commons:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_watchdog:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp-flask-restful-swagger-master:/home_daint/bbpnrsoa/nrp/src/VirtualCoach/hbp_nrp_virtual_coach:/home_daint/bbpnrsoa/nrp/src/BrainSimulation/hbp_nrp_distributed_nest:/home_daint/bbpnrsoa/.local/lib/python3.8/site-packages:/home_daint/bbpnrsoa/.local/lib/x86_64-linux-gnu/python3.8/site-packages
+[1;31m+-------------------------- Neurorobotics Platform warning ---------------------------+
+| Dear Neurorobotics user, your PYTHONPATH contains previous paths.                   |
+| This might cause the Neurorobotics Platform to malfunction.                         |
+| If you are experiencing problems (like MPI.so not finding function references), add |
+|   export PYTHONPATH=                                                                |
+| to your ~/.bashrc                                                                   |
++-------------------------------------------------------------------------------------+[0m
+[INFO] [2021.9.24 13:0:48 /home_daint/bbpnrsoa/nrp/src/nest-simulator/nestkernel/rng_manager.cpp:217 @ Network::create_rngs_] : Creating default RNGs
+[INFO] [2021.9.24 13:0:48 /home_daint/bbpnrsoa/nrp/src/nest-simulator/nestkernel/rng_manager.cpp:260 @ Network::create_grng_] : Creating new default global RNG
+
+              -- N E S T --
+  Copyright (C) 2004 The NEST Initiative
+
+ Version: nest-2.18.0
+ Built: Mar 29 2021 14:07:01
+
+ This program is provided AS IS and comes with
+ NO WARRANTY. See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+CSAConnector: libneurosim support not available in NEST.
+Falling back on PyNN's default CSAConnector.
+Please re-compile NEST using --with-libneurosim=PATH
+2021-09-24 13:00:50,513 [Thread-3    ] [rospy.intern] [INFO]  topic[/rosout] adding connection to [/rosout], count 0
+2021-09-24 13:01:48,481 [Thread-7    ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2021-09-24 13:01:48,481 [Thread-7    ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.0.i49vnhr8/experiment_configuration.exc config file
+2021-09-24 13:01:48,496 [Thread-7    ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.0.i49vnhr8/bibi_config.bibi
+2021-09-24 13:01:48,499 [Thread-7    ] [SimConfig   ] [INFO]  Using physics engine ode
+2021-09-24 13:01:48,500 [Thread-7    ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2021-09-24 13:01:48,500 [Thread-7    ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.0.i49vnhr8
+2021-09-24 13:01:48,500 [Thread-7    ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2021-09-24 13:01:48,500 [Thread-7    ] [hbp_nrp_cles] [INFO]  RNG seed = 1528946291850650811
+2021-09-24 13:01:48,500 [Thread-7    ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2021-09-24 13:01:48,502 [Thread-7    ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2021-09-24 13:01:48,502 [Thread-7    ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2021-09-24 13:01:48,525 [Thread-7    ] [hbp_nrp_cles] [INFO]  gzserver arguments: --seed 1528946291850650811 -e ode /tmp/nrp.0.i49vnhr8/virtual_room.sdf
+2021-09-24 13:01:48,526 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1632481313.246150358]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1632481313.248881942]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1632481313.258486364]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1632481313.261386141]: Gazebo ROS Playback Plugin initialized.[0m
+2021-09-24 13:01:54,051 [Thread-11   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.39:45643/], count 0
+2021-09-24 13:01:54,169 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1632481314.024672789]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1632481314.063797835]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2021-09-24 13:01:56,222 [Thread-7    ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2021-09-24 13:01:56,227 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.0.i49vnhr8/husky/model.sdf: 
+2021-09-24 13:01:56,509 [Thread-7    ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2021-09-24 13:01:56,540 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2021-09-24 13:01:56,557 [Thread-7    ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2021-09-24 13:01:56,557 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2021-09-24 13:01:56,557 [Thread-7    ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:01:56,557 [Thread-7    ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2021-09-24 13:01:56,558 [Thread-7    ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.0.i49vnhr8/hpctest122020.py
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Sep 24 2021 13:01:56 GMT+0200 (CEST) gzbridge Websocket is listening on port: 7681
+2021-09-24 13:02:13,189 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2021-09-24 13:02:13,189 [Thread-7    ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2021-09-24 13:02:13,189 [Thread-7    ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:02:13,189 [Thread-7    ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:02:13,193 [Thread-7    ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:02:13,195 [Thread-7    ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:02:13,196 [Thread-13   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [http://148.187.37.39:40357/], count 0
+2021-09-24 13:02:13,199 [Thread-14   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [http://148.187.37.39:44241/], count 1
+2021-09-24 13:02:13,201 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [/ros_cle_simulation_279_1632481250180], count 0
+2021-09-24 13:02:13,215 [Thread-7    ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2021-09-24 13:02:13,217 [Thread-7    ] [hbp_nrp_cles] [INFO]  Initialization done
+2021-09-24 13:02:13,218 [Thread-7    ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2021-09-24 13:02:13,266 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [/nrp_backend], count 1
+2021-09-24 13:02:13,292 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2021-09-24 13:02:13,292 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2021-09-24 13:02:13,292 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2021-09-24 13:02:13,292 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2021-09-24 13:02:13,292 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe2e03130>' after transition.
+2021-09-24 13:02:14,195 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:14,367 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2021-09-24 13:02:14,368 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:02:14,368 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2021-09-24 13:02:14,368 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2021-09-24 13:02:14,368 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2021-09-24 13:02:14,369 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2021-09-24 13:02:14,369 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe2e03340>' after transition.
+2021-09-24 13:02:14,726 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:02:14,740 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:02:15,196 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:16,196 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:17,197 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:18,197 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:19,198 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:20,198 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:21,199 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:22,199 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:23,200 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:24,200 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:25,201 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:26,201 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:27,202 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:28,202 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:29,203 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:30,203 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:31,204 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:32,204 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:33,204 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:34,205 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:35,205 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:36,206 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:37,206 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:38,207 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:39,208 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:40,208 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:41,208 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:42,209 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:43,209 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:44,210 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:45,210 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:46,211 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:47,211 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:48,212 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:49,212 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:50,213 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:51,213 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:52,214 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:53,214 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:54,214 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:55,215 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:56,215 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:57,216 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:58,216 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:02:59,217 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:00,217 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:01,218 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:02,218 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:03,219 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:04,219 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:05,220 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:06,220 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:07,221 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:08,221 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:09,221 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:10,222 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:11,222 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:12,223 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:13,223 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:14,224 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:15,224 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:16,225 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:17,225 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:18,226 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:19,226 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:20,227 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:21,227 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:22,228 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:23,228 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:24,229 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:25,229 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:26,230 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:27,230 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:28,230 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:29,231 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:30,231 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:31,232 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:32,232 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:33,233 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:34,233 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:35,234 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:36,234 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:37,235 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:38,235 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:39,236 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:40,236 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:41,237 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:42,237 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:43,238 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:44,238 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:45,239 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:46,239 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:47,240 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:48,240 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:03:49,241 [Thread-8    ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:04:29,201 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2021-09-24 13:04:29,201 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2021-09-24 13:04:29,201 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2021-09-24 13:04:29,201 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2021-09-24 13:04:29,201 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2021-09-24 13:04:29,752 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2021-09-24 13:04:29,752 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2021-09-24 13:04:30,202 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/0/lifecycle...
+2021-09-24 13:04:30,203 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to http://148.187.37.39:40357/
+2021-09-24 13:04:30,203 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to http://148.187.37.39:44241/
+2021-09-24 13:04:30,205 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/0/lifecycle...
+2021-09-24 13:04:30,205 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to /ros_cle_simulation_279_1632481250180
+2021-09-24 13:04:30,205 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to /nrp_backend
+2021-09-24 13:04:30,206 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe2e03640>' after transition.
+2021-09-24 13:04:30,206 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2021-09-24 13:04:31,204 [Thread-18   ] [hbp_nrp_cles] [INFO]  Finished main loop
+2021-09-24 13:04:31,204 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2021-09-24 13:04:31,204 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2021-09-24 13:04:31,205 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2021-09-24 13:04:34,321 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2021-09-24 13:04:34,322 [Thread-18   ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2021-09-24 13:04:34,322 [Thread-18   ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2021-09-24 13:04:34,322 [Thread-18   ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2021-09-24 13:04:36,324 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2021-09-24 13:04:36,326 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2021-09-24 13:04:36,327 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2021-09-24 13:04:36,328 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2021-09-24 13:04:36,329 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2021-09-24 13:04:36,330 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2021-09-24 13:04:36,331 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2021-09-24 13:04:36,332 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:04:36,333 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:04:36,334 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2021-09-24 13:04:36,334 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2021-09-24 13:04:36,335 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2021-09-24 13:04:36,336 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2021-09-24 13:04:36,337 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2021-09-24 13:04:36,338 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2021-09-24 13:04:36,339 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2021-09-24 13:04:37,393 [Thread-18   ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2021-09-24 13:04:37,399 [Thread-18   ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 1749:  OK.
+2021-09-24 13:04:37,415 [Thread-18   ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2021-09-24 13:04:37,415 [Thread-18   ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2021-09-24 13:04:37,415 [Thread-18   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2021-09-24 13:04:37,416 [Thread-18   ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2021-09-24 13:04:37,416 [Thread-18   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2021-09-24 13:04:37,418 [/clock      ] [rospy.intern] [WARNING]  Unknown error initiating TCP/IP socket to 148.187.37.39:60217 (http://148.187.37.39:45643/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 560, in connect
+    self.socket.connect((dest_addr, dest_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2021-09-24 13:04:37,418 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.39:45643/
+2021-09-24 13:04:37,419 [Thread-18   ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2021-09-24 13:05:50,687 [Thread-48   ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2021-09-24 13:05:50,688 [Thread-48   ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.1.u2s7k2g7/experiment_configuration.exc config file
+2021-09-24 13:05:50,695 [Thread-48   ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.1.u2s7k2g7/bibi_config.bibi
+2021-09-24 13:05:50,697 [Thread-48   ] [SimConfig   ] [INFO]  Using physics engine ode
+2021-09-24 13:05:50,698 [Thread-48   ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2021-09-24 13:05:50,698 [Thread-48   ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.1.u2s7k2g7
+2021-09-24 13:05:50,698 [Thread-48   ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2021-09-24 13:05:50,698 [Thread-48   ] [hbp_nrp_cles] [INFO]  RNG seed = 8718342426266810596
+2021-09-24 13:05:50,698 [Thread-48   ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2021-09-24 13:05:50,700 [Thread-48   ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2021-09-24 13:05:50,700 [Thread-48   ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2021-09-24 13:05:50,721 [Thread-48   ] [hbp_nrp_cles] [INFO]  gzserver arguments: --seed 8718342426266810596 -e ode /tmp/nrp.1.u2s7k2g7/virtual_room.sdf
+2021-09-24 13:05:50,722 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1632481553.434113254]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1632481553.437878453]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1632481553.451187021]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1632481553.454202646]: Gazebo ROS Playback Plugin initialized.[0m
+2021-09-24 13:05:54,261 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+2021-09-24 13:05:54,270 [Thread-51   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.39:45707/], count 0
+[0m[ INFO] [1632481554.194303780]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1632481554.229533580]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2021-09-24 13:05:56,286 [Thread-48   ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2021-09-24 13:05:56,291 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.1.u2s7k2g7/husky/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Sep 24 2021 13:05:56 GMT+0200 (CEST) gzbridge Websocket is listening on port: 7681
+2021-09-24 13:05:56,631 [Thread-48   ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2021-09-24 13:05:56,662 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2021-09-24 13:05:56,681 [Thread-48   ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2021-09-24 13:05:56,681 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2021-09-24 13:05:56,681 [Thread-48   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:05:56,681 [Thread-48   ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2021-09-24 13:05:56,681 [Thread-48   ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.1.u2s7k2g7/hpctest122020.py
+2021-09-24 13:06:05,000 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2021-09-24 13:06:05,001 [Thread-48   ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2021-09-24 13:06:05,001 [Thread-48   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:06:05,001 [Thread-48   ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:06:05,004 [Thread-48   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:06:05,007 [Thread-48   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:06:05,008 [Thread-53   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [http://148.187.37.39:40357/], count 0
+2021-09-24 13:06:05,010 [Thread-54   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [http://148.187.37.39:44241/], count 1
+2021-09-24 13:06:05,013 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [/ros_cle_simulation_279_1632481250180], count 0
+2021-09-24 13:06:05,028 [Thread-48   ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2021-09-24 13:06:05,031 [Thread-48   ] [hbp_nrp_cles] [INFO]  Initialization done
+2021-09-24 13:06:05,031 [Thread-48   ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2021-09-24 13:06:05,067 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [/nrp_backend], count 1
+2021-09-24 13:06:05,108 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2021-09-24 13:06:05,108 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2021-09-24 13:06:05,108 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2021-09-24 13:06:05,108 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2021-09-24 13:06:05,108 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe3e693d0>' after transition.
+2021-09-24 13:06:06,007 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:06,130 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:06:06,139 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:06:06,180 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2021-09-24 13:06:06,181 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:06:06,181 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2021-09-24 13:06:06,181 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2021-09-24 13:06:06,181 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2021-09-24 13:06:06,181 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2021-09-24 13:06:06,182 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe3e695e0>' after transition.
+2021-09-24 13:06:07,007 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:08,007 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:09,008 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:10,008 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:11,008 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:12,009 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:13,009 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:14,009 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:15,010 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:16,010 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:17,010 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:18,011 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:19,011 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:20,012 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:21,012 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:22,012 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:23,013 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:24,013 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:25,013 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:26,014 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:27,014 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:28,014 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:29,015 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:30,015 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:31,015 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:32,016 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:33,016 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:34,016 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:35,017 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:36,017 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:37,017 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:38,018 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:39,018 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:40,018 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:41,019 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:42,019 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:43,019 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:44,020 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:45,020 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:46,020 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:47,021 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:48,021 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:49,021 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:50,021 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:51,022 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:52,022 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:53,022 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:54,023 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:55,023 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:56,023 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:57,024 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:58,024 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:06:59,024 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:00,025 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:01,025 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:02,025 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:03,026 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:04,026 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:05,026 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:06,026 [Thread-49   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:07:23,914 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2021-09-24 13:07:23,914 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2021-09-24 13:07:23,914 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2021-09-24 13:07:23,914 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2021-09-24 13:07:23,914 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2021-09-24 13:07:24,533 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2021-09-24 13:07:24,533 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2021-09-24 13:07:24,915 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/1/lifecycle...
+2021-09-24 13:07:24,916 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to http://148.187.37.39:40357/
+2021-09-24 13:07:24,916 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to http://148.187.37.39:44241/
+2021-09-24 13:07:24,917 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/1/lifecycle...
+2021-09-24 13:07:24,917 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to /ros_cle_simulation_279_1632481250180
+2021-09-24 13:07:24,917 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to /nrp_backend
+2021-09-24 13:07:24,918 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe3e698e0>' after transition.
+2021-09-24 13:07:24,918 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2021-09-24 13:07:25,916 [Thread-58   ] [hbp_nrp_cles] [INFO]  Finished main loop
+2021-09-24 13:07:25,917 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2021-09-24 13:07:25,917 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2021-09-24 13:07:25,918 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2021-09-24 13:07:30,484 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2021-09-24 13:07:30,484 [Thread-58   ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2021-09-24 13:07:30,484 [Thread-58   ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2021-09-24 13:07:30,484 [Thread-58   ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2021-09-24 13:07:32,486 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2021-09-24 13:07:32,488 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2021-09-24 13:07:32,489 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2021-09-24 13:07:32,490 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2021-09-24 13:07:32,491 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2021-09-24 13:07:32,491 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2021-09-24 13:07:32,492 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2021-09-24 13:07:32,493 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:07:32,494 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:07:32,495 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2021-09-24 13:07:32,496 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2021-09-24 13:07:32,497 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2021-09-24 13:07:32,497 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2021-09-24 13:07:32,498 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2021-09-24 13:07:32,499 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2021-09-24 13:07:32,500 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2021-09-24 13:07:32,536 [Thread-58   ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2021-09-24 13:07:32,542 [Thread-58   ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 2255:  OK.
+2021-09-24 13:07:32,553 [Thread-58   ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2021-09-24 13:07:32,553 [Thread-58   ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2021-09-24 13:07:32,553 [Thread-58   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2021-09-24 13:07:32,554 [Thread-58   ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2021-09-24 13:07:32,554 [Thread-58   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2021-09-24 13:07:32,556 [Thread-58   ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+2021-09-24 13:07:32,574 [/clock      ] [rospy.intern] [WARNING]  Unknown error initiating TCP/IP socket to 148.187.37.39:48517 (http://148.187.37.39:45707/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 560, in connect
+    self.socket.connect((dest_addr, dest_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2021-09-24 13:07:32,574 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.39:45707/
+killing /gazebo
+killed
+2021-09-24 13:08:45,411 [Thread-88   ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2021-09-24 13:08:45,412 [Thread-88   ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.2.ooctomt0/experiment_configuration.exc config file
+2021-09-24 13:08:45,418 [Thread-88   ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.2.ooctomt0/bibi_config.bibi
+2021-09-24 13:08:45,420 [Thread-88   ] [SimConfig   ] [INFO]  Using physics engine ode
+2021-09-24 13:08:45,421 [Thread-88   ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2021-09-24 13:08:45,421 [Thread-88   ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.2.ooctomt0
+2021-09-24 13:08:45,421 [Thread-88   ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2021-09-24 13:08:45,421 [Thread-88   ] [hbp_nrp_cles] [INFO]  RNG seed = 7493716646132753932
+2021-09-24 13:08:45,421 [Thread-88   ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2021-09-24 13:08:45,423 [Thread-88   ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2021-09-24 13:08:45,423 [Thread-88   ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2021-09-24 13:08:45,444 [Thread-88   ] [hbp_nrp_cles] [INFO]  gzserver arguments: --seed 7493716646132753932 -e ode /tmp/nrp.2.ooctomt0/virtual_room.sdf
+2021-09-24 13:08:45,444 [Thread-88   ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1632481728.158296224]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1632481728.161308487]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1632481728.175962440]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1632481728.179151413]: Gazebo ROS Playback Plugin initialized.[0m
+2021-09-24 13:08:48,979 [Thread-92   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.39:34567/], count 0
+2021-09-24 13:08:48,987 [Thread-88   ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1632481728.936606378]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1632481728.980365571]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2021-09-24 13:08:51,018 [Thread-88   ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2021-09-24 13:08:51,023 [Thread-88   ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.2.ooctomt0/husky/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Sep 24 2021 13:08:51 GMT+0200 (CEST) gzbridge Websocket is listening on port: 7681
+2021-09-24 13:08:51,375 [Thread-88   ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2021-09-24 13:08:51,405 [Thread-88   ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2021-09-24 13:08:51,425 [Thread-88   ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2021-09-24 13:08:51,425 [Thread-88   ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2021-09-24 13:08:51,425 [Thread-88   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:08:51,425 [Thread-88   ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2021-09-24 13:08:51,425 [Thread-88   ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.2.ooctomt0/hpctest122020.py
+2021-09-24 13:08:55,656 [Thread-88   ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2021-09-24 13:08:55,656 [Thread-88   ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2021-09-24 13:08:55,657 [Thread-88   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:08:55,657 [Thread-88   ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:08:55,660 [Thread-88   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:08:55,663 [Thread-88   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:08:55,664 [Thread-94   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [http://148.187.37.39:40357/], count 0
+2021-09-24 13:08:55,665 [Thread-95   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [http://148.187.37.39:44241/], count 1
+2021-09-24 13:08:55,670 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [/ros_cle_simulation_279_1632481250180], count 0
+2021-09-24 13:08:55,671 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [/nrp_backend], count 1
+2021-09-24 13:08:55,685 [Thread-88   ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2021-09-24 13:08:55,688 [Thread-88   ] [hbp_nrp_cles] [INFO]  Initialization done
+2021-09-24 13:08:55,688 [Thread-88   ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2021-09-24 13:08:55,760 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2021-09-24 13:08:55,760 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2021-09-24 13:08:55,760 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2021-09-24 13:08:55,760 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2021-09-24 13:08:55,760 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe254b970>' after transition.
+2021-09-24 13:08:56,663 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:08:56,781 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:08:56,789 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:08:56,823 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2021-09-24 13:08:56,824 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:08:56,824 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2021-09-24 13:08:56,824 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2021-09-24 13:08:56,824 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2021-09-24 13:08:56,824 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2021-09-24 13:08:56,824 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe254b6a0>' after transition.
+2021-09-24 13:08:57,664 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:08:58,664 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:08:59,665 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:00,665 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:01,665 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:02,666 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:03,666 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:04,667 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:05,667 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:06,667 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:07,668 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:08,668 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:09,668 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:10,669 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:11,669 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:12,670 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:13,670 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:14,670 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:15,671 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:16,671 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:17,672 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:18,672 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:19,672 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:20,672 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:21,673 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:22,673 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:23,674 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:24,674 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:25,674 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:26,675 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:27,675 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:28,675 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:29,676 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:30,676 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:31,677 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:32,677 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:33,677 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:34,678 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:35,678 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:36,678 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:37,679 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:38,679 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:39,680 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:40,680 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:41,680 [Thread-89   ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:09:51,277 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2021-09-24 13:09:51,277 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2021-09-24 13:09:51,277 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2021-09-24 13:09:51,278 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2021-09-24 13:09:51,278 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2021-09-24 13:09:52,183 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2021-09-24 13:09:52,184 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2021-09-24 13:09:52,279 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/2/lifecycle...
+2021-09-24 13:09:52,279 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to http://148.187.37.39:40357/
+2021-09-24 13:09:52,279 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to http://148.187.37.39:44241/
+2021-09-24 13:09:52,280 [/ros_cle_sim] [rospy.intern] [WARNING]  Unknown error initiating TCP/IP socket to 148.187.37.39:39433 (http://148.187.37.39:44241/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 562, in connect
+    self.read_header()
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 657, in read_header
+    self._validate_header(read_ros_handshake_header(sock, self.read_buff, self.protocol.buff_size))
+AttributeError: 'NoneType' object has no attribute 'buff_size'
+
+2021-09-24 13:09:52,280 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/2/lifecycle...
+2021-09-24 13:09:52,281 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to /ros_cle_simulation_279_1632481250180
+2021-09-24 13:09:52,281 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to /nrp_backend
+2021-09-24 13:09:52,281 [Thread-3    ] [rosout      ] [WARNING]  Inbound TCP/IP connection failed: connection from sender terminated before handshake header received. 0 bytes were received. Please check sender for additional details.
+2021-09-24 13:09:52,283 [Thread-3    ] [rospy.intern] [ERROR]  Inbound TCP/IP connection failed:
+Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 327, in _tcp_server_callback
+    header = read_ros_handshake_header(sock, BytesIO(), buff_size)
+  File "/opt/ros/noetic/lib/python3/dist-packages/rosgraph/network.py", line 359, in read_ros_handshake_header
+    raise ROSHandshakeException("connection from sender terminated before handshake header received. %s bytes were received. Please check sender for additional details."%b.tell())
+rosgraph.network.ROSHandshakeException: connection from sender terminated before handshake header received. 0 bytes were received. Please check sender for additional details.
+
+2021-09-24 13:09:52,283 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe254b160>' after transition.
+2021-09-24 13:09:52,284 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2021-09-24 13:09:53,280 [Thread-101  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2021-09-24 13:09:53,280 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2021-09-24 13:09:53,280 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2021-09-24 13:09:53,281 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2021-09-24 13:09:55,962 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2021-09-24 13:09:55,963 [Thread-101  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2021-09-24 13:09:55,963 [Thread-101  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2021-09-24 13:09:55,963 [Thread-101  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2021-09-24 13:09:57,965 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2021-09-24 13:09:57,967 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2021-09-24 13:09:57,968 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2021-09-24 13:09:57,969 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2021-09-24 13:09:57,970 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2021-09-24 13:09:57,971 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2021-09-24 13:09:57,972 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2021-09-24 13:09:57,973 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:09:57,973 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:09:57,974 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2021-09-24 13:09:57,975 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2021-09-24 13:09:57,976 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2021-09-24 13:09:57,977 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2021-09-24 13:09:57,978 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2021-09-24 13:09:57,979 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2021-09-24 13:09:57,979 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2021-09-24 13:09:58,006 [Thread-101  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2021-09-24 13:09:58,012 [Thread-101  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 2755:  OK.
+2021-09-24 13:09:58,024 [Thread-101  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2021-09-24 13:09:58,024 [Thread-101  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2021-09-24 13:09:58,024 [Thread-101  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2021-09-24 13:09:58,025 [Thread-101  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2021-09-24 13:09:58,025 [Thread-101  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2021-09-24 13:09:58,026 [Thread-101  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+2021-09-24 13:09:58,044 [/clock      ] [rospy.intern] [WARNING]  Unknown error initiating TCP/IP socket to 148.187.37.39:47355 (http://148.187.37.39:34567/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 560, in connect
+    self.socket.connect((dest_addr, dest_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2021-09-24 13:09:58,044 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.39:34567/
+killing /gazebo
+killed
+2021-09-24 13:11:17,231 [Thread-129  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2021-09-24 13:11:17,231 [Thread-129  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.3.wq4nyjg5/experiment_configuration.exc config file
+2021-09-24 13:11:17,239 [Thread-129  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.3.wq4nyjg5/bibi_config.bibi
+2021-09-24 13:11:17,241 [Thread-129  ] [SimConfig   ] [INFO]  Using physics engine ode
+2021-09-24 13:11:17,241 [Thread-129  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2021-09-24 13:11:17,241 [Thread-129  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.3.wq4nyjg5
+2021-09-24 13:11:17,242 [Thread-129  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2021-09-24 13:11:17,242 [Thread-129  ] [hbp_nrp_cles] [INFO]  RNG seed = 778536325762421671
+2021-09-24 13:11:17,242 [Thread-129  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2021-09-24 13:11:17,244 [Thread-129  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2021-09-24 13:11:17,244 [Thread-129  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2021-09-24 13:11:17,266 [Thread-129  ] [hbp_nrp_cles] [INFO]  gzserver arguments: --seed 778536325762421671 -e ode /tmp/nrp.3.wq4nyjg5/virtual_room.sdf
+2021-09-24 13:11:17,266 [Thread-129  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1632481879.986047204]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1632481879.988901822]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1632481880.003694897]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1632481880.006887675]: Gazebo ROS Playback Plugin initialized.[0m
+2021-09-24 13:11:20,815 [Thread-129  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+2021-09-24 13:11:20,838 [Thread-133  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.39:35903/], count 0
+[0m[ INFO] [1632481880.785783684]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1632481880.826639698]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2021-09-24 13:11:22,836 [Thread-129  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2021-09-24 13:11:22,841 [Thread-129  ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.3.wq4nyjg5/husky/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Sep 24 2021 13:11:23 GMT+0200 (CEST) gzbridge Websocket is listening on port: 7681
+2021-09-24 13:11:23,216 [Thread-129  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2021-09-24 13:11:23,246 [Thread-129  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2021-09-24 13:11:23,267 [Thread-129  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2021-09-24 13:11:23,267 [Thread-129  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2021-09-24 13:11:23,267 [Thread-129  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:11:23,267 [Thread-129  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2021-09-24 13:11:23,267 [Thread-129  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.3.wq4nyjg5/hpctest122020.py
+2021-09-24 13:11:25,449 [Thread-129  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2021-09-24 13:11:25,449 [Thread-129  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2021-09-24 13:11:25,449 [Thread-129  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:11:25,449 [Thread-129  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:11:25,453 [Thread-129  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:11:25,455 [Thread-129  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:11:25,457 [Thread-135  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [http://148.187.37.39:40357/], count 0
+2021-09-24 13:11:25,457 [Thread-136  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [http://148.187.37.39:44241/], count 0
+2021-09-24 13:11:25,460 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [/ros_cle_simulation_279_1632481250180], count 0
+2021-09-24 13:11:25,477 [Thread-129  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2021-09-24 13:11:25,480 [Thread-129  ] [hbp_nrp_cles] [INFO]  Initialization done
+2021-09-24 13:11:25,480 [Thread-129  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2021-09-24 13:11:25,522 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [/nrp_backend], count 1
+2021-09-24 13:11:25,558 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2021-09-24 13:11:25,559 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2021-09-24 13:11:25,559 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2021-09-24 13:11:25,559 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2021-09-24 13:11:25,559 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe3e715b0>' after transition.
+2021-09-24 13:11:26,455 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:26,582 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:11:26,590 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:11:26,625 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2021-09-24 13:11:26,626 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:11:26,626 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2021-09-24 13:11:26,626 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2021-09-24 13:11:26,626 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2021-09-24 13:11:26,627 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2021-09-24 13:11:26,627 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe3e71400>' after transition.
+2021-09-24 13:11:27,456 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:28,456 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:29,457 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:30,457 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:31,457 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:32,457 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:33,458 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:34,458 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:35,459 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:36,459 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:37,459 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:38,460 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:39,460 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:40,460 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:41,461 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:42,461 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:43,461 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:44,462 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:45,462 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:46,462 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:47,463 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:48,463 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:49,463 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:50,464 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:51,464 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:52,464 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:53,465 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:54,465 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:55,465 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:56,465 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:57,466 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:58,466 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:11:59,466 [Thread-130  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:12:06,583 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2021-09-24 13:12:06,583 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2021-09-24 13:12:06,584 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2021-09-24 13:12:06,584 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2021-09-24 13:12:06,584 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2021-09-24 13:12:07,585 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/3/lifecycle...
+2021-09-24 13:12:07,585 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to http://148.187.37.39:40357/
+2021-09-24 13:12:07,586 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to http://148.187.37.39:44241/
+2021-09-24 13:12:07,586 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/3/lifecycle...
+2021-09-24 13:12:07,587 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to /ros_cle_simulation_279_1632481250180
+2021-09-24 13:12:07,587 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to /nrp_backend
+2021-09-24 13:12:07,588 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe3e71e80>' after transition.
+2021-09-24 13:12:07,588 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2021-09-24 13:12:07,968 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2021-09-24 13:12:07,968 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2021-09-24 13:12:08,586 [Thread-140  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2021-09-24 13:12:08,586 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2021-09-24 13:12:08,587 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2021-09-24 13:12:08,588 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2021-09-24 13:12:10,709 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2021-09-24 13:12:10,709 [Thread-140  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2021-09-24 13:12:10,709 [Thread-140  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2021-09-24 13:12:10,709 [Thread-140  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2021-09-24 13:12:12,712 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2021-09-24 13:12:12,714 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2021-09-24 13:12:12,715 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2021-09-24 13:12:12,716 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2021-09-24 13:12:12,717 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2021-09-24 13:12:12,717 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2021-09-24 13:12:12,718 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2021-09-24 13:12:12,719 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:12:12,720 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:12:12,721 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2021-09-24 13:12:12,722 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2021-09-24 13:12:12,723 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2021-09-24 13:12:12,724 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2021-09-24 13:12:12,725 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2021-09-24 13:12:12,726 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2021-09-24 13:12:12,727 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2021-09-24 13:12:12,754 [Thread-140  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2021-09-24 13:12:12,760 [Thread-140  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 3256:  OK.
+2021-09-24 13:12:12,771 [Thread-140  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2021-09-24 13:12:12,771 [Thread-140  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2021-09-24 13:12:12,771 [Thread-140  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2021-09-24 13:12:12,772 [Thread-140  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2021-09-24 13:12:12,772 [Thread-140  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2021-09-24 13:12:12,773 [Thread-140  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+2021-09-24 13:12:12,791 [/clock      ] [rospy.intern] [WARNING]  Unknown error initiating TCP/IP socket to 148.187.37.39:49735 (http://148.187.37.39:35903/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 560, in connect
+    self.socket.connect((dest_addr, dest_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2021-09-24 13:12:12,791 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.39:35903/
+killing /gazebo
+killed
+2021-09-24 13:13:28,801 [Thread-169  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2021-09-24 13:13:28,801 [Thread-169  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.4.zg5yqnc7/experiment_configuration.exc config file
+2021-09-24 13:13:28,809 [Thread-169  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.4.zg5yqnc7/bibi_config.bibi
+2021-09-24 13:13:28,811 [Thread-169  ] [SimConfig   ] [INFO]  Using physics engine ode
+2021-09-24 13:13:28,811 [Thread-169  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2021-09-24 13:13:28,812 [Thread-169  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.4.zg5yqnc7
+2021-09-24 13:13:28,812 [Thread-169  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2021-09-24 13:13:28,812 [Thread-169  ] [hbp_nrp_cles] [INFO]  RNG seed = 1082779369716244204
+2021-09-24 13:13:28,812 [Thread-169  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2021-09-24 13:13:28,814 [Thread-169  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2021-09-24 13:13:28,814 [Thread-169  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2021-09-24 13:13:28,834 [Thread-169  ] [hbp_nrp_cles] [INFO]  gzserver arguments: --seed 1082779369716244204 -e ode /tmp/nrp.4.zg5yqnc7/virtual_room.sdf
+2021-09-24 13:13:28,834 [Thread-169  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1632482011.554546595]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1632482011.558176333]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1632482011.572833246]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1632482011.576047090]: Gazebo ROS Playback Plugin initialized.[0m
+2021-09-24 13:13:32,369 [Thread-173  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.39:34367/], count 0
+2021-09-24 13:13:32,377 [Thread-169  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1632482012.337241817]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1632482012.371842293]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2021-09-24 13:13:34,395 [Thread-169  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2021-09-24 13:13:34,400 [Thread-169  ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.4.zg5yqnc7/husky/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Sep 24 2021 13:13:34 GMT+0200 (CEST) gzbridge Websocket is listening on port: 7681
+2021-09-24 13:13:34,756 [Thread-169  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2021-09-24 13:13:34,785 [Thread-169  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2021-09-24 13:13:34,807 [Thread-169  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2021-09-24 13:13:34,807 [Thread-169  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2021-09-24 13:13:34,807 [Thread-169  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:13:34,808 [Thread-169  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2021-09-24 13:13:34,808 [Thread-169  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.4.zg5yqnc7/hpctest122020.py
+2021-09-24 13:13:35,984 [Thread-169  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2021-09-24 13:13:35,984 [Thread-169  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2021-09-24 13:13:35,984 [Thread-169  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2021-09-24 13:13:35,984 [Thread-169  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:13:35,988 [Thread-169  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:13:35,990 [Thread-169  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2021-09-24 13:13:35,991 [Thread-175  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [http://148.187.37.39:40357/], count 0
+2021-09-24 13:13:35,993 [Thread-176  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [http://148.187.37.39:44241/], count 1
+2021-09-24 13:13:35,995 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [/ros_cle_simulation_279_1632481250180], count 0
+2021-09-24 13:13:36,011 [Thread-169  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2021-09-24 13:13:36,014 [Thread-169  ] [hbp_nrp_cles] [INFO]  Initialization done
+2021-09-24 13:13:36,014 [Thread-169  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2021-09-24 13:13:36,072 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [/nrp_backend], count 1
+2021-09-24 13:13:36,091 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2021-09-24 13:13:36,091 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2021-09-24 13:13:36,091 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2021-09-24 13:13:36,091 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2021-09-24 13:13:36,091 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe2e0c730>' after transition.
+2021-09-24 13:13:36,990 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:37,109 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:13:37,117 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2021-09-24 13:13:37,151 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2021-09-24 13:13:37,152 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2021-09-24 13:13:37,152 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2021-09-24 13:13:37,152 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2021-09-24 13:13:37,152 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2021-09-24 13:13:37,153 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2021-09-24 13:13:37,153 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe2e0c400>' after transition.
+2021-09-24 13:13:37,991 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:38,991 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:39,991 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:40,992 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:41,992 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:42,992 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:43,993 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:44,993 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:45,993 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:46,993 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:47,994 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:48,994 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:49,994 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:50,995 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:51,995 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:52,995 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:53,995 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:54,996 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:55,996 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:13:56,996 [Thread-170  ] [hbp_nrp_cles] [ERROR]  'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py", line 195, in publish_state_update
+    message['timeout'] = self.__remaining
+AttributeError: 'ROSCLEServer' object has no attribute '_SimulationServer__remaining'
+2021-09-24 13:14:03,149 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2021-09-24 13:14:03,149 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2021-09-24 13:14:03,149 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2021-09-24 13:14:03,149 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2021-09-24 13:14:03,149 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2021-09-24 13:14:04,150 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/4/lifecycle...
+2021-09-24 13:14:04,151 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to http://148.187.37.39:40357/
+2021-09-24 13:14:04,151 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to http://148.187.37.39:44241/
+2021-09-24 13:14:04,152 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/4/lifecycle...
+2021-09-24 13:14:04,152 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to /ros_cle_simulation_279_1632481250180
+2021-09-24 13:14:04,152 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to /nrp_backend
+2021-09-24 13:14:04,153 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabe2e0c070>' after transition.
+2021-09-24 13:14:04,153 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2021-09-24 13:14:04,498 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2021-09-24 13:14:04,498 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2021-09-24 13:14:05,151 [Thread-180  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2021-09-24 13:14:05,152 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2021-09-24 13:14:05,152 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2021-09-24 13:14:05,153 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2021-09-24 13:14:06,162 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2021-09-24 13:14:06,162 [Thread-180  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2021-09-24 13:14:06,163 [Thread-180  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2021-09-24 13:14:06,163 [Thread-180  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2021-09-24 13:14:08,165 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2021-09-24 13:14:08,167 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2021-09-24 13:14:08,168 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2021-09-24 13:14:08,168 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2021-09-24 13:14:08,169 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2021-09-24 13:14:08,170 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2021-09-24 13:14:08,171 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2021-09-24 13:14:08,172 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:14:08,173 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2021-09-24 13:14:08,174 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2021-09-24 13:14:08,175 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2021-09-24 13:14:08,176 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2021-09-24 13:14:08,176 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2021-09-24 13:14:08,177 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2021-09-24 13:14:08,178 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2021-09-24 13:14:08,179 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2021-09-24 13:14:08,206 [Thread-180  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2021-09-24 13:14:08,212 [Thread-180  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 3756:  OK.
+2021-09-24 13:14:08,222 [Thread-180  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2021-09-24 13:14:08,223 [Thread-180  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2021-09-24 13:14:08,223 [Thread-180  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2021-09-24 13:14:08,224 [Thread-180  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2021-09-24 13:14:08,224 [Thread-180  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2021-09-24 13:14:08,225 [Thread-180  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+2021-09-24 13:14:08,241 [/clock      ] [rospy.intern] [WARNING]  Unknown error initiating TCP/IP socket to 148.187.37.39:40987 (http://148.187.37.39:34367/): Traceback (most recent call last):
+  File "/opt/ros/noetic/lib/python3/dist-packages/rospy/impl/tcpros_base.py", line 560, in connect
+    self.socket.connect((dest_addr, dest_port))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2021-09-24 13:14:08,241 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.39:34367/
+killing /gazebo
+killed

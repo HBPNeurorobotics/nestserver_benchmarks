@@ -2,9 +2,9 @@
 <ExD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig"
      xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
-    <name>HPC Benchmark 2 based on Holodeck Husky Braitenberg experiment with NEST Client</name>
+    <name>HPC NEST SRV Benchmark with Transfer Functions</name>
     <thumbnail>thumbnail.jpg</thumbnail>
-    <description>This experiment loads the HPC Balanced Network experiment (2) with a Scale factor of 20 and configured to run in 16 Nodes. The Husky robot template is used in this experiment. There are no Transfer functions implemented in this experiment.
+    <description>This experiment loads the HPC Balanced Network experiment (2) with a Scale factor of 20 and with Transfer Functions. The Husky robot template is used in this experiment.
     </description>
     <tags>husky robotics holodeck braitenberg nest</tags>
     <timeout time="simulation">1</timeout>

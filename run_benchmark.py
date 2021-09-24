@@ -10,7 +10,7 @@ import sys
 import os
 
 import helpers
-
+import ast
 
 class BenchmarkRunner:
 
@@ -19,6 +19,7 @@ class BenchmarkRunner:
         self.nodelist = helpers.expand_nodelist()
         logger.info("Nodes in allocation: %s", self.nodelist)
         self.jobstep = -1
+        self.running = False
 
     def start_nest(self, n):
 
@@ -33,7 +34,10 @@ class BenchmarkRunner:
         logger.info("Starting NEST")
         logger.info("  Nodes  : %s", n)
 
-        with open(f'misc/nest.sh.tpl', 'r') as infile:
+        #with open(f'misc/nest.sh.tpl', 'r') as infile:
+        homedir = os.environ.get("HOME")
+        fullpath = homedir + "/nestserver_benchmarks/misc/nest.sh.tpl"
+        with open(fullpath, 'r') as infile:
             with open(f'{self.rundir}/nest.sh', 'w') as outfile:
                 outfile.write(f"{infile.read()}".format(**values))
 
@@ -46,8 +50,12 @@ class BenchmarkRunner:
         #print(subprocess.Popen(["ps", "-fu", "bp000193"]).communicate())
         job_step_id = f"{os.environ.get('SLURM_JOB_ID')}.{self.jobstep}"
         logger.info("Canceling NEST: %s", job_step_id)
-        print(subprocess.Popen(["scancel", job_step_id]))
-        time.sleep(5) # Wait for the job to die
+        #print(subprocess.Popen(["scancel", job_step_id]))
+        #subprocess.call(f"scancel {job_step_id}")
+        time.sleep(10)
+        subp = subprocess.call(["scancel",job_step_id])
+        logger.info("  Job cancelled. Give it 30 seconds more to cleanup...")
+        time.sleep(30) # Wait for the job to die
 
 
     def run(self):
@@ -111,17 +119,45 @@ class BenchmarkRunner:
             logger.info(f'  Done. t={sim_time_total}')
 
 
-    def stop_cb(status):
+    def stop_cb(self, status):
 
         if status['state'] == 'stopped' or status['state'] == 'halted':
             with open(f'{self.rundir}/hpcbench.log', "w+") as logfile:
-                logfile.write(time.time() - self.tic)
+                logfile.write(str(time.time() - self.tic))
+            self.running = False
 
-    def run_hpcbench_notf():
+    def run_hpcbench_notf(self, nprocs):
         """HPC benchmark via NRP without transfer functions.
         """
+        """HPC benchmark via NRP with simple transfer function.
 
-        pass
+        The transfer function records and reads spikes from a certain
+        subpopulation of the model. To have some load on the NRP side, we use the
+        husky robot as body model.
+
+        """
+        logger.info("Running NRP - HPC benchmark with TF")
+        self.running = True
+        homedir = os.environ.get("HOME")
+        fullpath = homedir + "/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withoutTF"
+        response_result = vc.import_experiment(fullpath)
+        dict_content = ast.literal_eval(response_result.content.decode("UTF-8"))
+        self.experiment = dict_content['destFolderName']
+        vc.print_cloned_experiments()
+        time.sleep(30)
+        self.tic = time.time()
+        self.sim = vc.launch_experiment(self.experiment, profiler='cle_step')
+        self.sim.register_status_callback(self.stop_cb)
+        self.sim.start()
+        while self.running:
+            time.sleep(0.5)
+        #vc.delete_cloned_experiment(self.experiment)
+        # TODO: make sure the simulation time is comparable to the one used in
+        # the hpcbench_baseline test case
+
+        # TODO: get profiling data using proxy rest api or copy it from the
+        # backend
+
 
 
     def run_hpcbench_readspikes(self, nprocs):
@@ -132,15 +168,22 @@ class BenchmarkRunner:
         husky robot as body model.
 
         """
-
-        vc.import_experiment("HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF/NRP_experiment")
+        logger.info("Running NRP - HPC benchmark with TF")
+        self.running = True
+        homedir = os.environ.get("HOME")
+        fullpath = homedir + "/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF"
+        response_result = vc.import_experiment(fullpath)
+        dict_content = ast.literal_eval(response_result.content.decode("UTF-8"))
+        self.experiment = dict_content['destFolderName'] 
         vc.print_cloned_experiments()
-
+        time.sleep(30)
         self.tic = time.time()
-        self.sim = vc.launch_experiment("nrp_hpc_16nodes_0", profiler='cle_step')
-        self.sim.register_status_callback(stop_cb)
+        self.sim = vc.launch_experiment(self.experiment, profiler='cle_step')
+        self.sim.register_status_callback(self.stop_cb)
         self.sim.start()
-
+        while self.running:
+            time.sleep(0.5)
+        #vc.delete_cloned_experiment(self.experiment)
         # TODO: make sure the simulation time is comparable to the one used in
         # the hpcbench_baseline test case
 

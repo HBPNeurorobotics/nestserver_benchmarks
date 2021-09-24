@@ -2,12 +2,12 @@
 <ExD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig"
      xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
-    <name>HPC Benchmark 2 based on Holodeck Husky Braitenberg experiment with NEST Client</name>
+    <name>HPC NEST SRV Benchmark without Transfer Functions</name>
     <thumbnail>thumbnail.jpg</thumbnail>
-    <description>This experiment loads the HPC Balanced Network experiment (2) with a Scale factor of 20 and configured to run in 16 Nodes. The Husky robot template is used in this experiment.
+    <description>This experiment loads the HPC Balanced Network experiment (2) with a Scale factor of 20 and without Transfer Functions. The Husky robot template is used in this experiment.
     </description>
     <tags>husky robotics holodeck braitenberg nest</tags>
-    <timeout>840</timeout>
+    <timeout time="simulation">1</timeout>
     <configuration type="3d-settings" src="3dsettings.ini"/>
     <configuration type="brainvisualizer" src="brainvisualizer.json"/>
     <configuration type="user-interaction-settings" src="usersettings.uis"/>
