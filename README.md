@@ -48,6 +48,23 @@ skopeo copy --insecure-policy \
 sarus load nrp_nest_client.tar nrp_nest_client
 ```
 
+## EBRAINS credentials
+
+Logging into the HBP Neurorobotics Platform via VirtualCoach requires EBRAINS
+credentials. To keep these safe and separate from the benchmark configuration,
+they are stored in `secrets.yaml`, which has to be only user-readable (600)
+and look like this:
+
+```yaml
+hbp_username: "your_ebrains_username"
+hbp_password: "your_ebrains_password"
+```
+
+For your convenience, a template of the file is available in the repository
+under the name `secrets.yaml.ini`. You can copy that file to `secrets.yaml`
+and modify it as needed. The file will subsequently be ignored by Git, as to
+not add it to the repository by accident.
+
 ## Job allocation
 
 In order to obtain a somewhat stable environment for running the benchmarks

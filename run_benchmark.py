@@ -205,11 +205,12 @@ if __name__ == '__main__':
     logger = logging.getLogger('BenchmarkRunner')
 
     config = helpers.get_config(sys.argv[1])
+    secrets = helpers.get_secrets()
 
     vc = VirtualCoach(
         f"http://{config['nrp_frontend_ip']}",
-        oidc_username=config['hbp_username'],
-        oidc_password=config['hbp_password'],
+        oidc_username=secrets['hbp_username'],
+        oidc_password=secrets['hbp_password'],
     )
 
     runner = BenchmarkRunner()
