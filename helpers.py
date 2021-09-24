@@ -25,10 +25,6 @@ def expand_nodelist():
 
 def get_config(config_fname):
 
-    if oct(os.stat(config_fname).st_mode)[-3:] != "600":
-        print(f"Error: config file permissions too open. Run 'chmod 600 {config_fname}'.\n")
-        exit(1)
-
     with open(config_fname, 'r') as config_file:
         config = yaml.safe_load(config_file)
         homedir = os.environ.get("HOME")
@@ -37,3 +33,20 @@ def get_config(config_fname):
 
     print(f"Error: config file '{configfile}' could not be read'.\n")
     exit(1)
+
+
+def get_secrets():
+
+    secrets_fname = "secrets.yaml"
+
+    if not os.path.isfile(secrets_fname):
+        print(f"Cannot open 'secrets.yaml'.\n")
+        exit(1)
+
+    if oct(os.stat(secrets_fname).st_mode)[-3:] != "600":
+        print(f"Error: permissions of 'secrets.yaml' too open. Run 'chmod 600 secrets.yaml'.\n")
+        exit(1)
+
+    with open(secrets_fname, 'r') as config_file:
+        secrets = yaml.safe_load(secrets_file)
+        return config

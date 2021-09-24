@@ -8,30 +8,26 @@ import helpers
 
 config_fname = sys.argv[1]
 config = helpers.get_config(config_fname)
+datadir = config["datadir"]
 
-if os.path.isdir(config["datadir"]):
-    print(f"Error: Output directory '{datadir}' already exists.\n")
+if os.path.exists(datadir):
+    print(f"Error: Output directory '{datadir}' already exists. Please move it out of the way.\n")
     sys.exit(1)
 
-os.makedirs(config["datadir"])
-
-with open(f"{config['datadir']}/{config_fname}", 'w') as config_file:
-    config_pwless = copy(config)
-    config_pwless["hbp_password"] = "********"
-    config_file.write(yaml.dump(config_pwless, default_flow_style=False))
+os.makedirs(datadir)
 
 nodelist = helpers.expand_nodelist()
 
 values = {
     "nest_master_node": nodelist[1],
-    "nrplogdir": f"{config['datadir']}/nrplogs",
+    "nrplogdir": f"{datadir}/nrplogs",
     "tunnel_keyfile": config['tunnel_keyfile'],
     "tunnel_ip": config['tunnel_ip'],
 }
 
 for script_basename in ("nrp", "tunnel"):
     with open(f"misc/{script_basename}.sh.tpl", "r") as infile:
-        with open(f"{config['datadir']}/{script_basename}.sh", "w") as outfile:
+        with open(f"{datadir}/{script_basename}.sh", "w") as outfile:
             outfile.write(f"{infile.read()}".format(**values))
 
 print(nodelist[0])

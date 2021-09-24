@@ -1,6 +1,4 @@
 
-hbp_username: ""
-hbp_password: ""
 nrp_frontend_ip: "148.187.96.212"
 tunnel_ip: "148.187.97.59"
 tunnel_keyfile: "$HOME/key-tunneluser"
