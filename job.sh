@@ -22,14 +22,12 @@ if [ $? -eq 1 ]; then
     exit 1
 fi
 
-cp $configfile $datadir
+cp $configfile $datadir/config.yaml
 
 echo "Node zero: $nodezero"
 
 ssh -o StrictHostKeyChecking=no $nodezero bash -s < $datadir/tunnel.sh &
-##sleep 10
 ssh -o StrictHostKeyChecking=no $nodezero bash -s < $datadir/nrp.sh &
-
 sleep 30 # Give the NRP and tunnel processes time to start
 
 python3 run_benchmark.py $configfile
