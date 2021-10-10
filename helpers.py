@@ -47,6 +47,6 @@ def get_secrets():
         print(f"Error: permissions of 'secrets.yaml' too open. Run 'chmod 600 secrets.yaml'.\n")
         exit(1)
 
-    with open(secrets_fname, 'r') as config_file:
+    with open(secrets_fname, 'r') as secrets_file:
         secrets = yaml.safe_load(secrets_file)
-        return config
+        return secrets
