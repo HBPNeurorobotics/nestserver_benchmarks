@@ -37,7 +37,7 @@ class BenchmarkRunner:
         logger.info("Starting NEST")
         logger.info("  Nodes  : %s", n)
 
-        with open("{os.getcwd()}/misc/nest.sh.tpl", 'r') as infile:
+        with open(f"{os.getcwd()}/misc/nest.sh.tpl", 'r') as infile:
             with open(f'{self.rundir}/nest.sh', 'w') as outfile:
                 outfile.write(f"{infile.read()}".format(**values))
 
@@ -126,8 +126,8 @@ class BenchmarkRunner:
 
         """
 
-        with open(f'{self.rundir}/hpcbench_baseline.log', "w") as logfile:
-
+        runtime_total = 0
+        with open(f'{self.rundir}/step_time.dat', "w") as logfile:
             simtime = 20.0
             logger.info(f'Running hpcbench_base with {nprocs} processes, 2 per node')
 
@@ -139,24 +139,31 @@ class BenchmarkRunner:
             data = {'source': open('hpcbench_baseline.py').read()}
             response = requests.post(f'{url}/exec', json=data, headers=headers)
             exec_time = time.time() - tic
+            runtime_total += exec_time
             logfile.write(f'{exec_time}\t# exec_time\n')
 
+            times = {}
             data = {'t': simtime}
-            sim_time_total = 0
             for cycle in range(config['n_cycles_nest']):
                 tic = time.time()
                 response = requests.post(f'{url}/api/Simulate', json=data, headers=headers)
                 sim_time = time.time() - tic
-                sim_time_total += sim_time
-                logfile.write(f'{sim_time}\t# cycle_time_{cycle}\n')
+                runtime_total += sim_time
+                times[f"cycle_time_{cycle}"] = sim_time
 
-            logger.info(f'  Done. t={sim_time_total}')
+            for label, t in times.items():
+                logfile.write(f'{t}\t# {label}\n')
+
+        with open(f'{self.rundir}/total_time.dat', "w") as logfile:
+            logfile.write(str(runtime_total))
+
+        logger.info(f'  Done after t={runtime_total}')
 
 
     def stop_cb(self, status):
 
         if status['state'] == 'stopped' or status['state'] == 'halted':
-            with open(f'{self.rundir}/hpcbench.log', "w+") as logfile:
+            with open(f'{self.rundir}/total_time.dat', "w+") as logfile:
                 logfile.write(str(time.time() - self.tic))
             self.running = False
 
