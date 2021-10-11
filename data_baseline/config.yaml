@@ -1,0 +1,8 @@
+
+nrp_frontend_ip: "148.187.96.212"
+tunnel_ip: "148.187.97.59"
+tunnel_keyfile: "$HOME/key-tunneluser"
+n_nodes: [2, 4, 8, 16, 32]
+n_cycles_nest: 100
+datadir: "$HOME/nestserver_benchmarks/test333"
+testcase: "hpcbench_baseline"

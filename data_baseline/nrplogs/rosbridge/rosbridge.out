@@ -1,0 +1,21 @@
+[1;31m+-------------------------- Neurorobotics Platform warning ---------------------------+
+| Dear Neurorobotics user, your PYTHONPATH contains previous paths.                   |
+| This might cause the Neurorobotics Platform to malfunction.                         |
+| If you are experiencing problems (like MPI.so not finding function references), add |
+|   export PYTHONPATH=                                                                |
+| to your ~/.bashrc                                                                   |
++-------------------------------------------------------------------------------------+[0m
+2021-10-11 17:21:38+0200 [-] Log opened.
+2021-10-11 17:21:38+0200 [-] registered capabilities (classes):
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.call_service.CallService'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.advertise.Advertise'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.publish.Publish'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.subscribe.Subscribe'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.defragmentation.Defragment'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.advertise_service.AdvertiseService'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.service_response.ServiceResponse'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.unadvertise_service.UnadvertiseService'>
+2021-10-11 17:21:38+0200 [-]  - <class 'rosbridge_library.capabilities.ros_commander.ExecuteRosCommand'>
+2021-10-11 17:21:38+0200 [-] WebSocketServerFactory starting on 9090
+2021-10-11 17:21:38+0200 [-] Starting factory <autobahn.twisted.websocket.WebSocketServerFactory object at 0x2aaaad93c070>
+2021-10-11 17:21:38+0200 [-] [INFO] [1633965698.905536, 0.000000]: Rosbridge WebSocket server started at ws://0.0.0.0:9090
