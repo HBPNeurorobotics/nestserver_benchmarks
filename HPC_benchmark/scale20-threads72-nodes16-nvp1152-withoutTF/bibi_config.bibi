@@ -6,6 +6,5 @@
                 <ns1:populations from="0" population="record" to="49" xsi:type="ns1:Range"/>
         </ns1:brainModel>
         <ns1:mode>SynchronousNestClientSimulation</ns1:mode>
-        <ns1:bodyModel robotId="husky">husky_model/model.sdf</ns1:bodyModel>
+        <ns1:bodyModel robotId="husky" model="hbp_clearpath_robotics_husky_a200">model.sdf</ns1:bodyModel>
 </ns1:bibi>
-
