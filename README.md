@@ -43,7 +43,7 @@ sarus pull christopherbignamini/nest:jougs_nest_server_mpi
 module use /scratch/snx3000/bignamic/EasyBuildInstall/modules/all/
 module load skopeo
 skopeo copy --insecure-policy \
-       docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:1dfbe38dae84393402d30e1921cdf2f690beece62498389194ececc6a3aa525b \
+       docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:caadd07080aa455c8c0ed4139117136f5d0a209aac0ad6d547108c06a683acbf \
        docker-archive:nrp_nest_client.tar
 sarus load nrp_nest_client.tar nrp_nest_client
 ```
