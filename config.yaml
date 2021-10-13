@@ -1,4 +1,4 @@
-nrp_frontend_ip: "148.187.96.212"
+nrp_frontend_ip: "148.187.148.14"
 tunnel_ip: "148.187.96.176"
 tunnel_keyfile: "$HOME/nrp_launch/key-tunneluser"
 n_nodes: [2, 4, 8, 16, 32]
