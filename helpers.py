@@ -1,5 +1,6 @@
 
 import ruamel.yaml as yaml
+import math
 import os
 
 
@@ -50,3 +51,14 @@ def get_secrets():
     with open(secrets_fname, 'r') as secrets_file:
         secrets = yaml.safe_load(secrets_file)
         return secrets
+
+
+magnames = ["", "k", "M", "G"]
+def humanize(n):
+    n = float(n)
+    magidx = max(0, min(
+        len(magnames) - 1,
+        int(math.floor(0 if n == 0 else math.log10(abs(n)) / 3))
+    ))
+    num = n / 10**(3 * millidx)
+    return "{num:.0f}{magnames[millidx]}"
