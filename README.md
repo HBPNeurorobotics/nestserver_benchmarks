@@ -21,8 +21,19 @@ threads per process for each benchmark step.
 
 ## Software and containers
 
-VirtualCoach can be installed into a Python virtual environment using the
-following sequence of commands:
+The benchmark runner and analysis/plotting scripts require a number of Python
+modules. They are listed in the file `requirements.txt` and can be easily
+installed using
+
+```bash
+module load cray-python/3.8.5.1
+pip3 install -r requirements.txt
+```
+
+The benchmarks runs using the NRP are run using the commandline interface
+[VirtualCoach](https://bitbucket.org/hbpneurorobotics/virtualcoach). It can be
+installed into a Python virtual environment using the following sequence of
+commands:
 
 ```bash
 virtualenv pynrp
