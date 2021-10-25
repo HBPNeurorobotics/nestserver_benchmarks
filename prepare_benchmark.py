@@ -21,9 +21,10 @@ nodelist = helpers.expand_nodelist()
 values = {
     "nest_master_node": nodelist[1],
     "nrplogdir": f"{datadir}/nrplogs",
-    "tunnel_keyfile": config['tunnel_keyfile'],
-    "tunnel_ip": config['tunnel_ip'],
 }
+
+for key in ("tunnel_keyfile", "tunnel_ip", "tunnel_port"):
+    values[key] = config[key]
 
 for script_basename in ("nrp", "tunnel"):
     with open(f"misc/{script_basename}.sh.tpl", "r") as infile:

@@ -41,12 +41,13 @@ sarus run \
           export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH; \
           export LC_ALL=C; unset LANGUAGE; \
           source $NRPSRC/user-scripts/nrp_variables; \
-          sed -i 's|<STORAGE_ADDR>|148.187.96.212|' $NRPSRCCOMM/workspace/Settings.py; \
+          sed -i 's|<STORAGE_ADDR>|148.187.148.14|' $NRPSRCCOMM/workspace/Settings.py; \
           sed -i 's|= MPILauncher|= DaintLauncher|' $NRPSRCLNCH/NestLauncher.py; \
           sed -i 's|sys.executable|\\\"/home_daint/bbpnrsoa/.opt/platform_venv/bin/python\\\"|' $NRPSRCLNCH/NestLauncher.py; \
           sed -i 's|$VGLRUN|xvfb-run -a --server-args=\\\"-screen 0 1280x1024x24\\\"|' /home_daint/bbpnrsoa/.opt/bbp/nrp-services/gzserver; \
+          sed -i 's|resolver 8.8.8.8;|resolver 148.187.18.88;|' /home_daint/bbpnrsoa/.local/etc/nginx/conf.d/nrp-services.conf; \
           sed -i 's|--pause|--pause --software_only_rendering|' /home_daint/bbpnrsoa/.opt/bbp/nrp-services/gzserver; \
-	  sed -i 's|NestClientControlAdapter()|NestClientControlAdapter(\"{nest_master_node}\", 5000)|' $NRPSRCSERV/server/ServerConfigurations.py;
+          sed -i 's|NestClientControlAdapter()|NestClientControlAdapter(\"{nest_master_node}\", 5000)|' $NRPSRCSERV/server/ServerConfigurations.py;
           \
           /etc/init.d/supervisor start;
-	  sleep infinity;"
+          sleep infinity;"

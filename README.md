@@ -39,6 +39,14 @@ commands:
 virtualenv pynrp
 source pynrp/bin/activate
 pip3 install pynrp
+
+cd pynrp/lib64/python3.6/site-packages/pynrp
+vp_url="https://bitbucket.org/hbpneurorobotics/virtualcoach"
+vp_githash="b4d8c119170a89621ffb298ba47a0345d7b0c7ae"
+vp_path="hbp_nrp_virtual_coach/pynrp"
+for file in config.json config.py virtual_coach.py; do
+  wget -o $file $vp_url/$vp_githash/$vp_path/$file
+done
 ```
 
 The environment is activated from within `job.sh` before the actual benchmark
