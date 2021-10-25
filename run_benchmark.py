@@ -14,6 +14,7 @@ import os
 import helpers
 import ast
 
+
 class BenchmarkRunner:
 
     def __init__(self):
@@ -22,7 +23,6 @@ class BenchmarkRunner:
         logger.info("Nodes in allocation: %s", self.nodelist)
         self.jobstep = -1
         self.running = False
-
 
     def start_nest(self, n):
 
@@ -43,8 +43,7 @@ class BenchmarkRunner:
 
         subprocess.Popen(["bash", f"{self.rundir}/nest.sh"])
         self.jobstep += 1
-        time.sleep(10) # Give the NEST container some time to start
-
+        time.sleep(10)  # Give the NEST container some time to start
 
     def stop_nest(self):
         job_step_id = f"{os.environ.get('SLURM_JOB_ID')}.{self.jobstep}"
@@ -54,7 +53,7 @@ class BenchmarkRunner:
         time.sleep(10)
         subprocess.call(["scancel", job_step_id])
         logger.info("  Called scancel, sleeping 30 seconds")
-        time.sleep(30) # Wait for the job to die
+        time.sleep(30)  # Wait for the job to die
         with open(f'{self.rundir}/metadata.yaml', 'w') as outfile:
             logger.info("  Obtaining metadata from sacct")
             run_info = self.get_sacct_info(job_step_id)
@@ -62,10 +61,10 @@ class BenchmarkRunner:
             outfile.write(yaml.dump(run_info, default_flow_style=False))
         logger.info("  Cancelling complete")
 
-
     def get_sacct_info(self, job_step_id):
         fmt = "--format=Elapsed,AveRSS,MaxRSS"
-        output = subprocess.check_output(["sacct", "-j", job_step_id, "-p", "--noheader", fmt])
+        sacct_cmd = ["sacct", "-j", job_step_id, "-p", "--noheader", fmt]
+        output = subprocess.check_output(sacct_cmd)
         output = output.decode("utf-8").split("|")[:-1]
         elapsed = datetime.strptime(output[0], "%H:%M:%S") - datetime(1900, 1, 1)
         return {
@@ -73,7 +72,6 @@ class BenchmarkRunner:
             "sacct_averss": float(output[1].replace("K", "")),
             "sacct_maxrss": float(output[2].replace("K", "")),
         }
-
 
     def get_nest_info(self):
         url = f"http://{self.nodelist[1]}:5000"
@@ -90,11 +88,9 @@ class BenchmarkRunner:
             "nest_time_simulated": response.json()["biological_time"],
         }
 
-
     def ps_fu(self):
         user = os.environ.get("USER")
         print(subprocess.Popen(["ps", "-fu", user]).communicate())
-
 
     def run(self):
         if 'n_nodes' not in config:
@@ -108,57 +104,55 @@ class BenchmarkRunner:
             self.rundir = f"{config['datadir']}/{n:02d}nodes"
             os.makedirs(self.rundir)
             self.start_nest(n)
+            time.sleep(3600)
+
             getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
 
         logger.info("Done!")
 
-
     def run_hpcbench_baseline(self, nprocs):
         """Baseline benchmark using only NEST Server and no NRP.
 
-        This variant of the benchmark uses the same brain simulation script as the
-        HPC benchmarks below, but instead of running the brain simulation by means
-        of an experiment in the NRP, it sends the script directly to NEST Server.
+        This variant of the benchmark uses the same brain simulation script as
+        the HPC benchmarks below, but instead of running the brain simulation
+        by means of an experiment in the NRP, it sends the script directly to
+        NEST Server.
 
-        We consider this the baseline benchmark to compare all other runs of the
-        HPC benchmarks to.
+        We consider this the baseline benchmark to compare all other runs of
+        the HPC benchmarks to.
 
         """
 
-        runtime_total = 0
-        with open(f'{self.rundir}/step_time.dat', "w") as logfile:
-            simtime = 20.0
-            logger.info(f'Running hpcbench_base with {nprocs} processes, 2 per node')
+        simtime = 20.0
+        logger.info(f'Running hpcbench_base with {nprocs} processes, 2 per node')
 
-            url = f"http://{self.nodelist[1]}:5000"
-            headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-            response = requests.post(f'{url}/api/ResetKernel', json={}, headers=headers)
+        url = f"http://{self.nodelist[1]}:5000"
+        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        requests.post(f'{url}/api/ResetKernel', json={}, headers=headers)
 
+        tic = time.time()
+        data = {'source': open('hpcbench_baseline.py').read()}
+        requests.post(f'{url}/exec', json=data, headers=headers)
+        with open(f'{self.rundir}/exec_time.dat', "w") as logfile:
+            logfile.write(str(time.time() - tic))
+
+        sim_times = []
+        data = {'t': simtime}
+        for cycle in range(config['n_cycles_nest']):
             tic = time.time()
-            data = {'source': open('hpcbench_baseline.py').read()}
-            response = requests.post(f'{url}/exec', json=data, headers=headers)
-            exec_time = time.time() - tic
-            runtime_total += exec_time
-            logfile.write(f'{exec_time}\t# exec_time\n')
+            requests.post(f'{url}/api/Simulate', json=data, headers=headers)
+            sim_times.append(time.time() - tic)
 
-            times = {}
-            data = {'t': simtime}
-            for cycle in range(config['n_cycles_nest']):
-                tic = time.time()
-                response = requests.post(f'{url}/api/Simulate', json=data, headers=headers)
-                sim_time = time.time() - tic
-                runtime_total += sim_time
-                times[f"cycle_time_{cycle}"] = sim_time
-
-            for label, t in times.items():
-                logfile.write(f'{t}\t# {label}\n')
+        with open(f'{self.rundir}/step_time.dat', "w") as logfile:
+            logfile.write(f'brainstep\n')
+            for t in sim_times:
+                logfile.write(f"{t}\n")
 
         with open(f'{self.rundir}/total_time.dat', "w") as logfile:
-            logfile.write(str(runtime_total))
+            logfile.write(str(sum(sim_times)))
 
-        logger.info(f'  Done after t={runtime_total}')
-
+        logger.info(f'  Done after t={sum(sim_times)}')
 
     def stop_cb(self, status):
 
@@ -167,6 +161,17 @@ class BenchmarkRunner:
                 logfile.write(str(time.time() - self.tic))
             self.running = False
 
+        # vc.print_experiment_run_files('experiment_name_id', 'profiler', 0)
+
+        # TODO: Store profiler data in f'{self.rundir}' and delete the experiment
+        # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
+        # vc.delete_cloned_experiment(self.experiment)
+        # self.experiment = None
+
+        # vc.print_experiment_runs_files('experiment_name_id', 'profiler')
+        # vc.get_experiment_run_file('experiment_name_id', 'profiler', 0, 'cle_time_profile.csv')
+        # vc.print_last_run_files('experiment_name_id', 'profiler')
+        # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
 
     def run_hpcbench_notf(self, nprocs):
         """HPC benchmark via NRP without transfer functions.
@@ -178,29 +183,10 @@ class BenchmarkRunner:
         husky robot as body model.
 
         """
-        logger.info("Running NRP - HPC benchmark with TF")
-        self.running = True
+        logger.info("Running NRP - HPC benchmark without TF")
         homedir = os.environ.get("HOME")
-        fullpath = "{homedir}/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withoutTF"
-        response_result = vc.import_experiment(fullpath)
-        dict_content = ast.literal_eval(response_result.content.decode("UTF-8"))
-        self.experiment = dict_content['destFolderName']
-        vc.print_cloned_experiments()
-        time.sleep(30)
-        self.tic = time.time()
-        self.sim = vc.launch_experiment(self.experiment, profiler='cle_step')
-        self.sim.register_status_callback(self.stop_cb)
-        self.sim.start()
-        while self.running:
-            time.sleep(0.5)
-        #vc.delete_cloned_experiment(self.experiment)
-        # TODO: make sure the simulation time is comparable to the one used in
-        # the hpcbench_baseline test case
-
-        # TODO: get profiling data using proxy rest api or copy it from the
-        # backend
-
-
+        experiment_path = f"{homedir}/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withoutTF"
+        self.run_nrp_benchmark(experiment_path)
 
     def run_hpcbench_readspikes(self, nprocs):
         """HPC benchmark via NRP with simple transfer function.
@@ -210,11 +196,19 @@ class BenchmarkRunner:
         husky robot as body model.
 
         """
+
         logger.info("Running NRP - HPC benchmark with TF")
-        self.running = True
         homedir = os.environ.get("HOME")
-        fullpath = "{homedir}/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF"
-        response_result = vc.import_experiment(fullpath)
+        experiment_path = f"{homedir}/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF"
+        self.run_nrp_benchmark(experiment_path)
+
+    def run_robobrain():
+        pass
+
+    def run_nrp_benchmark(self, experiment_path):
+
+        self.running = True
+        response_result = vc.import_experiment(experiment_path)
         dict_content = ast.literal_eval(response_result.content.decode("UTF-8"))
         self.experiment = dict_content['destFolderName']
         vc.print_cloned_experiments()
@@ -225,16 +219,6 @@ class BenchmarkRunner:
         self.sim.start()
         while self.running:
             time.sleep(0.5)
-        #vc.delete_cloned_experiment(self.experiment)
-        # TODO: make sure the simulation time is comparable to the one used in
-        # the hpcbench_baseline test case
-
-        # TODO: get profiling data using proxy rest api or copy it from the
-        # backend
-
-
-    def run_robobrain():
-        pass
 
 
 if __name__ == '__main__':
