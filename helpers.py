@@ -8,8 +8,9 @@ def expand_nodelist():
     """Expand the Slurm nodelist.
 
     This function expects the environment variable SLURM_NODELIST to be set
-    and to look something like 'nid0[27,48,50-52]'. In this example case, it
-    will return the list ["nid027", "nid048", "nid050", "nid051", "nid052"].
+    and to look something like 'nid0[27,48,50-52]'. 
+    In this example case, it will return the list: 
+    ["nid00027", "nid00048", "nid00050", "nid00051", "nid00052"].
 
     """
     # print({x:y for x,y in os.environ.items() if "SLURM" in x})
@@ -21,7 +22,7 @@ def expand_nodelist():
             node_ids += list(range(int(a), int(b) + 1))
         else:
             node_ids.append(int(id_range))
-    return [f"{prefix}{id}" for id in node_ids]
+    return [f"{prefix}{str(id).zfill(8-len(prefix))}" for id in node_ids]
 
 
 def get_config(config_fname):
