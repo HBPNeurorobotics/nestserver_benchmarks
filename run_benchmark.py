@@ -23,6 +23,7 @@ class BenchmarkRunner:
         logger.info("Nodes in allocation: %s", self.nodelist)
         self.jobstep = -1
         self.running = False
+        self.working_dir = os.getcwd()
 
     def start_nest(self, n):
 
@@ -37,7 +38,7 @@ class BenchmarkRunner:
         logger.info("Starting NEST")
         logger.info("  Nodes  : %s", n)
 
-        with open(f"{os.getcwd()}/misc/nest.sh.tpl", 'r') as infile:
+        with open(self.working_dir + "/misc/nest.sh.tpl", 'r') as infile:
             with open(f'{self.rundir}/nest.sh', 'w') as outfile:
                 outfile.write(f"{infile.read()}".format(**values))
 
@@ -104,7 +105,7 @@ class BenchmarkRunner:
             self.rundir = f"{config['datadir']}/{n:02d}nodes"
             os.makedirs(self.rundir)
             self.start_nest(n)
-            time.sleep(3600)
+            time.sleep(30)
 
             getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
@@ -184,8 +185,7 @@ class BenchmarkRunner:
 
         """
         logger.info("Running NRP - HPC benchmark without TF")
-        homedir = os.environ.get("HOME")
-        experiment_path = f"{homedir}/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withoutTF"
+        experiment_path = os.path.join(self.working_dir, "HPC_benchmark/scale20-threads72-nodes16-nvp1152-withoutTF")
         self.run_nrp_benchmark(experiment_path)
 
     def run_hpcbench_readspikes(self, nprocs):
@@ -198,8 +198,7 @@ class BenchmarkRunner:
         """
 
         logger.info("Running NRP - HPC benchmark with TF")
-        homedir = os.environ.get("HOME")
-        experiment_path = f"{homedir}/nestserver_benchmarks/HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF"
+        experiment_path = os.path.join(self.working_dir, "HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF")
         self.run_nrp_benchmark(experiment_path)
 
     def run_robobrain():
