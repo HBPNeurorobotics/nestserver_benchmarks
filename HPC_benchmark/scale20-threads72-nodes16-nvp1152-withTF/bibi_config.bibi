@@ -3,7 +3,7 @@
   <ns1:brainModel>
           <!--ns1:file>brain_model/braitenberg_nestclient.py</ns1:file-->
           <ns1:file>hpctest122020.py</ns1:file>
-    <ns1:populations from="0" population="record" to="49" xsi:type="ns1:Range"/>
+    <ns1:populations from="0" population="record" to="1000" xsi:type="ns1:Range"/>
   </ns1:brainModel>
   <ns1:mode>SynchronousNestClientSimulation</ns1:mode>
   <ns1:bodyModel robotId="husky" model="hbp_clearpath_robotics_husky_a200">model.sdf</ns1:bodyModel>
