@@ -351,6 +351,6 @@ E_neurons, I_neurons = build_network()
 print(nest.GetKernelStatus())
 
 #circuit = E_neurons[:50] + I_neurons[:50]
-subcircuit = E_neurons[:50] + I_neurons[:50]
+subcircuit = E_neurons[:500] + I_neurons[:500]
 populations = {'circuit':subcircuit}
 
