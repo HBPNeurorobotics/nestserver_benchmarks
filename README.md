@@ -57,14 +57,18 @@ used:
 
 ```bash
 module load sarus
-sarus pull christopherbignamini/nest:jougs_nest_server_mpi
-
 module use /scratch/snx3000/bignamic/EasyBuildInstall/modules/all/
 module load skopeo
+
 skopeo copy --insecure-policy \
        docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:caadd07080aa455c8c0ed4139117136f5d0a209aac0ad6d547108c06a683acbf \
        docker-archive:nrp_nest_client.tar
 sarus load nrp_nest_client.tar nrp_nest_client
+
+skopeo copy --insecure-policy \
+       docker://docker-registry.ebrains.eu/nest/nest-simulator@sha256:1b717264545522a18502d6e784e3a4a049fcfd20a182cca9e653bb60944e033d \
+       docker-archive:nest_latest_daint.tar
+sarus load nest_latest_daint.tar nest_latest_daint
 ```
 
 ## EBRAINS credentials
