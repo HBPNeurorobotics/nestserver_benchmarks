@@ -104,8 +104,6 @@ class BenchmarkRunner:
             self.rundir = f"{config['datadir']}/{n:02d}nodes"
             os.makedirs(self.rundir)
             self.start_nest(n)
-            time.sleep(3600)
-
             getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
 
