@@ -127,6 +127,9 @@ salloc --constraint mc -A ich004m --time=200 \
        job.sh config.yaml
 ```
 
+The allocation can be triggered with the bash.sh skript. In here it is possible 
+execute multiple repetitions of the same benchmark run.
+
 ## Main job script
 
 The main runner for the benchmarks is implemented in `job.sh`. It will first

@@ -30,7 +30,6 @@ def get_config(config_fname):
     with open(config_fname, 'r') as config_file:
         config = yaml.safe_load(config_file)
         homedir = os.environ.get("HOME")
-        config['datadir'] = config['datadir'].replace("$HOME", homedir)
         return config
 
     print(f"Error: config file '{configfile}' could not be read'.\n")

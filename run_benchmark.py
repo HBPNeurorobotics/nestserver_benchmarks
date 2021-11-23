@@ -17,13 +17,14 @@ import ast
 
 class BenchmarkRunner:
 
-    def __init__(self):
+    def __init__(self, rundir):
 
         self.nodelist = helpers.expand_nodelist()
         logger.info("Nodes in allocation: %s", self.nodelist)
         self.jobstep = -1
         self.running = False
         self.working_dir = os.getcwd()
+        self.rundir = rundir
 
     def start_nest(self, n):
 
@@ -102,8 +103,8 @@ class BenchmarkRunner:
 
         for n in n_nodes:
             logger.info(f"Running benchmark step with {n} nodes")
-            self.rundir = f"{config['datadir']}/{n:02d}nodes"
-            os.makedirs(self.rundir)
+            self.runnodesdir = f"{self.rundir}/{n:02d}nodes"
+            os.makedirs(self.runnodesdir)
             self.start_nest(n)
             getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
@@ -228,6 +229,7 @@ if __name__ == '__main__':
     logger = logging.getLogger('BenchmarkRunner')
 
     config = helpers.get_config(sys.argv[1])
+    rundir = sys.argv[2]
     secrets = helpers.get_secrets()
 
     if config["testcase"] != "hpcbench_baseline":
@@ -237,5 +239,5 @@ if __name__ == '__main__':
             oidc_password=secrets['hbp_password'],
         )
 
-    runner = BenchmarkRunner()
+    runner = BenchmarkRunner(rundir)
     runner.run()
