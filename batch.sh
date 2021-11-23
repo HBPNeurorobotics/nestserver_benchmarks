@@ -1,6 +1,6 @@
+config=$1
 
-
-repetitions=1 
+repetitions=$(grep 'repetitions:' $config | cut -d: -f2 | tr -d ' ' | tr -d '"')
 DATE_WITH_TIME=`date "+%Y-%m-%d_%H-%M-%S"`
 
 for (( c=1; c<=$repetitions; c++ ))
@@ -17,5 +17,5 @@ do
 		--ntasks 66 \
 		--cpus-per-task 36 \
 		--hint=multithread \
- 		job.sh config.yaml $RUNDIR
+ 		job.sh $config $RUNDIR
 done

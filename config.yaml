@@ -5,3 +5,4 @@ tunnel_keyfile: "$HOME/bf_data/key-tunneluser"
 n_nodes: [2, 4, 8, 16, 32]
 n_cycles_nest: 100
 testcase: "hpcbench_notf"
+repetitions: 1
