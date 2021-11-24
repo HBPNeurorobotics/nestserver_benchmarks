@@ -1,8 +1,8 @@
 nrp_frontend_ip: "148.187.148.14"
-tunnel_ip: "148.187.148.167"
+tunnel_ip: "148.187.148.198"
 tunnel_port: "8080"
-tunnel_keyfile: "$HOME/nrp_launch/key-tunneluser"
+tunnel_keyfile: "$HOME/bf_data/key-tunneluser"
 n_nodes: [2, 4, 8, 16, 32]
 n_cycles_nest: 100
-datadir: "$HOME/nestserver_benchmarks/testdir1"
 testcase: "hpcbench_notf"
+repetitions: 1

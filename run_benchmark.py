@@ -17,15 +17,20 @@ import ast
 
 class BenchmarkRunner:
 
-    def __init__(self):
+    def __init__(self, rundir):
 
         self.nodelist = helpers.expand_nodelist()
         logger.info("Nodes in allocation: %s", self.nodelist)
         self.jobstep = -1
         self.running = False
         self.working_dir = os.getcwd()
+        self.rundir = rundir
 
     def start_nest(self, n):
+        """
+        Starts the NEST container on the given number of nodes
+        :param n: Number of nodes to run on
+        """
 
         values = {
             'n_nodes_nest': n,
@@ -39,14 +44,18 @@ class BenchmarkRunner:
         logger.info("  Nodes  : %s", n)
 
         with open(self.working_dir + "/misc/nest.sh.tpl", 'r') as infile:
-            with open(f'{self.rundir}/nest.sh', 'w') as outfile:
+            with open(f'{self.nodes_rundir}/nest.sh', 'w') as outfile:
                 outfile.write(f"{infile.read()}".format(**values))
 
-        subprocess.Popen(["bash", f"{self.rundir}/nest.sh"])
+        subprocess.Popen(["bash", f"{self.nodes_rundir}/nest.sh"])
         self.jobstep += 1
         time.sleep(10)  # Give the NEST container some time to start
 
     def stop_nest(self):
+        """
+        Stops NEST on all nodes and retrieves info data
+        """
+
         job_step_id = f"{os.environ.get('SLURM_JOB_ID')}.{self.jobstep}"
         logger.info("Canceling NEST: %s", job_step_id)
         logger.info("  Obtaining metadata from NEST")
@@ -55,7 +64,7 @@ class BenchmarkRunner:
         subprocess.call(["scancel", job_step_id])
         logger.info("  Called scancel, sleeping 30 seconds")
         time.sleep(30)  # Wait for the job to die
-        with open(f'{self.rundir}/metadata.yaml', 'w') as outfile:
+        with open(f'{self.nodes_rundir}/metadata.yaml', 'w') as outfile:
             logger.info("  Obtaining metadata from sacct")
             run_info = self.get_sacct_info(job_step_id)
             run_info.update(nest_info)
@@ -63,6 +72,11 @@ class BenchmarkRunner:
         logger.info("  Cancelling complete")
 
     def get_sacct_info(self, job_step_id):
+        """
+        Collects benchmark relevant data from saact
+        :param job_step_id: ID of the current job
+        """
+        
         fmt = "--format=Elapsed,AveRSS,MaxRSS"
         sacct_cmd = ["sacct", "-j", job_step_id, "-p", "--noheader", fmt]
         output = subprocess.check_output(sacct_cmd)
@@ -75,6 +89,10 @@ class BenchmarkRunner:
         }
 
     def get_nest_info(self):
+        """
+        Collects benchmark relevant info from NEST
+        """
+
         url = f"http://{self.nodelist[1]}:5000"
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
         response = requests.post(f'{url}/api/GetKernelStatus', json={}, headers=headers)
@@ -88,12 +106,12 @@ class BenchmarkRunner:
             "nest_local_num_threads": response.json()["local_num_threads"],
             "nest_time_simulated": response.json()["biological_time"],
         }
-
-    def ps_fu(self):
-        user = os.environ.get("USER")
-        print(subprocess.Popen(["ps", "-fu", user]).communicate())
-
+   
     def run(self):
+        """
+        Runs the benchmark
+        """
+
         if 'n_nodes' not in config:
             n_nodes_max = int(os.environ.get("SLURM_NNODES"))
             n_nodes = [2**x for x in range(11) if 2**x < n_nodes_max]
@@ -102,107 +120,19 @@ class BenchmarkRunner:
 
         for n in n_nodes:
             logger.info(f"Running benchmark step with {n} nodes")
-            self.rundir = f"{config['datadir']}/{n:02d}nodes"
-            os.makedirs(self.rundir)
+            self.nodes_rundir = f"{self.rundir}/{n:02d}nodes"
+            os.makedirs(self.nodes_rundir)
             self.start_nest(n)
             getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
 
         logger.info("Done!")
-
-    def run_hpcbench_baseline(self, nprocs):
-        """Baseline benchmark using only NEST Server and no NRP.
-
-        This variant of the benchmark uses the same brain simulation script as
-        the HPC benchmarks below, but instead of running the brain simulation
-        by means of an experiment in the NRP, it sends the script directly to
-        NEST Server.
-
-        We consider this the baseline benchmark to compare all other runs of
-        the HPC benchmarks to.
-
-        """
-
-        simtime = 20.0
-        logger.info(f'Running hpcbench_base with {nprocs} processes, 2 per node')
-
-        url = f"http://{self.nodelist[1]}:5000"
-        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-        requests.post(f'{url}/api/ResetKernel', json={}, headers=headers)
-
-        tic = time.time()
-        data = {'source': open('hpcbench_baseline.py').read()}
-        requests.post(f'{url}/exec', json=data, headers=headers)
-        with open(f'{self.rundir}/exec_time.dat', "w") as logfile:
-            logfile.write(str(time.time() - tic))
-
-        sim_times = []
-        data = {'t': simtime}
-        for cycle in range(config['n_cycles_nest']):
-            tic = time.time()
-            requests.post(f'{url}/api/Simulate', json=data, headers=headers)
-            sim_times.append(time.time() - tic)
-
-        with open(f'{self.rundir}/step_time.dat', "w") as logfile:
-            logfile.write(f'brainstep\n')
-            for t in sim_times:
-                logfile.write(f"{t}\n")
-
-        with open(f'{self.rundir}/total_time.dat', "w") as logfile:
-            logfile.write(str(sum(sim_times)))
-
-        logger.info(f'  Done after t={sum(sim_times)}')
-
-    def stop_cb(self, status):
-
-        if status['state'] == 'stopped' or status['state'] == 'halted':
-            with open(f'{self.rundir}/total_time.dat', "w+") as logfile:
-                logfile.write(str(time.time() - self.tic))
-            self.running = False
-
-        # vc.print_experiment_run_files('experiment_name_id', 'profiler', 0)
-
-        # TODO: Store profiler data in f'{self.rundir}' and delete the experiment
-        # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
-        # vc.delete_cloned_experiment(self.experiment)
-        # self.experiment = None
-
-        # vc.print_experiment_runs_files('experiment_name_id', 'profiler')
-        # vc.get_experiment_run_file('experiment_name_id', 'profiler', 0, 'cle_time_profile.csv')
-        # vc.print_last_run_files('experiment_name_id', 'profiler')
-        # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
-
-    def run_hpcbench_notf(self, nprocs):
-        """HPC benchmark via NRP without transfer functions.
-        """
-        """HPC benchmark via NRP with simple transfer function.
-
-        The transfer function records and reads spikes from a certain
-        subpopulation of the model. To have some load on the NRP side, we use the
-        husky robot as body model.
-
-        """
-        logger.info("Running NRP - HPC benchmark without TF")
-        experiment_path = os.path.join(self.working_dir, "HPC_benchmark/scale20-threads72-nodes16-nvp1152-withoutTF")
-        self.run_nrp_benchmark(experiment_path)
-
-    def run_hpcbench_readspikes(self, nprocs):
-        """HPC benchmark via NRP with simple transfer function.
-
-        The transfer function records and reads spikes from a certain
-        subpopulation of the model. To have some load on the NRP side, we use the
-        husky robot as body model.
-
-        """
-
-        logger.info("Running NRP - HPC benchmark with TF")
-        experiment_path = os.path.join(self.working_dir, "HPC_benchmark/scale20-threads72-nodes16-nvp1152-withTF")
-        self.run_nrp_benchmark(experiment_path)
-
-    def run_robobrain():
-        pass
-
+ 
     def run_nrp_benchmark(self, experiment_path):
+        """
+        Runs a benchmark experiment in the NRP
+        :param experiment_path: Experiment ID that shall be started in the NRP 
+        """
 
         self.running = True
         response_result = vc.import_experiment(experiment_path)
@@ -217,6 +147,104 @@ class BenchmarkRunner:
         while self.running:
             time.sleep(0.5)
 
+    def stop_cb(self, status):
+        """
+        NRP callback of the VirtualCoach as a helper executed when experiment 
+        status changes.
+        :param status: New status of the experiment
+        """
+
+        if status['state'] == 'stopped' or status['state'] == 'halted':
+            with open(f'{self.nodes_rundir}/total_time.dat', "w+") as logfile:
+                logfile.write(str(time.time() - self.tic))
+            self.running = False
+
+        # vc.print_experiment_run_files('experiment_name_id', 'profiler', 0)
+
+        # TODO: Store profiler data in f'{self.nodes_rundir}' and delete the experiment
+        # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
+        # vc.delete_cloned_experiment(self.experiment)
+        # self.experiment = None
+
+        # vc.print_experiment_runs_files('experiment_name_id', 'profiler')
+        # vc.get_experiment_run_file('experiment_name_id', 'profiler', 0, 'cle_time_profile.csv')
+        # vc.print_last_run_files('experiment_name_id', 'profiler')
+        # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
+
+    def run_hpcbench_baseline(self, nprocs):
+        """
+        Baseline benchmark using only NEST Server and no NRP.
+
+        This variant of the benchmark uses the same brain simulation script as
+        the HPC benchmarks below, but instead of running the brain simulation
+        by means of an experiment in the NRP, it sends the script directly to
+        NEST Server.
+
+        We consider this the baseline benchmark to compare all other runs of
+        the HPC benchmarks to.
+        """
+
+        simtime = 20.0
+        logger.info(f'Running hpcbench_base with {nprocs} processes, 2 per node')
+
+        url = f"http://{self.nodelist[1]}:5000"
+        headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        requests.post(f'{url}/api/ResetKernel', json={}, headers=headers)
+
+        tic = time.time()
+        data = {'source': open('Experiments/HPC_benchmark/0_hpcbench_baseline.py').read()}
+        requests.post(f'{url}/exec', json=data, headers=headers)
+        with open(f'{self.nodes_rundir}/exec_time.dat', "w") as logfile:
+            logfile.write(str(time.time() - tic))
+
+        sim_times = []
+        data = {'t': simtime}
+        for cycle in range(config['n_cycles_nest']):
+            tic = time.time()
+            requests.post(f'{url}/api/Simulate', json=data, headers=headers)
+            sim_times.append(time.time() - tic)
+
+        with open(f'{self.nodes_rundir}/step_time.dat', "w") as logfile:
+            d
+            logfile.write(f'brainstep\n')
+            for t in sim_times:
+                logfile.write(f"{t}\n")
+
+        with open(f'{self.nodes_rundir}/total_time.dat', "w") as logfile:
+            logfile.write(str(sum(sim_times)))
+
+        logger.info(f'  Done after t={sum(sim_times)}')
+
+    def run_hpcbench_notf(self, nprocs):
+        """
+        HPC benchmark via NRP without transfer functions.
+        """
+
+        logger.info("Running NRP - HPC benchmark without TF")
+        experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/1_nrpexperiment_scale20-threads72-nodes16-nvp1152-withoutTF")
+        self.run_nrp_benchmark(experiment_path)
+
+    def run_hpcbench_readspikes(self, nprocs):
+        """
+        HPC benchmark via NRP with simple transfer function.
+
+        The transfer function records and reads spikes from a certain
+        subpopulation of the model. To have some load on the NRP side, we use the
+        husky robot as body model.
+        """
+
+        logger.info("Running NRP - HPC benchmark with TF")
+        experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/2_nrpexperiment_scale20-threads72-nodes16-nvp1152-withTF")
+        self.run_nrp_benchmark(experiment_path)
+
+    def run_robobrain():
+        """
+        RoboBrain benchmark experiment in the NRP consising of a musculoskeletal
+        rodent model with 8 muscles and a brain model with 1Million+ Neurons.
+        """
+
+        pass
+
 
 if __name__ == '__main__':
 
@@ -228,6 +256,7 @@ if __name__ == '__main__':
     logger = logging.getLogger('BenchmarkRunner')
 
     config = helpers.get_config(sys.argv[1])
+    rundir = sys.argv[2]
     secrets = helpers.get_secrets()
 
     if config["testcase"] != "hpcbench_baseline":
@@ -237,5 +266,5 @@ if __name__ == '__main__':
             oidc_password=secrets['hbp_password'],
         )
 
-    runner = BenchmarkRunner()
+    runner = BenchmarkRunner(rundir)
     runner.run()
