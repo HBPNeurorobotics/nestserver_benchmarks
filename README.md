@@ -66,7 +66,7 @@ skopeo copy --insecure-policy \
 sarus load nrp_nest_client.tar nrp_nest_client
 
 skopeo copy --insecure-policy \
-       docker pull docker-registry.ebrains.eu/nest/nest-simulator@sha256:68e9c269f31f2c7a72a8c01497a130971bff0cf1681bce4f96e7fdb335054ff7 \
+       docker://docker-registry.ebrains.eu/nest/nest-simulator@sha256:68e9c269f31f2c7a72a8c01497a130971bff0cf1681bce4f96e7fdb335054ff7 \
        docker-archive:nest_latest_daint.tar
 sarus load nest_latest_daint.tar nest_latest_daint
 ```
