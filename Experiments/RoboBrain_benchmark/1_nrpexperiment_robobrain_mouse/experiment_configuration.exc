@@ -1,0 +1,29 @@
+<ExD
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/ExDConfig ../ExDConfFile.xsd">
+  <name>Robobrain Holodeck NRP Experiment</name>
+  <thumbnail>ExDMouseCDP1.jpg</thumbnail>
+  <description>Loads a virtual mouse that actuates a joystick with its left forearm. Muscles are connected and controlled with a ~1 Million neurons/1.5 Billion synapses brain model. Both brain and body simulation run on a 72 core node on the PizDaint supercomputer.</description>
+  <tags>mouse biological holodeck</tags>
+  <timeout>18000000</timeout>
+  <configuration type="3d-settings" src="holodeck.ini" />
+  <configuration type="brainvisualizer" src="MouseCDP1NeuronCoords.json" />
+  <configuration type="user-interaction-settings" src="holodeck.uis" />
+  <maturity>production</maturity>
+  <environmentModel src="robobrain_world_holodeck.sdf">
+    <robotPose robotId="robobrain_mouse" x="1.51587" y="-1.0442" z="1.2875" roll="0.0" pitch="-0.0" yaw="0.0" />
+  </environmentModel>
+  <bibiConf src="bibi_configuration.bibi" />
+  <cameraPose>
+    <cameraPosition x="1.650596943953666" y="-1.3037450422457924" z="1.3963657402299325 " />
+    <cameraLookAt x="1.51587" y="-1.0442" z="1.33757" />
+  </cameraPose>
+  <physicsEngine>opensim</physicsEngine>
+  <gzbridgesettings>
+    <pose_update_delta_translation>1.e-12</pose_update_delta_translation>
+    <pose_update_delta_rotation>1.e-12</pose_update_delta_rotation>
+    <pose_update_early_threshold>0.02</pose_update_early_threshold>
+  </gzbridgesettings>
+  <cloneDate>2020-05-08T18:50:32</cloneDate>
+
+</ExD>
