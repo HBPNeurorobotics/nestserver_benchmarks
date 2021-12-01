@@ -119,33 +119,44 @@ class BenchmarkRunner:
             n_nodes = config['n_nodes']
 
         for n in n_nodes:
-            logger.info(f"Running benchmark step with {n} nodes")
+            logger.info(f"Running {config['testcase']} benchmark step with {n} nodes")
             self.nodes_rundir = f"{self.rundir}/{n:02d}nodes"
             os.makedirs(self.nodes_rundir)
             self.start_nest(n)
             getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
 
-        logger.info("Done!")
+        logger.info("Benchmarks done!")
  
     def run_nrp_benchmark(self, experiment_path):
         """
         Runs a benchmark experiment in the NRP
-        :param experiment_path: Experiment ID that shall be started in the NRP 
+        :param experiment_path: Experiment path of the experiment that shall be 
+                                imported and run.
         """
 
+        # Import Experiment
         self.running = True
         response_result = vc.import_experiment(experiment_path)
         dict_content = ast.literal_eval(response_result.content.decode("UTF-8"))
         self.experiment = dict_content['destFolderName']
         vc.print_cloned_experiments()
         time.sleep(30)
+        
+        # Launch Experiment
         self.tic = time.time()
-        self.sim = vc.launch_experiment(self.experiment, profiler='cle_step')
+
+        self.sim = vc.launch_experiment(self.experiment, server='148.187.148.198-port-8080', profiler='cle_step')
         self.sim.register_status_callback(self.stop_cb)
         self.sim.start()
         while self.running:
             time.sleep(0.5)
+
+        time.sleep(20)
+        self.retrieve_nrp_profiler_data(self.experiment)
+
+        # Delete Experiment after run
+        vc.delete_cloned_experiment(self.experiment)
 
     def stop_cb(self, status):
         """
@@ -158,6 +169,19 @@ class BenchmarkRunner:
             with open(f'{self.nodes_rundir}/total_time.dat', "w+") as logfile:
                 logfile.write(str(time.time() - self.tic))
             self.running = False
+
+    def retrieve_nrp_profiler_data(self, experiment_id):
+        """
+        Retrieves the experiment profiler data after a benchmark run.
+        :param experiment_id: Experiment ID that data shall be retrieved from.
+        """
+
+
+        file_path = os.path.join(self.nodes_rundir,"cle_time_profile_0.csv")
+        logger.info("Saving CLE profiler data from experiment: {} to {}".format(experiment_id, file_path))
+        cle_step_data = vc.get_last_run_file(experiment_id, 'profiler', 'cle_time_profile_0.csv')
+        with open(file_path, "wb") as f_data:
+            f_data.write(cle_step_data)
 
         # vc.print_experiment_run_files('experiment_name_id', 'profiler', 0)
 
