@@ -1,10 +1,10 @@
-<bibi 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<bibi
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://schemas.humanbrainproject.eu/SP10/2014/BIBI" xsi:schemaLocation="http://schemas.humanbrainproject.eu/SP10/2014/BIBI ../bibi_configuration.xsd">
   <brainModel>
     <file>robobrain.py</file>
   </brainModel>
-  <bodyModel robotId="robobrain_mouse">robobrain_mouse_with_joystick/model.sdf</bodyModel>
+  <bodyModel robotId="robobrain_mouse_with_joystick">model.sdf</bodyModel>
   <mode>SynchronousNestClientSimulation</mode>
   <transferFunction src="controller.py" active="true" priority="0" xsi:type="PythonTransferFunction" />
   <transferFunction src="a_muscle_feedback.py" active="true" priority="0" xsi:type="PythonTransferFunction" />
