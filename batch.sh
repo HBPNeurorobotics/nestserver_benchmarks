@@ -1,12 +1,14 @@
 config=$1
 
 repetitions=$(grep 'repetitions:' $config | cut -d: -f2 | tr -d ' ' | tr -d '"')
+testcase=$(grep 'testcase:' $config | cut -d: -f2 | tr -d ' ' | tr -d '"')
+
 DATE_WITH_TIME=`date "+%Y-%m-%d_%H-%M-%S"`
 
 for (( c=1; c<=$repetitions; c++ ))
 do
 		
-	RUNDIR=$PWD/tmp_benchmarks_results/$DATE_WITH_TIME/$c
+	RUNDIR=$PWD/tmp_benchmarks_results/$DATE_WITH_TIME-$testcase/$c
 
 	echo "==== BATCHRUNNER: Starting repetition $c in $RUNDIR ==="
 
