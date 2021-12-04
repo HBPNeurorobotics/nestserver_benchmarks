@@ -2,3 +2,4 @@ __pycache__/
 *~
 secrets.yaml
 tmp_benchmarks_results/*
+*.pyc
