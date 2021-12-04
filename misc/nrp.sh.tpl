@@ -34,13 +34,15 @@ sarus run \
       --mount=type=bind,source=$NRPLOGDIR/uwsgi,dst=$NRPVARLOG/uwsgi \
       --mount=type=bind,source=$NRPLOGDIR/nginx_home,dst=/home_daint/bbpnrsoa/nginx \
       \
-      load/library/nrp_nest_client:latest \
+      nexus.neurorobotics.ebrains.eu/daint/nrp:3.2.0-nest-client \
       \
       bash -c "\
+ 	  ln -s {working_dir}/Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/robobrain_mouse_with_joystick $NRPSRC/gzweb/http/client/assets/robobrain_mouse_with_joystick; \
           unset LD_PRELOAD; \
           export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH; \
           export LC_ALL=C; unset LANGUAGE; \
           source $NRPSRC/user-scripts/nrp_variables; \
+	  sed -i 's|self.__remaining_time = timeout|self.__remaining = timeout|' $NRPSRC/ExDBackend/hbp_nrp_cleserver/hbp_nrp_cleserver/server/SimulationServer.py; \
           sed -i 's|<STORAGE_ADDR>|148.187.148.14|' $NRPSRCCOMM/workspace/Settings.py; \
           sed -i 's|= MPILauncher|= DaintLauncher|' $NRPSRCLNCH/NestLauncher.py; \
           sed -i 's|sys.executable|\\\"/home_daint/bbpnrsoa/.opt/platform_venv/bin/python\\\"|' $NRPSRCLNCH/NestLauncher.py; \

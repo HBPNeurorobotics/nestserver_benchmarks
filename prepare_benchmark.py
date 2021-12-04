@@ -30,7 +30,7 @@ values = {
 
 for key in ("tunnel_keyfile", "tunnel_ip", "tunnel_port"):
     values[key] = config[key]
-
+values["working_dir"] = os.getcwd()
 
 # Generate NRP and tunnel scripts
 for script_basename in ("nrp", "tunnel"):

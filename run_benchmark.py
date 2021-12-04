@@ -39,6 +39,7 @@ class BenchmarkRunner:
             'jobid': os.environ.get("SLURM_JOB_ID"),
             'account': os.environ.get("SLURM_JOB_ACCOUNT"),
         }
+        values['working_dir'] = os.getcwd()
 
         logger.info("Starting NEST")
         logger.info("  Nodes  : %s", n)
@@ -84,8 +85,8 @@ class BenchmarkRunner:
         elapsed = datetime.strptime(output[0], "%H:%M:%S") - datetime(1900, 1, 1)
         return {
             "sacct_elapsed": elapsed.total_seconds(),
-            "sacct_averss": float(output[1].replace("K", "")),
-            "sacct_maxrss": float(output[2].replace("K", "")),
+            "sacct_averss": float(output[1].replace("K", "").replace("M", "")),
+            "sacct_maxrss": float(output[2].replace("K", "").replace("M", "")),
         }
 
     def get_nest_info(self):
@@ -261,11 +262,14 @@ class BenchmarkRunner:
         experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/2_nrpexperiment_scale20-threads72-nodes16-nvp1152-withTF")
         self.run_nrp_benchmark(experiment_path)
 
-    def run_robobrain():
+    def run_robobrain(self, nprocs):
         """
         RoboBrain benchmark experiment in the NRP consising of a musculoskeletal
         rodent model with 8 muscles and a brain model with 1Million+ Neurons.
         """
+        # todo: Import robobrain world, rename it, is supported in VC already merged?
+        experiment_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse")
+        self.run_nrp_benchmark(experiment_path)
 
         pass
 
@@ -290,5 +294,7 @@ if __name__ == '__main__':
             oidc_password=secrets['hbp_password'],
         )
 
+    logger.info('BF in here')
     runner = BenchmarkRunner(rundir)
     runner.run()
+    
