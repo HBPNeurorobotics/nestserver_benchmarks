@@ -35,7 +35,7 @@ for key in ("tunnel_keyfile", "tunnel_ip", "tunnel_port"):
 # Generate NRP and tunnel scripts
 for script_basename in ("nrp", "tunnel"):
     with open(f"misc/{script_basename}.sh.tpl", "r") as infile:
-        with open(f"{rundir}/{script_basename}.sh", "w") as outfile:
+        with open(f"{rundir}/../{script_basename}.sh", "w") as outfile:
             outfile.write(f"{infile.read()}".format(**values))
 
 

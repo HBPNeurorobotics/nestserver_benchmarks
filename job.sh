@@ -29,8 +29,8 @@ cp $configfile $rundir/config.yaml
 
 echo "Node zero: $nodezero"
 
-ssh -o StrictHostKeyChecking=no $nodezero bash -s < $rundir/tunnel.sh &
-ssh -o StrictHostKeyChecking=no $nodezero bash -s < $rundir/nrp.sh &
+ssh -o StrictHostKeyChecking=no $nodezero bash -s < $rundir/../tunnel.sh &
+ssh -o StrictHostKeyChecking=no $nodezero bash -s < $rundir/../nrp.sh &
 sleep 15 # Give the NRP and tunnel processes time to start
 
 python3 run_benchmark.py $configfile $rundir
