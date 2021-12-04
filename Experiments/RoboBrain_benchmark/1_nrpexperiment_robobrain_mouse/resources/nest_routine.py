@@ -89,9 +89,10 @@ def initialize_nest(sim_params):
   global pyrngs
   pyrngs = [np.random.RandomState(s) for s in range(sim_params['msd'], sim_params['msd']+N_vp)]
   ### global nest rng ###
-  nest.SetKernelStatus({'grng_seed' : sim_params['msd']+N_vp})
+  # nest.SetKernelStatus({'grng_seed' : sim_params['msd']+N_vp})
   ### per process rng #####
-  nest.SetKernelStatus({'rng_seeds' : range(sim_params['msd']+N_vp+1, sim_params['msd']+2*N_vp+1)})
+  nest.rng_seed = range(sim_params['msd']+N_vp+1, sim_params['msd']+2*N_vp+1)
+  # nest.SetKernelStatus({'rng_seeds' : range(sim_params['msd']+N_vp+1, sim_params['msd']+2*N_vp+1)})
 
 
 
@@ -662,7 +663,7 @@ def save_layers_position(layer_name, layer, positions):
     ids = np.array(layer.tolist())   # FIXME THIS IS BUG #1361  should not use tolist
     gid_and_positions=np.column_stack((positions, ids))
     if not os.path.exists('log/'+layer_name+'.txt'):
-        np.savetxt('log/'+layer_name+'.txt', gid_and_positions, fmt='%1.3f')
+        np.savetxt('/opt/data/log/'+layer_name+'.txt', gid_and_positions, fmt='%1.3f')
     
 # -------------------------------------------------------------------------------
 #randomizing the membarne potential

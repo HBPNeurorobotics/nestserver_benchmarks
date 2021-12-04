@@ -3,9 +3,11 @@
   
 import nest
 
+
 # Resetting Nest Kernel 
 nest.ResetKernel()  
 
+import stim_all_model
 
 # Initializing Neurons, Brain connections and FrequencyDetectors
 ctx_M1_layers = stim_all_model.main()

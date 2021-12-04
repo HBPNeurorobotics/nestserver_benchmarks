@@ -52,7 +52,7 @@ def instantiate_ctx(ctx_params,scalefactor, initial_ignore, region_name):
   # make connections
   print("Start to connect the layers")
   ctx_layers = collections.OrderedDict(sorted(ctx_layers.items(), key=lambda t: t[0]))
-  internal_connection = np.load('ctx/'+ ctx_params[region_name]['connection_info']['internal'], allow_pickle=True)
+  internal_connection = np.load('/opt/data/ctx/'+ ctx_params[region_name]['connection_info']['internal'], allow_pickle=True)
   from collections import defaultdict
   for pre_layer_name in ctx_layers.keys():
     for post_layer_name in ctx_layers.keys():
