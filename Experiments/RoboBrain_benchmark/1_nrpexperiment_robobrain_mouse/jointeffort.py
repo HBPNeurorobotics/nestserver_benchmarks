@@ -16,10 +16,10 @@ def jointeffort (t,
     effort_msg = ApplyJointEffortRequest()
     effort_msg.joint_name = 'joystick_world_joint'
     effort_msg.effort = -0.001
-    effort_msg.start_time.secs = 0.0
-    effort_msg.start_time.nsecs = 0.0
-    effort_msg.duration.secs = 2.0
-    effort_msg.duration.nsecs = 0.0
+    effort_msg.start_time.secs = 0
+    effort_msg.start_time.nsecs = 0
+    effort_msg.duration.secs = 2
+    effort_msg.duration.nsecs = 0
     
     joint_clear_srv.value('joystick_world_joint')
     feedback = apply_joint_effort_srv.value(effort_msg)    
