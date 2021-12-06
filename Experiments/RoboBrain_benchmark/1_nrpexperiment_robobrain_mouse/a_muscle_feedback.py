@@ -4,7 +4,7 @@ from gazebo_ros_muscle_interface.msg import MuscleStates
 @nrp.MapVariable("muscle_positions", initial_value=None, scope=nrp.GLOBAL)
 @nrp.MapVariable("muscle_velocities", initial_value=None, scope=nrp.GLOBAL)
 @nrp.MapVariable("initial_muscle_length", initial_value=None, scope=nrp.GLOBAL)
-@nrp.MapRobotSubscriber('muscle_states_msg', Topic('/gazebo_muscle_interface/robobrain_mouse/muscle_states', MuscleStates))
+@nrp.MapRobotSubscriber('muscle_states_msg', Topic('/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states', MuscleStates))
 @nrp.Robot2Neuron()
 def a_muscle_feedback (t, muscle_states_msg, muscle_velocities, muscle_positions, muscle_efforts, initial_muscle_length):
     import math
@@ -27,7 +27,7 @@ def a_muscle_feedback (t, muscle_states_msg, muscle_velocities, muscle_positions
         initial_muscle_length.value = positions.values()
 
     # origin in the center position:
-    muscle_positions.value = [value - initial_muscle_length.value[idx] for idx, value in enumerate(positions.values())]
+    muscle_positions.value = [value - list(initial_muscle_length.value)[idx] for idx, value in enumerate(positions.values())]
 
     muscle_velocities.value = list(velocities.values())
     muscle_efforts.value = list(efforts.values())
