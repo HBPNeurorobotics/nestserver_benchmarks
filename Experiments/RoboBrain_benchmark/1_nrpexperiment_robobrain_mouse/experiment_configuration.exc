@@ -5,13 +5,13 @@
   <thumbnail>ExDMouseCDP1.jpg</thumbnail>
   <description>Loads a virtual mouse that actuates a joystick with its left forearm. Muscles are connected and controlled with a ~1 Million neurons/1.5 Billion synapses brain model. Both brain and body simulation run on a 72 core node on the PizDaint supercomputer.</description>
   <tags>mouse biological holodeck</tags>
-  <timeout>18000000</timeout>
+  <timeout time="simulation">1</timeout>  
   <configuration type="3d-settings" src="holodeck.ini" />
   <configuration type="brainvisualizer" src="MouseCDP1NeuronCoords.json" />
   <configuration type="user-interaction-settings" src="holodeck.uis" />
   <maturity>production</maturity>
   <environmentModel src="robobrain_world_holodeck.sdf">
-    <robotPose robotId="robobrain_mouse" x="1.51587" y="-1.0442" z="1.2875" roll="0.0" pitch="-0.0" yaw="0.0" />
+    <robotPose robotId="robobrain_mouse_with_joystick" x="1.51587" y="-1.0442" z="1.2875" roll="0.0" pitch="-0.0" yaw="0.0" />
   </environmentModel>
   <bibiConf src="bibi_configuration.bibi" />
   <cameraPose>
