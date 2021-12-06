@@ -29,7 +29,7 @@
         </geometry>
       </visual>
       <visual name="VIS_Lickometer">
-        <pose>0.0 -0.052 0.0 -1.57 0.0</pose>
+        <pose>0.0 -0.052 0.0 -1.57 0.0 0.0</pose>
         <geometry>
           <mesh>
             <uri>model://robobrain_mouse_with_joystick/meshes/visual/VIS_lickometer.dae</uri>
@@ -38,7 +38,7 @@
         </geometry>
       </visual>
       <visual name="VIS_Magnet">
-        <pose>0.0 -0.047 0.0 -1.57 0.0</pose>
+        <pose>0.0 -0.047 0.0 -1.57 0.0 0.0</pose>
         <geometry>
           <mesh>
             <uri>model://robobrain_mouse_with_joystick/meshes/visual/VIS_magnet.dae</uri>
