@@ -37,7 +37,10 @@ sarus run \
       nexus.neurorobotics.ebrains.eu/daint/nrp:3.2.0-nest-client \
       \
       bash -c "\
- 	  ln -s {working_dir}/Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/robobrain_mouse_with_joystick $NRPSRC/gzweb/http/client/assets/robobrain_mouse_with_joystick; \
+	  sed -i 's|float(\x27inf\x27)|1.7976931348623157e+308|' $NRPSRC/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestLeakyIntegratorTypes.py; \
+	  sed -i 's|float(\x27inf\x27)|1.7976931348623157e+308|' $NRPSRC/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestPoissonSpikeGenerator.py; \
+          sed -i 's|float(\x27inf\x27)|1.7976931348623157e+308|' $NRPSRC/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestPopulationRate.py; \
+	  ln -s {working_dir}/Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/robobrain_mouse_with_joystick $NRPSRC/gzweb/http/client/assets/robobrain_mouse_with_joystick; \
           unset LD_PRELOAD; \
           export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH; \
           export LC_ALL=C; unset LANGUAGE; \
