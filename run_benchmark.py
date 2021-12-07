@@ -267,7 +267,6 @@ class BenchmarkRunner:
         RoboBrain benchmark experiment in the NRP consising of a musculoskeletal
         rodent model with 8 muscles and a brain model with 1Million+ Neurons.
         """
-        # todo: Import robobrain world, rename it, is supported in VC already merged?
         experiment_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse")
         self.run_nrp_benchmark(experiment_path)
 
