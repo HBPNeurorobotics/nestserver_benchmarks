@@ -121,8 +121,8 @@ class BenchmarkRunner:
             n_tasks = config['n_ntasks']
 
         for n in n_tasks:
-            logger.info(f"Running {config['testcase']} benchmark step with {ntasks} NEST tasks")
-            self.ntasks_rundir = f"{self.rundir}/{ntasks:02d}_ntasks"
+            logger.info(f"Running {config['testcase']} benchmark step with {n} NEST tasks")
+            self.ntasks_rundir = f"{self.rundir}/{n:02d}_ntasks"
             os.makedirs(self.ntasks_rundir)
             self.start_nest(ntasks)
             getattr(self, f"run_{config['testcase']}")(ntasks)
