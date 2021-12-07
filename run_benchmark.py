@@ -26,15 +26,16 @@ class BenchmarkRunner:
         self.working_dir = os.getcwd()
         self.rundir = rundir
 
-    def start_nest(self, n):
+    def start_nest(self, ntasks):
         """
-        Starts the NEST container on the given number of nodes
-        :param n: Number of nodes to run on
+        Starts the NEST container with the given number of tasks,
+        two tasks on each node.
+        :param ntasks: Number of NEST tasks to run in total
         """
 
         values = {
-            'n_nodes_nest': n,
-            'n_tasks_nest': 2 * n,
+            'n_nodes_nest': math.ceil(float(ntasks)/2),
+            'n_tasks_nest': ntasks,
             'nodezero': self.nodelist[0],
             'jobid': os.environ.get("SLURM_JOB_ID"),
             'account': os.environ.get("SLURM_JOB_ACCOUNT"),
@@ -42,13 +43,13 @@ class BenchmarkRunner:
         values['working_dir'] = os.getcwd()
 
         logger.info("Starting NEST")
-        logger.info("  Nodes  : %s", n)
+        logger.info("  NEST tasks  : %s", ntasks)
 
         with open(self.working_dir + "/misc/nest.sh.tpl", 'r') as infile:
-            with open(f'{self.nodes_rundir}/nest.sh', 'w') as outfile:
+            with open(f'{self.tasks_rundir}/nest.sh', 'w') as outfile:
                 outfile.write(f"{infile.read()}".format(**values))
 
-        subprocess.Popen(["bash", f"{self.nodes_rundir}/nest.sh"])
+        subprocess.Popen(["bash", f"{self.tasks_rundir}/nest.sh"])
         self.jobstep += 1
         time.sleep(10)  # Give the NEST container some time to start
 
@@ -65,7 +66,7 @@ class BenchmarkRunner:
         subprocess.call(["scancel", job_step_id])
         logger.info("  Called scancel, sleeping 30 seconds")
         time.sleep(30)  # Wait for the job to die
-        with open(f'{self.nodes_rundir}/metadata.yaml', 'w') as outfile:
+        with open(f'{self.ntasks_rundir}/metadata.yaml', 'w') as outfile:
             logger.info("  Obtaining metadata from sacct")
             run_info = self.get_sacct_info(job_step_id)
             run_info.update(nest_info)
@@ -113,18 +114,18 @@ class BenchmarkRunner:
         Runs the benchmark
         """
 
-        if 'n_nodes' not in config:
+        if 'n_tasks' not in config:
             n_nodes_max = int(os.environ.get("SLURM_NNODES"))
-            n_nodes = [2**x for x in range(11) if 2**x < n_nodes_max]
+            n_tasks = [2**x for x in range(22) if 2**x < n_nodes_max*2]
         else:
-            n_nodes = config['n_nodes']
+            n_tasks = config['n_ntasks']
 
-        for n in n_nodes:
-            logger.info(f"Running {config['testcase']} benchmark step with {n} nodes")
-            self.nodes_rundir = f"{self.rundir}/{n:02d}nodes"
-            os.makedirs(self.nodes_rundir)
-            self.start_nest(n)
-            getattr(self, f"run_{config['testcase']}")(n)
+        for n in n_tasks:
+            logger.info(f"Running {config['testcase']} benchmark step with {ntasks} NEST tasks")
+            self.ntasks_rundir = f"{self.rundir}/{ntasks:02d}_ntasks"
+            os.makedirs(self.ntasks_rundir)
+            self.start_nest(ntasks)
+            getattr(self, f"run_{config['testcase']}")(ntasks)
             self.stop_nest()
 
         logger.info("Benchmarks done!")
@@ -167,7 +168,7 @@ class BenchmarkRunner:
         """
 
         if status['state'] == 'stopped' or status['state'] == 'halted':
-            with open(f'{self.nodes_rundir}/total_time.dat', "w+") as logfile:
+            with open(f'{self.ntasks_rundir}/total_time.dat', "w+") as logfile:
                 logfile.write(str(time.time() - self.tic))
             self.running = False
 
@@ -178,7 +179,7 @@ class BenchmarkRunner:
         """
 
 
-        file_path = os.path.join(self.nodes_rundir,"cle_time_profile_0.csv")
+        file_path = os.path.join(self.ntasks_rundir,"cle_time_profile_0.csv")
         logger.info("Saving CLE profiler data from experiment: {} to {}".format(experiment_id, file_path))
         cle_step_data = vc.get_last_run_file(experiment_id, 'profiler', 'cle_time_profile_0.csv')
         with open(file_path, "wb") as f_data:
@@ -186,7 +187,7 @@ class BenchmarkRunner:
 
         # vc.print_experiment_run_files('experiment_name_id', 'profiler', 0)
 
-        # TODO: Store profiler data in f'{self.nodes_rundir}' and delete the experiment
+        # TODO: Store profiler data in f'{self.ntasks_rundir}' and delete the experiment
         # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
         # vc.delete_cloned_experiment(self.experiment)
         # self.experiment = None
@@ -196,7 +197,7 @@ class BenchmarkRunner:
         # vc.print_last_run_files('experiment_name_id', 'profiler')
         # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
 
-    def run_hpcbench_baseline(self, nprocs):
+    def run_hpcbench_baseline(self, ntasks):
         """
         Baseline benchmark using only NEST Server and no NRP.
 
@@ -207,10 +208,11 @@ class BenchmarkRunner:
 
         We consider this the baseline benchmark to compare all other runs of
         the HPC benchmarks to.
+        :param ntasks: NEST tasks to run the benchmark on
         """
 
         simtime = 20.0
-        logger.info(f'Running hpcbench_base with {nprocs} processes, 2 per node')
+        logger.info(f'Running hpcbench_base with {ntasks} processes, 2 per node')
 
         url = f"http://{self.nodelist[1]}:5000"
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
@@ -219,7 +221,7 @@ class BenchmarkRunner:
         tic = time.time()
         data = {'source': open('Experiments/HPC_benchmark/0_hpcbench_baseline.py').read()}
         requests.post(f'{url}/exec', json=data, headers=headers)
-        with open(f'{self.nodes_rundir}/exec_time.dat', "w") as logfile:
+        with open(f'{self.ntasks_rundir}/exec_time.dat', "w") as logfile:
             logfile.write(str(time.time() - tic))
 
         sim_times = []
@@ -229,44 +231,47 @@ class BenchmarkRunner:
             requests.post(f'{url}/api/Simulate', json=data, headers=headers)
             sim_times.append(time.time() - tic)
 
-        with open(f'{self.nodes_rundir}/step_time.dat', "w") as logfile:
+        with open(f'{self.ntasks_rundir}/step_time.dat', "w") as logfile:
             d
             logfile.write(f'brainstep\n')
             for t in sim_times:
                 logfile.write(f"{t}\n")
 
-        with open(f'{self.nodes_rundir}/total_time.dat', "w") as logfile:
+        with open(f'{self.ntasks_rundir}/total_time.dat', "w") as logfile:
             logfile.write(str(sum(sim_times)))
 
         logger.info(f'  Done after t={sum(sim_times)}')
 
-    def run_hpcbench_notf(self, nprocs):
+    def run_hpcbench_notf(self, ntasks):
         """
         HPC benchmark via NRP without transfer functions.
+        :param ntasks: NEST tasks to run the benchmark on
         """
 
-        logger.info("Running NRP - HPC benchmark without TF")
-        experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/1_nrpexperiment_scale20-threads72-nodes16-nvp1152-withoutTF")
+        logger.info("Running NRP - HPC benchmark without TF with {ntasks} processes, 2 per node")
+        experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/1_nrpexperiment_scale20-nvp1152-withoutTF")
         self.run_nrp_benchmark(experiment_path)
 
-    def run_hpcbench_readspikes(self, nprocs):
+    def run_hpcbench_readspikes(self, ntasks):
         """
         HPC benchmark via NRP with simple transfer function.
 
         The transfer function records and reads spikes from a certain
         subpopulation of the model. To have some load on the NRP side, we use the
         husky robot as body model.
+        :param ntasks: NEST tasks to run the benchmark on
         """
 
-        logger.info("Running NRP - HPC benchmark with TF")
-        experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/2_nrpexperiment_scale20-threads72-nodes16-nvp1152-withTF")
+        logger.info("Running NRP - HPC benchmark with TF with {ntasks} processes, 2 per node")
+        experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/2_nrpexperiment_scale20-nvp1152-withTF")
         self.run_nrp_benchmark(experiment_path)
 
-    def run_robobrain(self, nprocs):
+    def run_robobrain(self, ntasks):
         """
         RoboBrain benchmark experiment in the NRP consising of a musculoskeletal
         rodent model with 8 muscles and a brain model with 1Million+ Neurons.
         """
+        logger.info("Running NRP - RoboBrain benchmark with TF with {ntasks} processes, 2 per node")
         experiment_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse")
         self.run_nrp_benchmark(experiment_path)
 
