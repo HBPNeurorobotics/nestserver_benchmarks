@@ -78,26 +78,26 @@ class BenchmarkProcessor:
             diagram_rep_folder = os.path.join(diagram_folder, repetition_folder)
             os.makedirs(diagram_rep_folder, exist_ok=True)
 
-            for n in config["n_nodes"]:
-                self.data[key]["data"][repetition_folder][f"{n:02d}nodes"] = {}
-                run_node_path = f"{repetition_path}/{n:02d}nodes"
+            for n in config["n_tasks"]:
+                self.data[key]["data"][repetition_folder][f"{n:02d}_ntasks"] = {}
+                run_ntasks_path = f"{repetition_path}/{n:02d}_ntasks"
 
                 # read data into data dictionary
-                self.read_run_nodes_data(run_node_path, config,
-                        self.data[key]["data"][repetition_folder][f"{n:02d}nodes"])
+                self.read_run_ntasks_data(run_ntasks_path, config,
+                        self.data[key]["data"][repetition_folder][f"{n:02d}_ntasks"])
 
-                # plot cle time profile for every individual node run
-                diagram_node_run_folder = os.path.join(diagram_rep_folder, f"{n:02d}nodes")
-                os.makedirs(diagram_node_run_folder, exist_ok=True)
+                # plot cle time profile for every individual ntasks run
+                diagram_ntasks_run_folder = os.path.join(diagram_rep_folder, f"{n:02d}_ntasks")
+                os.makedirs(diagram_ntasks_run_folder, exist_ok=True)
 
-                #self.plot_run_node_cle_time_profiler(self.data[key]["data"][repetition_folder][f"{n:02d}nodes"],
-                #        diagram_node_run_folder)
+                #self.plot_run_ntasks_cle_time_profiler(self.data[key]["data"][repetition_folder][f"{n:02d}_ntasks"],
+                #        diagram_ntasks_run_folder)
 
-            # plot cle time profile for all nodes in run
+            # plot cle time profile for all ntasks in run
             #self.plot_run_cle_time_profiler(self.data[key]["data"][repetition_folder],
             #        diagram_rep_folder)
 
-            # plot total time for all nodes in run
+            # plot total time for all ntasks in run
             self.plot_total_runtime(config, self.data[key]["data"][repetition_folder],
                                     diagram_rep_folder)
 
@@ -115,36 +115,36 @@ class BenchmarkProcessor:
         with open(fname, 'r') as config_file:
             return yaml.safe_load(config_file)
 
-    def read_run_nodes_data(self, run_node_path, config, data_run_node):
+    def read_run_ntasks_data(self, run_ntasks_path, config, data_run_ntasks):
         """
-        Reads all data from files of a single run with fixed node number
-        :param repetition_path: Folder path to repetition data
+        Reads all data from files of a single run with fixed NEST task number
+        :param run_ntasks_path: Folder path to ntasks data
         :param config: Configuration parameter for all runs in this data folder
-        :param data_run_node: data dictionary to be filled with collected data
+        :param data_run_ntasks: data dictionary to be filled with collected data
         """
 
         # read metadata
         if config['testcase'] in ['hpcbench_notf', 'hpcbench_readspikes', 'robobrain']:
-            metadata = self.read_yaml_file(f"{run_node_path}/metadata.yaml")
-            data_run_node["metadata"] = metadata
+            metadata = self.read_yaml_file(f"{run_ntasks_path}/metadata.yaml")
+            data_run_ntasks["metadata"] = metadata
 
         # read total time
-        with open(f"{run_node_path}/total_time.dat", "r") as datafile:
-            data_run_node["runtime"] = float(datafile.read())
+        with open(f"{run_ntasks_path}/total_time.dat", "r") as datafile:
+            data_run_ntasks["runtime"] = float(datafile.read())
 
         # read cle time profile
-        df = pd.read_csv(f"{run_node_path}/cle_time_profile_0.csv")
-        data_run_node["cle_time_profile"] = df
+        df = pd.read_csv(f"{run_ntasks_path}/cle_time_profile_0.csv")
+        data_run_ntasks["cle_time_profile"] = df
 
 
 
-    def plot_run_node_cle_time_profiler(self, data_run_node, folder):
+    def plot_run_ntasks_cle_time_profiler(self, data_run_ntasks, folder):
         """
-        Plots the cle time profile for individual node runs
-        :param data_run_node: data for this run and node number
+        Plots the cle time profile for individual ntasks runs
+        :param data_run_ntasks: data for this run and ntasks number
         :param folder: folder path to save figure in
         """
-        cle_time_profile = data_run_node['cle_time_profile']
+        cle_time_profile = data_run_ntasks['cle_time_profile']
 
         fig_all_one, ax_all_one = plt.subplots(figsize=figsize)
         fig_all_multi, ax_all_multi = plt.subplots(4, figsize=figsize)
@@ -199,7 +199,7 @@ class BenchmarkProcessor:
 
     def plot_run_cle_time_profiler(self, data_run, folder):
         """
-        Plots the cle time profile for all node runs
+        Plots the cle time profile for all ntasks runs
         :param data_run: data for this run
         :param folder: folder path to save figure in
         """
@@ -210,8 +210,8 @@ class BenchmarkProcessor:
             fig_column_multi, ax_column_multi = plt.subplots(len(data_run), figsize=figsize)
 
 
-            for i, node in enumerate(data_run):
-                cle_time_profile = data_run[node]['cle_time_profile']
+            for i, ntasks in enumerate(data_run):
+                cle_time_profile = data_run[ntasks]['cle_time_profile']
 
                 title = f"CLE time profile"
                 subtitle = f"{column}"
@@ -228,11 +228,11 @@ class BenchmarkProcessor:
                 fig_column_one.savefig(f'{folder}/cle_time_profile-{column}-one.jpg')
 
 
-                ax_column_multi[i].plot(cle_time_profile.index, cle_time_profile[column], label=node)
+                ax_column_multi[i].plot(cle_time_profile.index, cle_time_profile[column], label=ntasks)
                 ax_column_multi[i].set_xlabel('cle step', color='#666')
                 ax_column_multi[i].set_ylabel('time (s)', color='#666')
                 ax_column_multi[i].grid(True, axis='y')
-                ax_column_multi[i].set_title(node)
+                ax_column_multi[i].set_title(ntasks)
 
 
             title = f"CLE time profile"
@@ -248,28 +248,28 @@ class BenchmarkProcessor:
 
 
     def get_linear_expectation(self, config, max):
-        factors = [n/config["n_nodes"][0] for n in config["n_nodes"]]
+        factors = [n/config["n_tasks"][0] for n in config["n_ntasks"]]
         linear = [max/f for f in factors]
         return linear
 
 
     def plot_total_runtime(self, config, data_run, folder):
         """
-        Plots the total runtime for all nodes in a run
+        Plots the total runtime for all ntasks in a run
         :param config: Configuration for this run
         :param data_run: data for this run
         :param folder: folder to save the figure in
         """
         fig_all, ax_all = plt.subplots(figsize=figsize)
 
-        runtimes = [data_run[node]['runtime'] for node in data_run]
+        runtimes = [data_run[ntasks]['runtime'] for ntasks in data_run]
         linear = self.get_linear_expectation(config, float(list(data_run.values())[0]['runtime']))
 
         xticks = set()
-        x = config["n_nodes"]
+        x = config["n_tasks"]
         ax_all.plot(x, runtimes, lw=2, c=f"C{i}", label='runtime')
         ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25)
-        for n in config["n_nodes"]:
+        for n in config["n_tasks"]:
             xticks.add(n)
             # TODO: get number of neurons and connections from metadata and use in
             # subtitle
@@ -278,7 +278,7 @@ class BenchmarkProcessor:
         fig_all.suptitle(f'{title}')
         fig_all.canvas.manager.set_window_title(f'{title}')
         #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of compute nodes', color='#666')
+        ax_all.set_xlabel('number of NEST processes', color='#666')
         ax_all.set_xticks(list(xticks))
         ax_all.set_ylabel('total run time (s)', color='#666')
         ax_all.grid(True, axis='y')
@@ -287,7 +287,7 @@ class BenchmarkProcessor:
 
     def plot_metadata(self, config, data_run, folder):
         """
-        Plots the total runtime for all nodes in a run
+        Plots the total runtime for all ntasks in a run
         :param config: Configuration for this run
         :param data_run: data for this run
         :param folder: folder to save the figure in
@@ -297,14 +297,14 @@ class BenchmarkProcessor:
 
             fig_all, ax_all = plt.subplots(figsize=figsize)
 
-            values = [data_run[node]['metadata'][type] for node in data_run]
+            values = [data_run[ntasks]['metadata'][type] for ntasks in data_run]
             linear = self.get_linear_expectation(config, float(list(data_run.values())[0]['metadata'][type]))
 
             xticks = set()
-            x = config["n_nodes"]
+            x = config["n_tasks"]
             ax_all.plot(x, values, lw=2, c=f"C{i}", label='runtime')
             ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25)
-            for n in config["n_nodes"]:
+            for n in config["n_tasks"]:
                 xticks.add(n)
                 # TODO: get number of neurons and connections from metadata and use in
                 # subtitle
@@ -313,7 +313,7 @@ class BenchmarkProcessor:
             fig_all.suptitle(f'{title}')
             fig_all.canvas.manager.set_window_title(f'{title}')
             #fig_all.setp(plt.legend().get_texts(), color='#666')
-            ax_all.set_xlabel('number of compute nodes', color='#666')
+            ax_all.set_xlabel('number of NEST tasks', color='#666')
             ax_all.set_xticks(list(xticks))
             ax_all.set_ylabel('total run time (s)', color='#666')
             ax_all.grid(True, axis='y')
