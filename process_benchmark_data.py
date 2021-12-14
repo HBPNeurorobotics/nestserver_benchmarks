@@ -90,6 +90,7 @@ class BenchmarkProcessor:
                 diagram_ntasks_run_folder = os.path.join(diagram_rep_folder, f"{n:02d}_ntasks")
                 os.makedirs(diagram_ntasks_run_folder, exist_ok=True)
 
+<<<<<<< Updated upstream
                 #self.plot_run_ntasks_cle_time_profiler(self.data[key]["data"][repetition_folder][f"{n:02d}_ntasks"],
                 #        diagram_ntasks_run_folder)
 
@@ -104,7 +105,6 @@ class BenchmarkProcessor:
             self.plot_metadata(config, self.data[key]["data"][repetition_folder],
                                     diagram_rep_folder)
 
-            #self.get_linear_expectation(self.data[key]["data"][repetition_folder])
 
         pprint(self.data)
 
@@ -164,6 +164,7 @@ class BenchmarkProcessor:
             fig_single.tight_layout(pad=0.25, w_pad=0.25, h_pad=0.25)
 
             ax_single.plot(cle_time_profile.index, cle_time_profile[column], label=column)
+            ax_single.legend(loc="upper right")
             fig_single.savefig(f'{folder}/cle_time_profile-{column}.jpg')
 
             ax_all_one.plot(cle_time_profile.index, cle_time_profile[column], label=column)
@@ -173,6 +174,7 @@ class BenchmarkProcessor:
             ax_all_multi[i].set_xlabel('cle step', color='#666')
             ax_all_multi[i].set_ylabel('time (s)', color='#666')
             ax_all_multi[i].grid(True, axis='y')
+            ax_all_multi[i].legend(loc="upper right")
 
 
         title = f"CLE time profile one"
@@ -183,6 +185,7 @@ class BenchmarkProcessor:
         ax_all_one.set_xlabel('cle step', color='#666')
         ax_all_one.set_ylabel('time (s)', color='#666')
         ax_all_one.grid(True, axis='y')
+        ax_all_one.legend(loc="upper right")
         fig_all_one.tight_layout(pad=0.25, w_pad=0.25, h_pad=0.25)
         fig_all_one.savefig(f'{folder}/cle_time_profile-all-one.jpg')
 
@@ -225,6 +228,7 @@ class BenchmarkProcessor:
                 fig_column_one.tight_layout(pad=0.25, w_pad=0.25, h_pad=0.25)
 
                 ax_column_one.plot(cle_time_profile.index, cle_time_profile[column], label=column)
+                ax_column_one.legend(loc="upper right")
                 fig_column_one.savefig(f'{folder}/cle_time_profile-{column}-one.jpg')
 
 
@@ -233,7 +237,7 @@ class BenchmarkProcessor:
                 ax_column_multi[i].set_ylabel('time (s)', color='#666')
                 ax_column_multi[i].grid(True, axis='y')
                 ax_column_multi[i].set_title(ntasks)
-
+                ax_column_multi[i].legend(loc="upper right")
 
             title = f"CLE time profile"
             fig_column_multi.suptitle(f'{title}')
@@ -268,7 +272,8 @@ class BenchmarkProcessor:
         xticks = set()
         x = config["n_tasks"]
         ax_all.plot(x, runtimes, lw=2, c=f"C{i}", label='runtime')
-        ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25)
+        ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
+        ax_all.legend(loc="upper right")
         for n in config["n_tasks"]:
             xticks.add(n)
             # TODO: get number of neurons and connections from metadata and use in
@@ -280,10 +285,12 @@ class BenchmarkProcessor:
         #fig_all.setp(plt.legend().get_texts(), color='#666')
         ax_all.set_xlabel('number of NEST processes', color='#666')
         ax_all.set_xticks(list(xticks))
-        ax_all.set_ylabel('total run time (s)', color='#666')
+        ax_all.set_ylabel('time (s)', color='#666')
         ax_all.grid(True, axis='y')
         fig_all.tight_layout(pad=0.25, w_pad=0.25, h_pad=0.25)
         fig_all.savefig(f'{folder}/total_runtime.jpg')
+
+        plt.close('all')
 
     def plot_metadata(self, config, data_run, folder):
         """
@@ -305,6 +312,12 @@ class BenchmarkProcessor:
             ax_all.plot(x, values, lw=2, c=f"C{i}", label='runtime')
             ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25)
             for n in config["n_tasks"]:
+            x = config["n_tasks"]
+            ax_all.plot(x, values, lw=2, c=f"C{i}", label=type)
+            ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
+            ax_all.legend(loc="upper right")
+
+            for n in config["n_tasks"]:
                 xticks.add(n)
                 # TODO: get number of neurons and connections from metadata and use in
                 # subtitle
@@ -315,20 +328,19 @@ class BenchmarkProcessor:
             #fig_all.setp(plt.legend().get_texts(), color='#666')
             ax_all.set_xlabel('number of NEST tasks', color='#666')
             ax_all.set_xticks(list(xticks))
-            ax_all.set_ylabel('total run time (s)', color='#666')
+            ax_all.set_ylabel('time (s)', color='#666')
             ax_all.grid(True, axis='y')
             fig_all.tight_layout(pad=0.25, w_pad=0.25, h_pad=0.25)
             fig_all.savefig(f'{folder}/{type}.jpg')
 
+        plt.close('all')
 
-    def print_network_creation_time(self):
+
+    def plot_realtime_factor(self):
         pass
 
-    def plot_memory(self):
+    def plot_batch(self):
         pass
-
-
-
 
 
 
