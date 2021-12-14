@@ -1,0 +1,11 @@
+nest_local_num_threads: 36
+nest_num_connections: 158211625
+nest_num_nodes: 226002
+nest_num_processes: 16
+nest_time_connect: 4.244979
+nest_time_create: 0.266587
+nest_time_last_simulate: 0.263615
+nest_time_simulated: 1000.0
+sacct_averss: 6910367872.0
+sacct_elapsed: 701.0
+sacct_maxrss: 6811404.0
