@@ -83,7 +83,7 @@ def braintobody (t, counter, flag,
         else:
             flag.value = True
             
-    if counter.value > 149:        
+    if counter.value > 25:        
         if flag.value:
             clientLogger.advertise('''--> START Motor Cortex Spike Injections''', duration = 10000)
             M1_L1_ENGC_in.rate = 50000.0 
