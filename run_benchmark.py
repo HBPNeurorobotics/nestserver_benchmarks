@@ -10,6 +10,7 @@ import signal
 import time
 import sys
 import os
+import math
 
 import helpers
 import ast
@@ -46,12 +47,12 @@ class BenchmarkRunner:
         logger.info("  NEST tasks  : %s", ntasks)
 
         with open(self.working_dir + "/misc/nest.sh.tpl", 'r') as infile:
-            with open(f'{self.tasks_rundir}/nest.sh', 'w') as outfile:
+            with open(f'{self.ntasks_rundir}/nest.sh', 'w') as outfile:
                 outfile.write(f"{infile.read()}".format(**values))
 
-        subprocess.Popen(["bash", f"{self.tasks_rundir}/nest.sh"])
+        subprocess.Popen(["bash", f"{self.ntasks_rundir}/nest.sh"])
         self.jobstep += 1
-        time.sleep(10)  # Give the NEST container some time to start
+        time.sleep(60)  # Give the NEST container some time to start
 
     def stop_nest(self):
         """
@@ -65,7 +66,7 @@ class BenchmarkRunner:
         time.sleep(10)
         subprocess.call(["scancel", job_step_id])
         logger.info("  Called scancel, sleeping 30 seconds")
-        time.sleep(30)  # Wait for the job to die
+        time.sleep(600)  # Wait for the job to die
         with open(f'{self.ntasks_rundir}/metadata.yaml', 'w') as outfile:
             logger.info("  Obtaining metadata from sacct")
             run_info = self.get_sacct_info(job_step_id)
@@ -86,8 +87,9 @@ class BenchmarkRunner:
         elapsed = datetime.strptime(output[0], "%H:%M:%S") - datetime(1900, 1, 1)
         return {
             "sacct_elapsed": elapsed.total_seconds(),
-            "sacct_averss": float(output[1].replace("K", "").replace("M", "")),
-            "sacct_maxrss": float(output[2].replace("K", "").replace("M", "")),
+            "sacct_averss": float(output[1].replace("K", "").replace("M", "000")),
+            "sacct_maxrss": float(output[2].replace("K", "").replace("M", "000")),
+            "saact_comsumedenergy": float(output[3].replace("K", "").replace("M", "000"))
         }
 
     def get_nest_info(self):
@@ -118,14 +120,14 @@ class BenchmarkRunner:
             n_nodes_max = int(os.environ.get("SLURM_NNODES"))
             n_tasks = [2**x for x in range(22) if 2**x < n_nodes_max*2]
         else:
-            n_tasks = config['n_ntasks']
+            n_tasks = config['n_tasks']
 
         for n in n_tasks:
             logger.info(f"Running {config['testcase']} benchmark step with {n} NEST tasks")
             self.ntasks_rundir = f"{self.rundir}/{n:02d}_ntasks"
             os.makedirs(self.ntasks_rundir)
-            self.start_nest(ntasks)
-            getattr(self, f"run_{config['testcase']}")(ntasks)
+            self.start_nest(n)
+            getattr(self, f"run_{config['testcase']}")(n)
             self.stop_nest()
 
         logger.info("Benchmarks done!")
@@ -136,6 +138,12 @@ class BenchmarkRunner:
         :param experiment_path: Experiment path of the experiment that shall be 
                                 imported and run.
         """
+
+        vc = VirtualCoach(
+            f"http://{config['nrp_frontend_ip']}",
+            oidc_username=secrets['hbp_username'],
+            oidc_password=secrets['hbp_password'],
+        )
 
         # Import Experiment
         self.running = True
@@ -155,6 +163,7 @@ class BenchmarkRunner:
             time.sleep(0.5)
 
         time.sleep(20)
+
         self.retrieve_nrp_profiler_data(self.experiment)
 
         # Delete Experiment after run
@@ -178,6 +187,11 @@ class BenchmarkRunner:
         :param experiment_id: Experiment ID that data shall be retrieved from.
         """
 
+        vc = VirtualCoach(
+            f"http://{config['nrp_frontend_ip']}",
+            oidc_username=secrets['hbp_username'],
+            oidc_password=secrets['hbp_password'],
+        )
 
         file_path = os.path.join(self.ntasks_rundir,"cle_time_profile_0.csv")
         logger.info("Saving CLE profiler data from experiment: {} to {}".format(experiment_id, file_path))
@@ -248,7 +262,7 @@ class BenchmarkRunner:
         :param ntasks: NEST tasks to run the benchmark on
         """
 
-        logger.info("Running NRP - HPC benchmark without TF with {ntasks} processes, 2 per node")
+        logger.info(f"Running NRP - HPC benchmark without TF with {ntasks} processes, 2 per node")
         experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/1_nrpexperiment_scale20-nvp1152-withoutTF")
         self.run_nrp_benchmark(experiment_path)
 
@@ -262,7 +276,7 @@ class BenchmarkRunner:
         :param ntasks: NEST tasks to run the benchmark on
         """
 
-        logger.info("Running NRP - HPC benchmark with TF with {ntasks} processes, 2 per node")
+        logger.info(f"Running NRP - HPC benchmark with TF with {ntasks} processes, 2 per node")
         experiment_path = os.path.join(self.working_dir, "Experiments/HPC_benchmark/2_nrpexperiment_scale20-nvp1152-withTF")
         self.run_nrp_benchmark(experiment_path)
 
@@ -271,7 +285,7 @@ class BenchmarkRunner:
         RoboBrain benchmark experiment in the NRP consising of a musculoskeletal
         rodent model with 8 muscles and a brain model with 1Million+ Neurons.
         """
-        logger.info("Running NRP - RoboBrain benchmark with TF with {ntasks} processes, 2 per node")
+        logger.info(f"Running NRP - RoboBrain benchmark with TF with {ntasks} processes, 2 per node")
         experiment_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse")
         self.run_nrp_benchmark(experiment_path)
 
@@ -290,13 +304,6 @@ if __name__ == '__main__':
     config = helpers.get_config(sys.argv[1])
     rundir = sys.argv[2]
     secrets = helpers.get_secrets()
-
-    if config["testcase"] != "hpcbench_baseline":
-        vc = VirtualCoach(
-            f"http://{config['nrp_frontend_ip']}",
-            oidc_username=secrets['hbp_username'],
-            oidc_password=secrets['hbp_password'],
-        )
 
     logger.info('BF in here')
     runner = BenchmarkRunner(rundir)
