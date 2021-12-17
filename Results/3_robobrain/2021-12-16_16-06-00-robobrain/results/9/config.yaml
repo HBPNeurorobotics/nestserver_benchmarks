@@ -1,0 +1,8 @@
+nrp_frontend_ip: "148.187.148.14"
+tunnel_ip: "148.187.148.198"
+tunnel_port: "8080"
+tunnel_keyfile: "$HOME/bf_data/key-tunneluser"
+n_tasks: [1, 2, 4, 8, 16, 32, 64]
+n_cycles_nest: 100
+testcase: "robobrain"
+repetitions: 11

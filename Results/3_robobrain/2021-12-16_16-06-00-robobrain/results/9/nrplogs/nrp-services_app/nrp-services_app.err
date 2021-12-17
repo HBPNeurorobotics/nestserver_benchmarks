@@ -1,0 +1,234 @@
+[uWSGI] getting INI configuration from /home_daint/bbpnrsoa/.local/etc/nginx/uwsgi-nrp.ini
+*** Starting uWSGI 2.0.18-debian (64bit) on [Fri Dec 17 05:10:36 2021] ***
+compiled with version: 10.0.1 20200405 (experimental) [master revision 0be9efad938:fcb98e4978a:705510a708d3642c9c962beb663c476167e4e8a4] on 11 April 2020 11:15:55
+os: Linux-4.12.14-197.7_5.0.100-cray_ari_c #1 SMP Fri Jul 23 15:32:31 UTC 2021 (c47993f)
+nodename: nid01274
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 72
+current working directory: /
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_backend/
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 514025
+your memory page size is 4096 bytes
+detected max file descriptor number: 262140
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/nrp-services.sock fd 3
+Python version: 3.8.10 (default, Sep 28 2021, 16:10:42)  [GCC 9.3.0]
+PEP 405 virtualenv detected: /home_daint/bbpnrsoa/.opt/platform_venv
+Set PythonHome to /home_daint/bbpnrsoa/.opt/platform_venv
+Python main interpreter initialized at 0x55555567ee90
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 146112 bytes (142 KB) for 8 cores
+*** Operational MODE: threaded ***
+2021-12-17 05:10:38,075 [MainThread  ] [hbp_nrp_back] [WARNING]  Application started with uWSGI or any other framework. logging to console by default !
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x55555567ee90 pid: 307 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 307, cores: 8)
+2021-12-17 05:12:18,189 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 05:12:21,856 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 05:12:21,856 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 05:14:03,366 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/reset
+2021-12-17 05:14:03,371 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/extend_timeout
+2021-12-17 05:14:03,374 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/get_transfer_functions
+2021-12-17 05:14:03,378 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/add_transfer_function
+2021-12-17 05:14:03,382 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/activate_transfer_function
+2021-12-17 05:14:03,385 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/edit_transfer_function
+2021-12-17 05:14:03,389 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/convert_transfer_function_raw_to_structured
+2021-12-17 05:14:03,393 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/delete_transfer_function
+2021-12-17 05:14:03,396 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/get_brain
+2021-12-17 05:14:03,400 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/set_brain
+2021-12-17 05:14:03,404 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/get_populations
+2021-12-17 05:14:03,407 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/set_populations
+2021-12-17 05:14:03,411 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/get_CSV_recorders_files
+2021-12-17 05:14:03,415 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/simulation_recorder
+2021-12-17 05:14:03,419 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/get_robots
+2021-12-17 05:14:03,422 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/add_robot
+2021-12-17 05:14:03,426 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/del_robot
+2021-12-17 05:14:03,430 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/set_exc_robot_pose
+2021-12-17 05:14:03,433 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/0/prepare_model
+2021-12-17 05:14:03,437 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 05:14:04,497 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 05:14:59,059 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 05:15:38,096 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:20:38,192 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:25:38,248 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+Fri Dec 17 05:25:40 2021 - SIGPIPE: writing to a closed pipe/socket/fd (probably the client disconnected) !!!
+Fri Dec 17 05:25:40 2021 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 306] during GET /health/errors (127.0.0.1)
+OSError: write error
+Fri Dec 17 05:25:40 2021 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 306] during GET /simulation (127.0.0.1)
+OSError: write error
+Fri Dec 17 05:25:40 2021 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 306] during GET /simulation (127.0.0.1)
+OSError: write error
+Fri Dec 17 05:25:40 2021 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 306] during GET /health/errors (127.0.0.1)
+OSError: write error
+2021-12-17 05:27:08,099 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 05:27:11,719 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 05:27:11,720 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 05:28:07,165 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/reset
+2021-12-17 05:28:07,169 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/extend_timeout
+2021-12-17 05:28:07,173 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/get_transfer_functions
+2021-12-17 05:28:07,177 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/add_transfer_function
+2021-12-17 05:28:07,180 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/activate_transfer_function
+2021-12-17 05:28:07,184 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/edit_transfer_function
+2021-12-17 05:28:07,188 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/convert_transfer_function_raw_to_structured
+2021-12-17 05:28:07,191 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/delete_transfer_function
+2021-12-17 05:28:07,195 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/get_brain
+2021-12-17 05:28:07,198 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/set_brain
+2021-12-17 05:28:07,202 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/get_populations
+2021-12-17 05:28:07,206 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/set_populations
+2021-12-17 05:28:07,210 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/get_CSV_recorders_files
+2021-12-17 05:28:07,214 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/simulation_recorder
+2021-12-17 05:28:07,217 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/get_robots
+2021-12-17 05:28:07,221 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/add_robot
+2021-12-17 05:28:07,224 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/del_robot
+2021-12-17 05:28:07,228 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/set_exc_robot_pose
+2021-12-17 05:28:07,232 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/1/prepare_model
+2021-12-17 05:28:07,236 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 05:28:08,285 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 05:28:58,407 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 05:30:38,348 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:35:38,449 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:40:38,549 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:41:08,077 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 05:41:11,759 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 05:41:11,759 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 05:41:45,080 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/reset
+2021-12-17 05:41:45,083 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/extend_timeout
+2021-12-17 05:41:45,087 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/get_transfer_functions
+2021-12-17 05:41:45,091 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/add_transfer_function
+2021-12-17 05:41:45,095 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/activate_transfer_function
+2021-12-17 05:41:45,099 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/edit_transfer_function
+2021-12-17 05:41:45,102 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/convert_transfer_function_raw_to_structured
+2021-12-17 05:41:45,106 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/delete_transfer_function
+2021-12-17 05:41:45,110 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/get_brain
+2021-12-17 05:41:45,114 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/set_brain
+2021-12-17 05:41:45,118 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/get_populations
+2021-12-17 05:41:45,122 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/set_populations
+2021-12-17 05:41:45,126 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/get_CSV_recorders_files
+2021-12-17 05:41:45,130 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/simulation_recorder
+2021-12-17 05:41:45,133 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/get_robots
+2021-12-17 05:41:45,137 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/add_robot
+2021-12-17 05:41:45,141 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/del_robot
+2021-12-17 05:41:45,144 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/set_exc_robot_pose
+2021-12-17 05:41:45,148 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/2/prepare_model
+2021-12-17 05:41:45,152 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 05:41:46,209 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 05:42:27,402 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 05:45:38,650 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:50:38,750 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 05:54:36,954 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 05:54:40,496 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 05:54:40,496 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 05:55:02,408 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/reset
+2021-12-17 05:55:02,411 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/extend_timeout
+2021-12-17 05:55:02,415 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/get_transfer_functions
+2021-12-17 05:55:02,419 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/add_transfer_function
+2021-12-17 05:55:02,422 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/activate_transfer_function
+2021-12-17 05:55:02,426 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/edit_transfer_function
+2021-12-17 05:55:02,429 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/convert_transfer_function_raw_to_structured
+2021-12-17 05:55:02,433 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/delete_transfer_function
+2021-12-17 05:55:02,437 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/get_brain
+2021-12-17 05:55:02,440 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/set_brain
+2021-12-17 05:55:02,444 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/get_populations
+2021-12-17 05:55:02,448 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/set_populations
+2021-12-17 05:55:02,452 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/get_CSV_recorders_files
+2021-12-17 05:55:02,455 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/simulation_recorder
+2021-12-17 05:55:02,459 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/get_robots
+2021-12-17 05:55:02,462 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/add_robot
+2021-12-17 05:55:02,466 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/del_robot
+2021-12-17 05:55:02,470 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/set_exc_robot_pose
+2021-12-17 05:55:02,473 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/3/prepare_model
+2021-12-17 05:55:02,477 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 05:55:03,540 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 05:55:35,588 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 05:55:38,792 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:00:38,892 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:05:38,992 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:07:45,997 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 06:07:49,528 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 06:07:49,528 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 06:08:05,957 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/reset
+2021-12-17 06:08:05,961 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/extend_timeout
+2021-12-17 06:08:05,966 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/get_transfer_functions
+2021-12-17 06:08:05,970 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/add_transfer_function
+2021-12-17 06:08:05,974 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/activate_transfer_function
+2021-12-17 06:08:05,978 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/edit_transfer_function
+2021-12-17 06:08:05,981 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/convert_transfer_function_raw_to_structured
+2021-12-17 06:08:05,985 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/delete_transfer_function
+2021-12-17 06:08:05,989 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/get_brain
+2021-12-17 06:08:05,993 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/set_brain
+2021-12-17 06:08:05,997 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/get_populations
+2021-12-17 06:08:06,000 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/set_populations
+2021-12-17 06:08:06,004 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/get_CSV_recorders_files
+2021-12-17 06:08:06,008 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/simulation_recorder
+2021-12-17 06:08:06,012 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/get_robots
+2021-12-17 06:08:06,016 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/add_robot
+2021-12-17 06:08:06,020 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/del_robot
+2021-12-17 06:08:06,024 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/set_exc_robot_pose
+2021-12-17 06:08:06,027 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/4/prepare_model
+2021-12-17 06:08:06,031 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 06:08:07,069 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 06:08:34,588 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 06:10:39,046 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:15:39,080 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:20:39,180 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:20:43,795 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 06:20:47,449 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 06:20:47,449 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 06:21:01,904 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/reset
+2021-12-17 06:21:01,909 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/extend_timeout
+2021-12-17 06:21:01,913 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/get_transfer_functions
+2021-12-17 06:21:01,916 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/add_transfer_function
+2021-12-17 06:21:01,920 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/activate_transfer_function
+2021-12-17 06:21:01,923 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/edit_transfer_function
+2021-12-17 06:21:01,927 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/convert_transfer_function_raw_to_structured
+2021-12-17 06:21:01,931 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/delete_transfer_function
+2021-12-17 06:21:01,934 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/get_brain
+2021-12-17 06:21:01,938 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/set_brain
+2021-12-17 06:21:01,941 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/get_populations
+2021-12-17 06:21:01,945 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/set_populations
+2021-12-17 06:21:01,948 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/get_CSV_recorders_files
+2021-12-17 06:21:01,952 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/simulation_recorder
+2021-12-17 06:21:01,956 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/get_robots
+2021-12-17 06:21:01,959 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/add_robot
+2021-12-17 06:21:01,963 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/del_robot
+2021-12-17 06:21:01,967 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/set_exc_robot_pose
+2021-12-17 06:21:01,970 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/5/prepare_model
+2021-12-17 06:21:01,974 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 06:21:03,044 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 06:21:27,846 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 06:25:39,225 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:30:39,325 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:33:37,053 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Could not generate textures, error occurred : Failed to communicate with the storage server, status code 500
+2021-12-17 06:33:40,596 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Requesting simulation resources
+2021-12-17 06:33:40,596 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation timeout initialized
+2021-12-17 06:33:55,888 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/reset
+2021-12-17 06:33:55,892 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/extend_timeout
+2021-12-17 06:33:55,895 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/get_transfer_functions
+2021-12-17 06:33:55,899 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/add_transfer_function
+2021-12-17 06:33:55,903 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/activate_transfer_function
+2021-12-17 06:33:55,907 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/edit_transfer_function
+2021-12-17 06:33:55,911 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/convert_transfer_function_raw_to_structured
+2021-12-17 06:33:55,915 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/delete_transfer_function
+2021-12-17 06:33:55,919 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/get_brain
+2021-12-17 06:33:55,923 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/set_brain
+2021-12-17 06:33:55,926 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/get_populations
+2021-12-17 06:33:55,930 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/set_populations
+2021-12-17 06:33:55,934 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/get_CSV_recorders_files
+2021-12-17 06:33:55,938 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/simulation_recorder
+2021-12-17 06:33:55,942 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/get_robots
+2021-12-17 06:33:55,945 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/add_robot
+2021-12-17 06:33:55,949 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/del_robot
+2021-12-17 06:33:55,953 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/set_exc_robot_pose
+2021-12-17 06:33:55,957 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Connecting to ROS service /ros_cle_simulation/6/prepare_model
+2021-12-17 06:33:55,960 [uWSGIWorker1] [hbp_nrp_back] [INFO]  simulation initialized
+2021-12-17 06:33:57,016 [uWSGIWorker1] [hbp_nrp_back] [INFO]  Starting State Machines...
+2021-12-17 06:34:22,331 [/ros_cle_sim] [hbp_nrp_back] [INFO]  State machine outcomes: 
+2021-12-17 06:35:39,327 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
+2021-12-17 06:40:39,364 [Thread-5    ] [hbp_nrp_back] [INFO]  Start cleanup
