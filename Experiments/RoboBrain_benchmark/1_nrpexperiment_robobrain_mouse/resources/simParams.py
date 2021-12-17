@@ -149,13 +149,13 @@ simParams =\
         "resting_state": {
             "on": True,
             "regions": {
-                "BG": False,
-                "CB_M1": False,
-                "CB_S1": False,
+                "BG": True,
+                "CB_M1": True,
+                "CB_S1": True,
                 "M1": True,
-                "S1": False,
-                "TH_M1": False,
-                "TH_S1": False
+                "S1": True,
+                "TH_M1": True,
+                "TH_S1": True
             }
         },
         "single_arm_reaching": {
