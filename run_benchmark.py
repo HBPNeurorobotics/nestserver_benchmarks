@@ -65,7 +65,7 @@ class BenchmarkRunner:
         nest_info = self.get_nest_info()
         time.sleep(10)
         subprocess.call(["scancel", job_step_id])
-        logger.info("  Called scancel, sleeping 30 seconds")
+        logger.info("  Called scancel, sleeping 600 seconds")
         time.sleep(600)  # Wait for the job to die
         with open(f'{self.ntasks_rundir}/metadata.yaml', 'w') as outfile:
             logger.info("  Obtaining metadata from sacct")
@@ -76,11 +76,11 @@ class BenchmarkRunner:
 
     def get_sacct_info(self, job_step_id):
         """
-        Collects benchmark relevant data from saact
+        Collects benchmark relevant data from sacct
         :param job_step_id: ID of the current job
         """
         
-        fmt = "--format=Elapsed,AveRSS,MaxRSS"
+        fmt = "--format=Elapsed,AveRSS,MaxRSS,ConsumedEnergy"
         sacct_cmd = ["sacct", "-j", job_step_id, "-p", "--noheader", fmt]
         output = subprocess.check_output(sacct_cmd)
         output = output.decode("utf-8").split("|")[:-1]
@@ -89,7 +89,7 @@ class BenchmarkRunner:
             "sacct_elapsed": elapsed.total_seconds(),
             "sacct_averss": float(output[1].replace("K", "").replace("M", "000")),
             "sacct_maxrss": float(output[2].replace("K", "").replace("M", "000")),
-            "saact_comsumedenergy": float(output[3].replace("K", "").replace("M", "000"))
+            "sacct_consumedenergy": float(output[3].replace("K", "").replace("M", "000"))
         }
 
     def get_nest_info(self):
