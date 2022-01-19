@@ -1,0 +1,266 @@
+<?xml version="1.0" ?>
+<OpenSimDocument Version="30000">
+	<Model>
+		<ForceSet>
+			<objects>
+				<Millard2012EquilibriumMuscle name="Foot1">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Foot1_node0">
+									<location>0.008502 0.000730 0.001280</location>
+									<body>radius</body>
+								</PathPoint>
+								<PathPoint name="Foot1_node1">
+									<location>0.011580 0.000975 0.001240</location>
+									<body>radius</body>
+								</PathPoint>
+								<PathPoint name="Foot1_node2">
+									<location>0.001197 0.000246 -0.001244</location>
+									<body>foot</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>0.8</max_isometric_force>
+                                              <optimal_fiber_length>0.005358</optimal_fiber_length>
+                                              <tendon_slack_length>0.000536</tendon_slack_length>
+
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.005358</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Foot2">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Foot2_node0">
+									<location>0.008970 0.001020 0.000175</location>
+									<body>radius</body>
+								</PathPoint>
+								<PathPoint name="Foot2_node1">
+									<location>0.012524 0.001545 -0.000060</location>
+									<body>radius</body>
+								</PathPoint>
+								<PathPoint name="Foot2_node2">
+									<location>0.000461 -0.000661 -0.001330</location>
+									<body>foot</body>
+								</PathPoint>
+								<PathPoint name="Foot2_node3">
+									<location>0.001205 -0.000717 -0.001444</location>
+									<body>foot</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>0.8</max_isometric_force>
+                                              <optimal_fiber_length>0.005067</optimal_fiber_length>
+                                              <tendon_slack_length>0.000507</tendon_slack_length>
+
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.005067</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Radius1">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Radius1_node0">
+									<location>0.003306 -0.002112 0.000330</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Radius1_node1">
+									<location>0.002067 -0.000103 0.000365</location>
+									<body>radius</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>1</max_isometric_force>
+                                              <optimal_fiber_length>0.006026</optimal_fiber_length>
+                                              <tendon_slack_length>0.000603</tendon_slack_length>
+
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.006026</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Radius2">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Radius2_node0">
+									<location>0.006241 0.000625 -0.000198</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Radius2_node1">
+									<location>0.008001 0.001263 -0.000321</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Radius2_node2">
+									<location>-0.001867 -0.000494 -0.000722</location>
+									<body>radius</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>1</max_isometric_force>
+                                              <optimal_fiber_length>0.005879</optimal_fiber_length>
+                                              <tendon_slack_length>0.000588</tendon_slack_length>
+
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.005879</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Humerus1">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Humerus1_node0">
+									<location>0.007749 0.008172 0.017920</location>
+									<body>Mouse</body>
+								</PathPoint>
+								<PathPoint name="Humerus1_node1">
+									<location>0.008774 0.005730 0.018953</location>
+									<body>Mouse</body>
+								</PathPoint>
+								<PathPoint name="Humerus1_node2">
+									<location>-0.001105 -0.001781 0.000541</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus1_node3">
+									<location>0.004853 -0.001597 0.000213</location>
+									<body>humerus</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                               <max_isometric_force>1.4</max_isometric_force>
+                                              <optimal_fiber_length>0.012200</optimal_fiber_length>
+                                              <tendon_slack_length>0.001220</tendon_slack_length>
+
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.012200</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Humerus2">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Humerus2_node0">
+									<location>0.008054 0.007992 0.016959</location>
+									<body>Mouse</body>
+								</PathPoint>
+								<PathPoint name="Humerus2_node1">
+									<location>0.009183 0.006019 0.018040</location>
+									<body>Mouse</body>
+								</PathPoint>
+								<PathPoint name="Humerus2_node2">
+									<location>0.002577 0.000071 -0.000113</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus2_node3">
+									<location>0.005647 0.000445 -0.000328</location>
+									<body>humerus</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>1.4</max_isometric_force>
+                                              <optimal_fiber_length>0.010242</optimal_fiber_length>
+                                              <tendon_slack_length>0.001024</tendon_slack_length>
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.010242</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Humerus3">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Humerus3_node0">
+									<location>0.005400 -0.000212 0.000538</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus3_node1">
+									<location>0.002481 -0.000668 0.000709</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus3_node2">
+									<location>-0.000186 0.000033 0.001132</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus3_node3">
+									<location>0.010232 0.006149 0.019100</location>
+									<body>Mouse</body>
+								</PathPoint>
+								<PathPoint name="Humerus3_node4">
+									<location>0.008610 0.008542 0.017764</location>
+									<body>Mouse</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>1.4</max_isometric_force>
+                                              <optimal_fiber_length>0.010242</optimal_fiber_length>
+                                              <tendon_slack_length>0.001024</tendon_slack_length>
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.010242</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+				<Millard2012EquilibriumMuscle name="Humerus4">
+					<GeometryPath>
+						<PathPointSet>
+							<objects>
+								<PathPoint name="Humerus4_node0">
+									<location>0.004758 -0.000841 -0.000795</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus4_node1">
+									<location>0.001309 -0.001068 -0.000559</location>
+									<body>humerus</body>
+								</PathPoint>
+								<PathPoint name="Humerus4_node2">
+									<location>0.008171 0.005046 0.018416</location>
+									<body>Mouse</body>
+								</PathPoint>
+								<PathPoint name="Humerus4_node3">
+									<location>0.007787 0.007778 0.017372</location>
+									<body>Mouse</body>
+								</PathPoint>
+							</objects>
+						</PathPointSet>
+						<PathWrapSet>
+							<objects/>
+						</PathWrapSet>
+					</GeometryPath>
+                                              <max_isometric_force>1.4</max_isometric_force>
+                                              <optimal_fiber_length>0.010242</optimal_fiber_length>
+                                              <tendon_slack_length>0.001024</tendon_slack_length>
+                                              <!--Angle between tendon and fibers at optimal fiber length expressed in radians-->
+                                              <pennation_angle_at_optimal>0</pennation_angle_at_optimal>
+                                              <default_fiber_length>0.010242</default_fiber_length>
+				</Millard2012EquilibriumMuscle>
+			</objects>
+		</ForceSet>
+	</Model>
+</OpenSimDocument>

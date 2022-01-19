@@ -91,7 +91,7 @@ def initialize_nest(sim_params):
   ### global nest rng ###
   # nest.SetKernelStatus({'grng_seed' : sim_params['msd']+N_vp})
   ### per process rng #####
-  nest.rng_seed = range(sim_params['msd']+N_vp+1, sim_params['msd']+2*N_vp+1)
+  # nest.rng_seed = range(sim_params['msd']+N_vp+1, sim_params['msd']+2*N_vp+1)
   # nest.SetKernelStatus({'rng_seeds' : range(sim_params['msd']+N_vp+1, sim_params['msd']+2*N_vp+1)})
 
 
