@@ -2,7 +2,7 @@
 # GLOBAL VARIABLES
 @nrp.MapVariable("muscle_actuation", initial_value=8*[0.], scope=nrp.GLOBAL)
 @nrp.MapVariable("external_input", initial_value=0, scope=nrp.GLOBAL)
-@nrp.MapVariable("counter", initial_value=1, scope=nrp.GLOBAL)
+@nrp.MapVariable("counter", initial_value=0, scope=nrp.GLOBAL)
 @nrp.MapVariable("flag", initial_value=False, scope=nrp.GLOBAL)
 #-------------------------------------------------------------------------------
 # SPIKE SOURCES
@@ -77,13 +77,13 @@ def braintobody (t, counter, flag,
          
     M1_L1_ENGC_in.rate = 0.0
 
-    if counter.value > 0 and counter.value % 150 == 0:
+    if counter.value > 0 and counter.value % 25 == 0:
         if flag.value:
             flag.value = False
         else:
             flag.value = True
             
-    if counter.value > 25:        
+    if counter.value > 5:        
         if flag.value:
             clientLogger.advertise('''--> START Motor Cortex Spike Injections''', duration = 10000)
             M1_L1_ENGC_in.rate = 50000.0 
