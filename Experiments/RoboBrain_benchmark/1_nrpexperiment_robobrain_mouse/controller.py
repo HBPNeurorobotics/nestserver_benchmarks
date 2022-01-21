@@ -9,5 +9,5 @@ def controller (t,
         
     ## Send actuation values to muscle
     #muscle_actuation.value = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    if t < 1.0:
+    if t < 0.1:
         muscle_actuation.value = [0.5, 0.9, 0.2, 0.4, 0.6, 0.8, 0.2, 0.6]
