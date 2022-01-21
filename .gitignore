@@ -3,4 +3,4 @@ __pycache__/
 secrets.yaml
 tmp_benchmarks_results/*
 *.pyc
-Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/resources/log/performance.txt
+Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/resources/log/*
