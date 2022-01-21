@@ -9,8 +9,10 @@ srun --jobid={jobid} -C mc -A {account} --mpi=pmi2 -v \
            load/library/nest_latest_daint:latest \
            bash -c ' \
                source /opt/nest/bin/nest_vars.sh; \
-	       ln -s {working_dir}/Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/resources /opt/data; \
-	       ln -f -s {working_dir}/fixes/hl_api_server.py /opt/nest/lib/python3.8/site-packages/nest/server/hl_api_server.py; \
+	       ln -s /users/bp000231/bf_data/nestserver_benchmarks/Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/resources /opt/data; \
+	       cp /users/bp000231/bf_data/nestserver_benchmarks/fixes/hl_api_server.py /opt/nest/lib/python3.8/site-packages/nest/server/hl_api_server.py; \
+	       echo NEST server dir is; \
+	       ls /opt/nest/lib/python3.8/site-packages/nest/server; \
 	       export NEST_SERVER_MODULES="nest,numpy,time,math"; \
 	       export NEST_SERVER_RESTRICTION_OFF=true; \
                nest-server-mpi --host 0.0.0.0 --port 5000'
