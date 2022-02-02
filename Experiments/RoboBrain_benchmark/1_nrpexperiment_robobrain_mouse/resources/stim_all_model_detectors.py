@@ -125,16 +125,13 @@ def main():
         file.write('Interconnect_Regions_Time ' + str(time.time() - start_time) + '\n')
 
     # 2.5) detectors
-    
-    ''' BF
+
     detectors = {}
     if sim_regions['BG']:
         for layer_name in bg_layers.keys():
             detectors[layer_name] = nest_routine.layer_spike_detector(bg_layers[layer_name], layer_name,
                                                                       sim_params['initial_ignore'])
             # detectors[layer_name] = []
-    '''
-
     '''
     if sim_regions['S1']:
         for layer_name in ctx_layers.keys():
@@ -149,8 +146,6 @@ def main():
         for layer_name in cb_layers_M1.keys():
             detectors[layer_name] = nest_routine.layer_spike_detector(cb_layers_M1[layer_name], layer_name, sim_params['initial_ignore'])
     '''
-
-    ''' BF
     if sim_regions['TH_S1']:
         for layer_name in th_layers['TH_S1_EZ'].keys():
             detectors['TH_S1_EZ' + '_' + layer_name] = nest_routine.layer_spike_detector(
@@ -165,8 +160,6 @@ def main():
         for layer_name in th_layers['TH_M1_IZ'].keys():
             detectors['TH_M1_IZ' + '_' + layer_name] = nest_routine.layer_spike_detector(
                 th_layers['TH_M1_IZ'][layer_name], 'TH_M1_IZ_' + layer_name, sim_params['initial_ignore'])
-    '''
-
     print('Start simulation for : ', sim_model_on)
 
     if sim_model_on == 'resting_state':
@@ -178,26 +171,22 @@ def main():
             file.write('Simulation_Elapse_Time ' + str(time.time() - start_time) + '\n')
         print('Simulation Finish')
 
-        ''' BF
         if sim_regions['BG']:
             for layer_name in bg_layers.keys():
                 rate = nest_routine.average_fr(detectors[layer_name], sim_params['simDuration'], len(
                     bg_layers[layer_name]))  # nest_routine.count_layer(bg_layers[layer_name]))
                 print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-        '''
 
         # if sim_regions['BG']:
         #    for layer_name in bg_layers.keys():
         #        rate = nest_routine.get_firing_rate_from_gdf_files(layer_name, detectors[layer_name], sim_params['simDuration'],
         #                                       nest_routine.count_layer(bg_layers[layer_name]))
         #        print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-        
-        ''' BF
+        ''' 
         if sim_regions['S1']:
             for layer_name in ctx_layers.keys():
               rate = nest_routine.average_fr(detectors[layer_name], sim_params['simDuration'],nest_routine.count_layer(ctx_layers[layer_name]))
               print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-        '''
 
         #if sim_regions['S1']:
         #    for layer_name in ctx_layers.keys():
@@ -205,12 +194,10 @@ def main():
         #                                       nest_routine.count_layer(ctx_layers[layer_name]))
         #        print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
 
-        ''' BF
         if sim_regions['M1']:
             for layer_name in ctx_M1_layers.keys():
               rate = nest_routine.average_fr(detectors[layer_name], sim_params['simDuration'], nest_routine.count_layer(ctx_M1_layers[layer_name]))
               print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-        '''
 
         #if sim_regions['M1']:
         #    for layer_name in ctx_M1_layers.keys():
@@ -218,19 +205,17 @@ def main():
         #                                       nest_routine.count_layer(ctx_M1_layers[layer_name]))
         #        print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
 
-        ''' BF
         if sim_regions['CB_S1']:
             for layer_name in cb_layers_S1.keys():
                 rate = nest_routine.average_fr(detectors[layer_name], sim_params['simDuration'],
                                                nest_routine.count_layer(cb_layers_S1[layer_name]))
                 print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-    
+
         if sim_regions['CB_M1']:
             for layer_name in cb_layers_M1.keys():
                 rate = nest_routine.average_fr(detectors[layer_name], sim_params['simDuration'],
                                                nest_routine.count_layer(cb_layers_M1[layer_name]))
                 print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-        '''
 
         #if sim_regions['CB_S1']:
         #    for layer_name in cb_layers_S1.keys():
@@ -242,8 +227,7 @@ def main():
         #        rate = nest_routine.get_firing_rate_from_gdf_files(layer_name, detectors[layer_name], sim_params['simDuration'],
         #                                       nest_routine.count_layer(cb_layers_M1[layer_name]))
         #        print('Layer ' + layer_name + " fires at " + str(rate) + " Hz")
-
-        ''' BF
+        '''
         if sim_regions['TH_S1']:
             for layer_name in th_layers['TH_S1_EZ'].keys():
                 rate = nest_routine.average_fr(detectors['TH_S1_EZ' + '_' + layer_name], sim_params['simDuration'],
@@ -263,7 +247,7 @@ def main():
                 rate = nest_routine.average_fr(detectors['TH_M1_IZ' + '_' + layer_name], sim_params['simDuration'],
                                                nest_routine.count_layer(th_layers['TH_M1_IZ'][layer_name]))
                 print('Layer ' + 'TH_M1_IZ_' + layer_name + " fires at " + str(rate) + " Hz")
-        '''
+
         print('>>> simulation ended <<<')
         print('Kernel Status: ')
         print(nest.GetKernelStatus())
