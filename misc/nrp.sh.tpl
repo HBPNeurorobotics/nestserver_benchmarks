@@ -37,6 +37,7 @@ sarus run \
       nexus.neurorobotics.ebrains.eu/daint/nrp:3.2.0-nest-client \
       \
       bash -c "\
+	  sed -i 's|300|300000|' /home_daint/bbpnrsoa/.local/etc/nginx/conf.d/nrp-services.conf; \
 	  sed -i 's|float(\x27inf\x27)|1.7976931348623157e+308|' $NRPSRC/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestLeakyIntegratorTypes.py; \
 	  sed -i 's|float(\x27inf\x27)|1.7976931348623157e+308|' $NRPSRC/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestPoissonSpikeGenerator.py; \
           sed -i 's|float(\x27inf\x27)|1.7976931348623157e+308|' $NRPSRC/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestPopulationRate.py; \
