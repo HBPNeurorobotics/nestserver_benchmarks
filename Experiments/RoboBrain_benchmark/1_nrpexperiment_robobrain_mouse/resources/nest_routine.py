@@ -79,7 +79,7 @@ def create_synapse_model(elements, synapse_info, new_model_name):
 def initialize_nest(sim_params):
   nest.set_verbosity("M_WARNING")
   nest.SetKernelStatus({"overwrite_files": sim_params['overwrite_files']}) # should we erase previous traces when redoing a simulation?
-  #nest.SetKernelStatus({'local_num_threads': int(sim_params['nbcpu'])})
+  nest.SetKernelStatus({'local_num_threads': int(sim_params['nbcpu'])})
   nest.SetKernelStatus({"data_path": '/opt/data/log'})
   if sim_params['dt'] != '0.1':
     nest.SetKernelStatus({'resolution': float(sim_params['dt'])})
