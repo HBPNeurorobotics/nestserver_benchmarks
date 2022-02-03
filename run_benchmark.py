@@ -11,6 +11,7 @@ import time
 import sys
 import os
 import math
+import shutil 
 
 import helpers
 import ast
@@ -52,7 +53,7 @@ class BenchmarkRunner:
 
         subprocess.Popen(["bash", f"{self.ntasks_rundir}/nest.sh"])
         self.jobstep += 1
-        time.sleep(60)  # Give the NEST container some time to start
+        time.sleep(180)  # Give the NEST container some time to start
 
     def stop_nest(self):
         """
@@ -65,8 +66,8 @@ class BenchmarkRunner:
         nest_info = self.get_nest_info()
         time.sleep(10)
         subprocess.call(["scancel", job_step_id])
-        logger.info("  Called scancel, sleeping 600 seconds")
-        time.sleep(600)  # Wait for the job to die
+        logger.info("  Called scancel, sleeping 400 seconds")
+        time.sleep(400)  # Wait for the job to die
         with open(f'{self.ntasks_rundir}/metadata.yaml', 'w') as outfile:
             logger.info("  Obtaining metadata from sacct")
             run_info = self.get_sacct_info(job_step_id)
@@ -155,10 +156,11 @@ class BenchmarkRunner:
         
         # Launch Experiment
         self.tic = time.time()
-
         self.sim = vc.launch_experiment(self.experiment, server='148.187.148.198-port-8080', profiler='cle_step')
+
         self.sim.register_status_callback(self.stop_cb)
         self.sim.start()
+
         while self.running:
             time.sleep(0.5)
 
@@ -286,6 +288,14 @@ class BenchmarkRunner:
         rodent model with 8 muscles and a brain model with 1Million+ Neurons.
         """
         logger.info(f"Running NRP - RoboBrain benchmark with TF with {ntasks} processes, 2 per node")
+        
+        # remove old log files
+        logger.info(f"RoboBrain: Removing log folder")
+        robobrain_log_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/resources/log")
+        shutil.rmtree(robobrain_log_path)
+        logger.info(f"RoboBrain: Recreating log folder")
+        os.mkdir(robobrain_log_path)
+
         experiment_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse")
         self.run_nrp_benchmark(experiment_path)
 
