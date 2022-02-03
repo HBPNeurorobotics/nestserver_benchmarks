@@ -18,7 +18,8 @@ do
 
 	salloc --constraint mc \
 		-A ich004m \
-		--time=200 \
+		--mem=120GB \
+		--time=500 \
 		--nodes 33 \
 		--ntasks 66 \
 		--cpus-per-task 36 \
