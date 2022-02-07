@@ -1,0 +1,1 @@
+nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /home_daint/bbpnrsoa/.local/etc/nginx/nginx.conf:1

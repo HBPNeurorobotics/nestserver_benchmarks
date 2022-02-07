@@ -1,0 +1,884 @@
+/home_daint/bbpnrsoa
+/home_daint/bbpnrsoa/nrp/src/GazeboRosPackages/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/home_daint/bbpnrsoa/nrp/src/GazeboRosPackages/devel/lib/python3.8/dist-packages:/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle:/home_daint/bbpnrsoa/nrp/src/ExperimentControl/hbp_nrp_excontrol:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_backend:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_commons:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_watchdog:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp-flask-restful-swagger-master:/home_daint/bbpnrsoa/nrp/src/VirtualCoach/hbp_nrp_virtual_coach:/home_daint/bbpnrsoa/nrp/src/BrainSimulation/hbp_nrp_distributed_nest:/home_daint/bbpnrsoa/.local/lib/python3.8/site-packages:/home_daint/bbpnrsoa/.local/lib/x86_64-linux-gnu/python3.8/site-packages
+[1;31m+-------------------------- Neurorobotics Platform warning ---------------------------+
+| Dear Neurorobotics user, your PYTHONPATH contains previous paths.                   |
+| This might cause the Neurorobotics Platform to malfunction.                         |
+| If you are experiencing problems (like MPI.so not finding function references), add |
+|   export PYTHONPATH=                                                                |
+| to your ~/.bashrc                                                                   |
++-------------------------------------------------------------------------------------+[0m
+[INFO] [2022.2.4 21:4:36 /home_daint/bbpnrsoa/nrp/src/nest-simulator/nestkernel/rng_manager.cpp:217 @ Network::create_rngs_] : Creating default RNGs
+[INFO] [2022.2.4 21:4:36 /home_daint/bbpnrsoa/nrp/src/nest-simulator/nestkernel/rng_manager.cpp:260 @ Network::create_grng_] : Creating new default global RNG
+
+              -- N E S T --
+  Copyright (C) 2004 The NEST Initiative
+
+ Version: nest-2.18.0
+ Built: Nov 15 2021 12:00:34
+
+ This program is provided AS IS and comes with
+ NO WARRANTY. See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+CSAConnector: libneurosim support not available in NEST.
+Falling back on PyNN's default CSAConnector.
+Please re-compile NEST using --with-libneurosim=PATH
+2022-02-04 21:04:39,197 [Thread-3    ] [rospy.intern] [INFO]  topic[/rosout] adding connection to [/rosout], count 0
+2022-02-04 21:08:09,622 [Thread-7    ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 21:08:09,622 [Thread-7    ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.0.m40q290d/experiment_configuration.exc config file
+2022-02-04 21:08:09,637 [Thread-7    ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.0.m40q290d/bibi_config.bibi
+2022-02-04 21:08:09,640 [Thread-7    ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 21:08:09,640 [Thread-7    ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 21:08:09,640 [Thread-7    ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 21:08:09,640 [Thread-7    ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.0.m40q290d
+2022-02-04 21:08:09,641 [Thread-7    ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 21:08:09,641 [Thread-7    ] [hbp_nrp_cles] [INFO]  RNG seed = 8257098165208599146
+2022-02-04 21:08:09,641 [Thread-7    ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 21:08:09,648 [Thread-7    ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 21:08:09,648 [Thread-7    ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 21:08:09,672 [Thread-7    ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 8257098165208599146 -e ode /tmp/nrp.0.m40q290d/virtual_room.sdf
+2022-02-04 21:08:09,673 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644005294.974122207]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644005294.981947147]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644005295.006733562]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644005295.021653012]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 21:08:15,733 [Thread-11   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:45479/], count 0
+2022-02-04 21:08:15,963 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644005295.748762648]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644005295.944579270]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 21:08:17,984 [Thread-7    ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 21:08:18 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 21:08:18,358 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.0.m40q290d/husky/model.sdf: 
+2022-02-04 21:08:18,677 [Thread-7    ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 21:08:18,707 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 21:08:18,737 [Thread-7    ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 21:08:18,737 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 21:08:18,737 [Thread-7    ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:08:18,737 [Thread-7    ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 21:08:18,738 [Thread-7    ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.0.m40q290d/hpctest122020.py
+2022-02-04 21:09:25,002 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 21:09:25,003 [Thread-7    ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 21:09:25,003 [Thread-7    ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:09:25,003 [Thread-7    ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:09:25,015 [Thread-7    ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:09:25,018 [Thread-14   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [http://148.187.37.48:36269/], count 0
+2022-02-04 21:09:25,018 [Thread-13   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [http://148.187.37.48:39385/], count 0
+2022-02-04 21:09:25,020 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 21:09:25,023 [Thread-7    ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:09:25,034 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 21:09:25,086 [Thread-7    ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 21:09:25,093 [Thread-7    ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 21:09:25,093 [Thread-7    ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 21:09:25,169 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 21:09:25,169 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 21:09:25,169 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 21:09:25,169 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 21:09:25,169 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f271f0>' after transition.
+2022-02-04 21:09:26,230 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 21:09:26,230 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:09:26,230 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 21:09:26,230 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 21:09:26,230 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 21:09:26,231 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 21:09:26,231 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f273a0>' after transition.
+2022-02-04 21:09:26,801 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:09:26,823 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:16:28,285 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 21:16:28,285 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 21:16:28,285 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 21:16:28,285 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 21:16:28,285 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 21:16:29,287 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/0/lifecycle...
+2022-02-04 21:16:29,287 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 21:16:29,288 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 21:16:29,292 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/0/lifecycle...
+2022-02-04 21:16:29,292 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 21:16:29,292 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to /nrp_backend
+2022-02-04 21:16:29,296 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f276a0>' after transition.
+2022-02-04 21:16:29,296 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 21:16:29,625 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 21:16:29,625 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 21:16:30,288 [Thread-20   ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 21:16:30,288 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 21:16:30,288 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 21:16:30,292 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 21:16:31,576 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 21:16:31,576 [Thread-20   ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 21:16:31,577 [Thread-20   ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 21:16:31,577 [Thread-20   ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 21:16:33,579 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 21:16:33,586 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 21:16:33,589 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 21:16:33,593 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 21:16:33,597 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 21:16:33,600 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 21:16:33,604 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 21:16:33,607 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:16:33,611 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:16:33,614 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 21:16:33,618 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 21:16:33,621 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 21:16:33,625 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 21:16:33,628 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 21:16:33,631 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 21:16:33,635 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 21:16:33,674 [Thread-20   ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 21:16:33,681 [Thread-20   ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 1848:  OK.
+2022-02-04 21:16:33,697 [Thread-20   ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 21:16:33,697 [Thread-20   ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 21:16:33,698 [Thread-20   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 21:16:33,700 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:45479/
+2022-02-04 21:16:33,701 [Thread-20   ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 21:16:33,701 [Thread-20   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 21:16:33,706 [Thread-20   ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-04 21:27:12,620 [Thread-48   ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 21:27:12,620 [Thread-48   ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.1.bd5w3zro/experiment_configuration.exc config file
+2022-02-04 21:27:12,627 [Thread-48   ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.1.bd5w3zro/bibi_config.bibi
+2022-02-04 21:27:12,630 [Thread-48   ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 21:27:12,630 [Thread-48   ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 21:27:12,630 [Thread-48   ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 21:27:12,630 [Thread-48   ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.1.bd5w3zro
+2022-02-04 21:27:12,630 [Thread-48   ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 21:27:12,630 [Thread-48   ] [hbp_nrp_cles] [INFO]  RNG seed = 3098096264730242131
+2022-02-04 21:27:12,630 [Thread-48   ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 21:27:12,637 [Thread-48   ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 21:27:12,637 [Thread-48   ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 21:27:12,659 [Thread-48   ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 3098096264730242131 -e ode /tmp/nrp.1.bd5w3zro/virtual_room.sdf
+2022-02-04 21:27:12,659 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644006435.410080189]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644006435.416316278]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644006435.438371031]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644006435.454667321]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 21:27:16,124 [Thread-52   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:33571/], count 0
+2022-02-04 21:27:16,520 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644006436.161919937]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644006436.341837819]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 21:27:18,540 [Thread-48   ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 21:27:18 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 21:27:18,875 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.1.bd5w3zro/husky/model.sdf: 
+2022-02-04 21:27:19,071 [Thread-48   ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 21:27:19,103 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 21:27:19,126 [Thread-48   ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 21:27:19,126 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 21:27:19,127 [Thread-48   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:27:19,127 [Thread-48   ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 21:27:19,127 [Thread-48   ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.1.bd5w3zro/hpctest122020.py
+2022-02-04 21:27:52,847 [Thread-48   ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 21:27:52,848 [Thread-48   ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 21:27:52,848 [Thread-48   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:27:52,848 [Thread-48   ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:27:52,859 [Thread-48   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:27:52,862 [Thread-54   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [http://148.187.37.48:39385/], count 0
+2022-02-04 21:27:52,863 [Thread-55   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [http://148.187.37.48:36269/], count 0
+2022-02-04 21:27:52,865 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 21:27:52,868 [Thread-48   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:27:52,887 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 21:27:52,931 [Thread-48   ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 21:27:52,938 [Thread-48   ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 21:27:52,938 [Thread-48   ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 21:27:53,011 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 21:27:53,011 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 21:27:53,012 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 21:27:53,012 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 21:27:53,012 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb395eb0>' after transition.
+2022-02-04 21:27:54,034 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:27:54,070 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 21:27:54,070 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:27:54,071 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 21:27:54,071 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 21:27:54,071 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 21:27:54,071 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 21:27:54,071 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb39f0d0>' after transition.
+2022-02-04 21:27:54,083 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:32:05,323 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 21:32:05,323 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 21:32:05,323 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 21:32:05,323 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 21:32:05,323 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 21:32:05,964 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 21:32:05,965 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 21:32:06,325 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/1/lifecycle...
+2022-02-04 21:32:06,325 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 21:32:06,326 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 21:32:06,329 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/1/lifecycle...
+2022-02-04 21:32:06,330 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 21:32:06,330 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to /nrp_backend
+2022-02-04 21:32:06,334 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb39f3d0>' after transition.
+2022-02-04 21:32:06,334 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 21:32:07,326 [Thread-61   ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 21:32:07,326 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 21:32:07,327 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 21:32:07,330 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 21:32:08,792 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 21:32:08,793 [Thread-61   ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 21:32:08,793 [Thread-61   ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 21:32:08,793 [Thread-61   ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 21:32:10,795 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 21:32:10,803 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 21:32:10,806 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 21:32:10,810 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 21:32:10,813 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 21:32:10,817 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 21:32:10,821 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 21:32:10,825 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:32:10,829 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:32:10,832 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 21:32:10,836 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 21:32:10,840 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 21:32:10,843 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 21:32:10,847 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 21:32:10,850 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 21:32:10,854 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 21:32:25,954 [Thread-61   ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 21:32:25,960 [Thread-61   ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 2955:  OK.
+2022-02-04 21:32:25,971 [Thread-61   ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 21:32:25,972 [Thread-61   ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 21:32:25,972 [Thread-61   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 21:32:25,976 [Thread-61   ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 21:32:25,976 [Thread-61   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 21:32:25,980 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:33571/
+2022-02-04 21:32:25,981 [Thread-61   ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-04 21:43:02,861 [Thread-89   ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 21:43:02,861 [Thread-89   ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.2.hd2o5lkw/experiment_configuration.exc config file
+2022-02-04 21:43:02,868 [Thread-89   ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.2.hd2o5lkw/bibi_config.bibi
+2022-02-04 21:43:02,871 [Thread-89   ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 21:43:02,871 [Thread-89   ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 21:43:02,871 [Thread-89   ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 21:43:02,871 [Thread-89   ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.2.hd2o5lkw
+2022-02-04 21:43:02,871 [Thread-89   ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 21:43:02,871 [Thread-89   ] [hbp_nrp_cles] [INFO]  RNG seed = 3143171588976931970
+2022-02-04 21:43:02,871 [Thread-89   ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 21:43:02,878 [Thread-89   ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 21:43:02,878 [Thread-89   ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 21:43:02,900 [Thread-89   ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 3143171588976931970 -e ode /tmp/nrp.2.hd2o5lkw/virtual_room.sdf
+2022-02-04 21:43:02,900 [Thread-89   ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644007385.643349563]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644007385.649631909]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644007385.671678501]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644007385.688071925]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 21:43:06,419 [Thread-93   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:36809/], count 0
+2022-02-04 21:43:06,761 [Thread-89   ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644007386.391825874]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644007386.591280987]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 21:43:08,780 [Thread-89   ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 21:43:09 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 21:43:09,131 [Thread-89   ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.2.hd2o5lkw/husky/model.sdf: 
+2022-02-04 21:43:09,329 [Thread-89   ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 21:43:09,361 [Thread-89   ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 21:43:09,386 [Thread-89   ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 21:43:09,386 [Thread-89   ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 21:43:09,386 [Thread-89   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:43:09,386 [Thread-89   ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 21:43:09,386 [Thread-89   ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.2.hd2o5lkw/hpctest122020.py
+2022-02-04 21:43:26,194 [Thread-89   ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 21:43:26,194 [Thread-89   ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 21:43:26,194 [Thread-89   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:43:26,194 [Thread-89   ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:43:26,205 [Thread-89   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:43:26,209 [Thread-95   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [http://148.187.37.48:39385/], count 0
+2022-02-04 21:43:26,210 [Thread-96   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [http://148.187.37.48:36269/], count 1
+2022-02-04 21:43:26,212 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 21:43:26,214 [Thread-89   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:43:26,224 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 21:43:26,280 [Thread-89   ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 21:43:26,286 [Thread-89   ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 21:43:26,286 [Thread-89   ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 21:43:26,356 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 21:43:26,357 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 21:43:26,357 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 21:43:26,357 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 21:43:26,357 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd986c4f0>' after transition.
+2022-02-04 21:43:27,379 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:43:27,414 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 21:43:27,414 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:43:27,414 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 21:43:27,414 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 21:43:27,414 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 21:43:27,415 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 21:43:27,415 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f27910>' after transition.
+2022-02-04 21:43:27,427 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:45:43,158 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 21:45:43,159 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 21:45:43,159 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 21:45:43,159 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 21:45:43,159 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 21:45:43,751 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 21:45:43,751 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 21:45:44,160 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/2/lifecycle...
+2022-02-04 21:45:44,161 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 21:45:44,161 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 21:45:44,165 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/2/lifecycle...
+2022-02-04 21:45:44,165 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 21:45:44,165 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to /nrp_backend
+2022-02-04 21:45:44,169 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f277f0>' after transition.
+2022-02-04 21:45:44,169 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 21:45:45,162 [Thread-102  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 21:45:45,162 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 21:45:45,162 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 21:45:45,166 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 21:45:46,763 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 21:45:46,763 [Thread-102  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 21:45:46,763 [Thread-102  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 21:45:46,763 [Thread-102  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 21:45:48,766 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 21:45:48,773 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 21:45:48,776 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 21:45:48,780 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 21:45:48,783 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 21:45:48,787 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 21:45:48,790 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 21:45:48,794 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:45:48,797 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:45:48,801 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 21:45:48,805 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 21:45:48,808 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 21:45:48,812 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 21:45:48,815 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 21:45:48,819 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 21:45:48,823 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 21:45:48,861 [Thread-102  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 21:45:48,868 [Thread-102  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 4044:  OK.
+2022-02-04 21:45:48,879 [Thread-102  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 21:45:48,879 [Thread-102  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 21:45:48,879 [Thread-102  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 21:45:48,883 [Thread-102  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 21:45:48,883 [Thread-102  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 21:45:48,887 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:36809/
+2022-02-04 21:45:48,889 [Thread-102  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-04 21:56:26,675 [Thread-130  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 21:56:26,675 [Thread-130  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.3.rsql77bc/experiment_configuration.exc config file
+2022-02-04 21:56:26,683 [Thread-130  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.3.rsql77bc/bibi_config.bibi
+2022-02-04 21:56:26,685 [Thread-130  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 21:56:26,685 [Thread-130  ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 21:56:26,685 [Thread-130  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 21:56:26,685 [Thread-130  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.3.rsql77bc
+2022-02-04 21:56:26,685 [Thread-130  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 21:56:26,686 [Thread-130  ] [hbp_nrp_cles] [INFO]  RNG seed = 4215779681025877419
+2022-02-04 21:56:26,686 [Thread-130  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 21:56:26,693 [Thread-130  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 21:56:26,693 [Thread-130  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 21:56:26,718 [Thread-130  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 4215779681025877419 -e ode /tmp/nrp.3.rsql77bc/virtual_room.sdf
+2022-02-04 21:56:26,718 [Thread-130  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644008189.429358415]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644008189.435734102]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644008189.459970333]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644008189.475630645]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 21:56:30,152 [Thread-134  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:35975/], count 0
+2022-02-04 21:56:30,577 [Thread-130  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644008190.173443316]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644008190.359038728]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 21:56:32,598 [Thread-130  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 21:56:32 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 21:56:32,943 [Thread-130  ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.3.rsql77bc/husky/model.sdf: 
+2022-02-04 21:56:33,296 [Thread-130  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 21:56:33,326 [Thread-130  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 21:56:33,351 [Thread-130  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 21:56:33,351 [Thread-130  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 21:56:33,351 [Thread-130  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:56:33,351 [Thread-130  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 21:56:33,351 [Thread-130  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.3.rsql77bc/hpctest122020.py
+2022-02-04 21:56:41,882 [Thread-130  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 21:56:41,882 [Thread-130  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 21:56:41,882 [Thread-130  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 21:56:41,883 [Thread-130  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:56:41,893 [Thread-130  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:56:41,896 [Thread-137  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [http://148.187.37.48:36269/], count 0
+2022-02-04 21:56:41,897 [Thread-136  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [http://148.187.37.48:39385/], count 1
+2022-02-04 21:56:41,898 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 21:56:41,902 [Thread-130  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 21:56:41,961 [Thread-130  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 21:56:41,967 [Thread-130  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 21:56:41,968 [Thread-130  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 21:56:41,971 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 21:56:42,044 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 21:56:42,045 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 21:56:42,045 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 21:56:42,045 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 21:56:42,045 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f45c70>' after transition.
+2022-02-04 21:56:43,066 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:56:43,098 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 21:56:43,099 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 21:56:43,099 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 21:56:43,099 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 21:56:43,099 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 21:56:43,099 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 21:56:43,100 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f450a0>' after transition.
+2022-02-04 21:56:43,111 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 21:58:01,916 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 21:58:01,916 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 21:58:01,917 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 21:58:01,917 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 21:58:01,917 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 21:58:02,419 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 21:58:02,419 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 21:58:02,918 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/3/lifecycle...
+2022-02-04 21:58:02,918 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 21:58:02,919 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 21:58:02,923 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 21:58:02,924 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/3/lifecycle...
+2022-02-04 21:58:02,924 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to /nrp_backend
+2022-02-04 21:58:02,928 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f455b0>' after transition.
+2022-02-04 21:58:02,928 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 21:58:03,919 [Thread-141  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 21:58:03,920 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 21:58:03,920 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 21:58:03,923 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 21:58:07,256 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 21:58:07,256 [Thread-141  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 21:58:07,256 [Thread-141  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 21:58:07,256 [Thread-141  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 21:58:09,259 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 21:58:09,265 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 21:58:09,269 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 21:58:09,272 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 21:58:09,275 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 21:58:09,279 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 21:58:09,282 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 21:58:09,285 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:58:09,289 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 21:58:09,292 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 21:58:09,296 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 21:58:09,299 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 21:58:09,302 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 21:58:09,306 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 21:58:09,309 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 21:58:09,312 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 21:58:09,351 [Thread-141  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 21:58:09,357 [Thread-141  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 5133:  OK.
+2022-02-04 21:58:09,368 [Thread-141  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 21:58:09,368 [Thread-141  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 21:58:09,368 [Thread-141  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 21:58:09,371 [Thread-141  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 21:58:09,372 [Thread-141  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 21:58:09,374 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:35975/
+2022-02-04 21:58:09,377 [Thread-141  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-04 22:08:45,555 [Thread-171  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 22:08:45,555 [Thread-171  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.4.fukad3uu/experiment_configuration.exc config file
+2022-02-04 22:08:45,562 [Thread-171  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.4.fukad3uu/bibi_config.bibi
+2022-02-04 22:08:45,565 [Thread-171  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 22:08:45,565 [Thread-171  ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 22:08:45,565 [Thread-171  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 22:08:45,565 [Thread-171  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.4.fukad3uu
+2022-02-04 22:08:45,565 [Thread-171  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 22:08:45,565 [Thread-171  ] [hbp_nrp_cles] [INFO]  RNG seed = 4945902594967936360
+2022-02-04 22:08:45,565 [Thread-171  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 22:08:45,572 [Thread-171  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 22:08:45,572 [Thread-171  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 22:08:45,598 [Thread-171  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 4945902594967936360 -e ode /tmp/nrp.4.fukad3uu/virtual_room.sdf
+2022-02-04 22:08:45,598 [Thread-171  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644008928.335699339]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644008928.342049376]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644008928.364449785]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644008928.380710648]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 22:08:49,114 [Thread-175  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:37761/], count 0
+2022-02-04 22:08:49,458 [Thread-171  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644008929.088624137]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644008929.291003975]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 22:08:51,478 [Thread-171  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 22:08:51 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 22:08:51,910 [Thread-171  ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.4.fukad3uu/husky/model.sdf: 
+2022-02-04 22:08:52,225 [Thread-171  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 22:08:52,255 [Thread-171  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 22:08:52,281 [Thread-171  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 22:08:52,281 [Thread-171  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 22:08:52,281 [Thread-171  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 22:08:52,282 [Thread-171  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 22:08:52,282 [Thread-171  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.4.fukad3uu/hpctest122020.py
+2022-02-04 22:08:56,731 [Thread-171  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 22:08:56,731 [Thread-171  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 22:08:56,731 [Thread-171  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 22:08:56,732 [Thread-171  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 22:08:56,744 [Thread-171  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 22:08:56,746 [Thread-177  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [http://148.187.37.48:39385/], count 0
+2022-02-04 22:08:56,747 [Thread-178  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [http://148.187.37.48:36269/], count 0
+2022-02-04 22:08:56,749 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 22:08:56,752 [Thread-171  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 22:08:56,806 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 22:08:56,818 [Thread-171  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 22:08:56,824 [Thread-171  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 22:08:56,825 [Thread-171  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 22:08:56,901 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 22:08:56,901 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 22:08:56,901 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 22:08:56,901 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 22:08:56,901 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f075b0>' after transition.
+2022-02-04 22:08:57,922 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 22:08:57,937 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 22:08:57,958 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 22:08:57,958 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 22:08:57,958 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 22:08:57,958 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 22:08:57,959 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 22:08:57,959 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 22:08:57,959 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f07220>' after transition.
+2022-02-04 22:09:51,115 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 22:09:51,115 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 22:09:51,115 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 22:09:51,115 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 22:09:51,116 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 22:09:52,117 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/4/lifecycle...
+2022-02-04 22:09:52,117 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 22:09:52,118 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 22:09:52,121 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/4/lifecycle...
+2022-02-04 22:09:52,121 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 22:09:52,122 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to /nrp_backend
+2022-02-04 22:09:52,125 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f3df40>' after transition.
+2022-02-04 22:09:52,125 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 22:09:52,271 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 22:09:52,271 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 22:09:53,118 [Thread-184  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 22:09:53,118 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 22:09:53,118 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 22:09:53,122 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 22:09:57,032 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 22:09:57,032 [Thread-184  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 22:09:57,033 [Thread-184  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 22:09:57,033 [Thread-184  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 22:09:59,035 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 22:09:59,042 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 22:09:59,046 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 22:09:59,049 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 22:09:59,053 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 22:09:59,056 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 22:09:59,060 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 22:09:59,063 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 22:09:59,067 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 22:09:59,071 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 22:09:59,074 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 22:09:59,078 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 22:09:59,081 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 22:09:59,085 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 22:09:59,088 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 22:09:59,092 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 22:09:59,134 [Thread-184  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 22:09:59,140 [Thread-184  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 6223:  OK.
+2022-02-04 22:09:59,151 [Thread-184  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 22:09:59,152 [Thread-184  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 22:09:59,152 [Thread-184  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 22:09:59,155 [Thread-184  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 22:09:59,155 [Thread-184  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 22:09:59,159 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:37761/
+2022-02-04 22:09:59,161 [Thread-184  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-04 22:20:35,155 [Thread-212  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 22:20:35,155 [Thread-212  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.5.1xgcpoq0/experiment_configuration.exc config file
+2022-02-04 22:20:35,162 [Thread-212  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.5.1xgcpoq0/bibi_config.bibi
+2022-02-04 22:20:35,165 [Thread-212  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 22:20:35,165 [Thread-212  ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 22:20:35,165 [Thread-212  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 22:20:35,165 [Thread-212  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.5.1xgcpoq0
+2022-02-04 22:20:35,165 [Thread-212  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 22:20:35,165 [Thread-212  ] [hbp_nrp_cles] [INFO]  RNG seed = 3939259985515060919
+2022-02-04 22:20:35,165 [Thread-212  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 22:20:35,172 [Thread-212  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 22:20:35,172 [Thread-212  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 22:20:35,196 [Thread-212  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 3939259985515060919 -e ode /tmp/nrp.5.1xgcpoq0/virtual_room.sdf
+2022-02-04 22:20:35,196 [Thread-212  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644009637.931852632]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644009637.938247226]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644009637.959566526]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644009637.975761360]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 22:20:38,719 [Thread-216  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:46281/], count 0
+2022-02-04 22:20:39,058 [Thread-212  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644009638.682687843]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644009638.872258425]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 22:20:41,086 [Thread-212  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 22:20:41 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 22:20:41,442 [Thread-212  ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.5.1xgcpoq0/husky/model.sdf: 
+2022-02-04 22:20:41,803 [Thread-212  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 22:20:41,833 [Thread-212  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 22:20:41,862 [Thread-212  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 22:20:41,862 [Thread-212  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 22:20:41,862 [Thread-212  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 22:20:41,862 [Thread-212  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 22:20:41,862 [Thread-212  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.5.1xgcpoq0/hpctest122020.py
+2022-02-04 22:20:44,313 [Thread-212  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 22:20:44,313 [Thread-212  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 22:20:44,313 [Thread-212  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 22:20:44,313 [Thread-212  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 22:20:44,325 [Thread-212  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 22:20:44,328 [Thread-219  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [http://148.187.37.48:36269/], count 0
+2022-02-04 22:20:44,329 [Thread-218  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [http://148.187.37.48:39385/], count 0
+2022-02-04 22:20:44,331 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 22:20:44,333 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 22:20:44,334 [Thread-212  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 22:20:44,398 [Thread-212  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 22:20:44,405 [Thread-212  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 22:20:44,406 [Thread-212  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 22:20:44,512 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 22:20:44,512 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 22:20:44,512 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 22:20:44,513 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 22:20:44,513 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f45430>' after transition.
+2022-02-04 22:20:45,532 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 22:20:45,548 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 22:20:45,566 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 22:20:45,567 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 22:20:45,567 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 22:20:45,567 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 22:20:45,567 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 22:20:45,568 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 22:20:45,568 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb3785e0>' after transition.
+2022-02-04 22:21:26,427 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 22:21:26,427 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 22:21:26,427 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 22:21:26,427 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 22:21:26,427 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 22:21:27,428 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/5/lifecycle...
+2022-02-04 22:21:27,429 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 22:21:27,429 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 22:21:27,433 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/5/lifecycle...
+2022-02-04 22:21:27,433 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 22:21:27,433 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] removing connection to /nrp_backend
+2022-02-04 22:21:27,437 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb378a90>' after transition.
+2022-02-04 22:21:27,437 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 22:21:27,842 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 22:21:27,842 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 22:21:28,430 [Thread-225  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 22:21:28,430 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 22:21:28,430 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 22:21:28,434 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 22:21:29,564 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 22:21:29,564 [Thread-225  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 22:21:29,564 [Thread-225  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 22:21:29,564 [Thread-225  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 22:21:31,567 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 22:21:31,573 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 22:21:31,577 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 22:21:31,581 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 22:21:31,585 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 22:21:31,588 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 22:21:31,592 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 22:21:31,595 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 22:21:31,599 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 22:21:31,602 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 22:21:31,606 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 22:21:31,609 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 22:21:31,613 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 22:21:31,616 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 22:21:31,620 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 22:21:31,623 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 22:21:31,666 [Thread-225  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 22:21:31,672 [Thread-225  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 7312:  OK.
+2022-02-04 22:21:31,683 [Thread-225  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 22:21:31,683 [Thread-225  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 22:21:31,683 [Thread-225  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 22:21:31,687 [Thread-225  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 22:21:31,687 [Thread-225  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 22:21:31,690 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:46281/
+2022-02-04 22:21:31,693 [Thread-225  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-04 22:32:10,449 [Thread-253  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-04 22:32:10,449 [Thread-253  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.6.rldk_zhc/experiment_configuration.exc config file
+2022-02-04 22:32:10,457 [Thread-253  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.6.rldk_zhc/bibi_config.bibi
+2022-02-04 22:32:10,459 [Thread-253  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-04 22:32:10,459 [Thread-253  ] [SimConfig   ] [INFO]  Using physics engine ode
+2022-02-04 22:32:10,460 [Thread-253  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-04 22:32:10,460 [Thread-253  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.6.rldk_zhc
+2022-02-04 22:32:10,460 [Thread-253  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-04 22:32:10,460 [Thread-253  ] [hbp_nrp_cles] [INFO]  RNG seed = 3184334893555144372
+2022-02-04 22:32:10,460 [Thread-253  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-04 22:32:10,466 [Thread-253  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-04 22:32:10,467 [Thread-253  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-04 22:32:10,492 [Thread-253  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 3184334893555144372 -e ode /tmp/nrp.6.rldk_zhc/virtual_room.sdf
+2022-02-04 22:32:10,492 [Thread-253  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1644010333.237376060]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1644010333.243621231]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1644010333.266704402]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1644010333.282039236]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-04 22:32:13,968 [Thread-257  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.48:32987/], count 0
+2022-02-04 22:32:14,347 [Thread-253  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1644010333.984117009]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1644010334.173052954]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-04 22:32:16,366 [Thread-253  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 0.00001
+  minimum Quaternion distance squared between successive messages: 0.0001
+--------------------------------------------------------------
+Fri Feb 04 2022 22:32:16 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-04 22:32:16,702 [Thread-253  ] [hbp_nrp_cle.] [INFO]  Adding robot husky from /tmp/nrp.6.rldk_zhc/husky/model.sdf: 
+2022-02-04 22:32:16,902 [Thread-253  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-04 22:32:16,933 [Thread-253  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-04 22:32:16,966 [Thread-253  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-04 22:32:16,966 [Thread-253  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-04 22:32:16,966 [Thread-253  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 22:32:16,967 [Thread-253  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-04 22:32:16,967 [Thread-253  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.6.rldk_zhc/hpctest122020.py
+2022-02-04 22:32:18,522 [Thread-253  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-04 22:32:18,523 [Thread-253  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-04 22:32:18,523 [Thread-253  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-04 22:32:18,523 [Thread-253  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 22:32:18,534 [Thread-253  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 22:32:18,538 [Thread-259  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] adding connection to [http://148.187.37.48:39385/], count 0
+2022-02-04 22:32:18,540 [Thread-260  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] adding connection to [http://148.187.37.48:36269/], count 1
+2022-02-04 22:32:18,541 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] adding connection to [/ros_cle_simulation_286_1644005078790], count 0
+2022-02-04 22:32:18,544 [Thread-253  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-04 22:32:18,548 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-04 22:32:18,609 [Thread-253  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-04 22:32:18,616 [Thread-253  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-04 22:32:18,616 [Thread-253  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-04 22:32:18,692 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-04 22:32:18,692 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-04 22:32:18,692 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-04 22:32:18,693 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-04 22:32:18,693 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb3a45b0>' after transition.
+2022-02-04 22:32:19,728 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 22:32:19,744 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-04 22:32:19,762 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-04 22:32:19,762 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-04 22:32:19,762 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-04 22:32:19,763 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-04 22:32:19,763 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-04 22:32:19,763 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-04 22:32:19,763 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdb3a4490>' after transition.
+2022-02-04 22:32:47,099 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-04 22:32:47,099 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-04 22:32:47,099 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-04 22:32:47,099 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-04 22:32:47,099 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-04 22:32:48,054 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-04 22:32:48,054 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-04 22:32:48,100 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/6/lifecycle...
+2022-02-04 22:32:48,101 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] removing connection to http://148.187.37.48:39385/
+2022-02-04 22:32:48,101 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] removing connection to http://148.187.37.48:36269/
+2022-02-04 22:32:48,105 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/6/lifecycle...
+2022-02-04 22:32:48,105 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] removing connection to /ros_cle_simulation_286_1644005078790
+2022-02-04 22:32:48,105 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/6/lifecycle] removing connection to /nrp_backend
+2022-02-04 22:32:48,109 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9ec3c70>' after transition.
+2022-02-04 22:32:48,109 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-04 22:32:49,102 [Thread-266  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-04 22:32:49,102 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-04 22:32:49,102 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-04 22:32:49,106 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-04 22:32:53,743 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-04 22:32:53,743 [Thread-266  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-04 22:32:53,743 [Thread-266  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-04 22:32:53,743 [Thread-266  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-04 22:32:55,746 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-04 22:32:55,752 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-04 22:32:55,756 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-04 22:32:55,759 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-04 22:32:55,763 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-04 22:32:55,766 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-04 22:32:55,770 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-04 22:32:55,773 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 22:32:55,776 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-04 22:32:55,780 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-04 22:32:55,783 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-04 22:32:55,787 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-04 22:32:55,790 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-04 22:32:55,794 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-04 22:32:55,797 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-04 22:32:55,800 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-04 22:32:55,840 [Thread-266  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-04 22:32:55,846 [Thread-266  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 8402:  OK.
+2022-02-04 22:32:55,857 [Thread-266  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-04 22:32:55,857 [Thread-266  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-04 22:32:55,857 [Thread-266  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-04 22:32:55,860 [Thread-266  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-04 22:32:55,861 [Thread-266  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-04 22:32:55,863 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.48:32987/
+2022-02-04 22:32:55,866 [Thread-266  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
