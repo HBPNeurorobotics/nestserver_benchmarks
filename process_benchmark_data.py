@@ -9,6 +9,9 @@ import pandas as pd
 import time
 import numpy as np
 import matplotlib
+from operator import add
+from matplotlib.patches import Patch
+from matplotlib.lines import Line2D
 
 # Plot parameter
 base_font_size = 12
@@ -21,16 +24,19 @@ plt.rc('xtick', labelsize=base_font_size, color='#666')
 plt.rc('ytick', labelsize=base_font_size, color='#666')
 plt.rc('legend', fontsize=base_font_size)
 plt.rc('axes', facecolor='white', titlecolor='#666')
-plt.rc('grid', color='gray', ls='dotted')
+plt.rc('grid', color='black', ls='dotted')
 
 cle_profiler_columns = ['robot_step', 'brain_step', 'brain_refresh', 'cle_step', 'transfer_function']
 
-labels = {
+experiment_names = {
     "hpcbench_baseline": "NEST standalone",
     "hpcbench_notf": "NRP+NEST, no TF",
     "hpcbench_readspikes": "NRP+NEST, spike-reading TF",
     "robobrain": "RoboBrain experiment"
 }
+
+robobrain_tf_switch_times = [5, 25]
+
 
 
 class BenchmarkProcessor:
@@ -92,37 +98,10 @@ class BenchmarkProcessor:
                 self.read_run_ntasks_data(run_ntasks_path, config,
                         self.data[key]["data"][repetition_folder][f"{n:02d}_ntasks"])
 
-                # plot cle time profile for every individual ntasks run
-                diagram_ntasks_run_folder = os.path.join(diagram_rep_folder, f"{n:02d}_ntasks")
-                os.makedirs(diagram_ntasks_run_folder, exist_ok=True)
-
-                # self.plot_run_ntasks_cle_time_profiler(self.data[key]["data"][repetition_folder][f"{n:02d}_ntasks"],
-                #          diagram_ntasks_run_folder, n)
-
             # plot cle time profile for all ntasks in run
             self.plot_run_cle_time_profiler(self.data[key]["data"][repetition_folder],
                      diagram_rep_folder)
 
-            # plot realtime factor for all ntasks in run
-            self.plot_run_realtime_factor(config, self.data[key]["data"][repetition_folder],
-                     diagram_rep_folder)
-
-            # plot brain to robot ratio for all ntasks in run
-            self.plot_run_braintorobot_ratio(config, self.data[key]["data"][repetition_folder],
-                 diagram_rep_folder)
-
-            # plot total time for all ntasks in run
-            self.plot_run_total_runtime(config, self.data[key]["data"][repetition_folder],
-                                 diagram_rep_folder)
-
-            # plot nodehours for all ntasks in run
-            self.plot_run_nodehours(config, self.data[key]["data"][repetition_folder],
-                                             diagram_rep_folder)
-
-            # plot metadta for all ntasks in run
-            self.plot_run_metadata(config, self.data[key]["data"][repetition_folder],
-                                 diagram_rep_folder)
-
         # plot total time for all ntasks in repetition
         self.plot_repetition_total_runtime(config, self.data[key]["data"],
                              diagram_folder)
@@ -135,25 +114,6 @@ class BenchmarkProcessor:
         self.plot_repetition_realtime_factor(config, self.data[key]["data"],
                                 diagram_folder)
 
-        # plot metadta for all ntasks in run
-        self.plot_run_metadata(config, self.data[key]["data"][repetition_folder],
-                                 diagram_rep_folder)
-
-        # plot total time for all ntasks in repetition
-        self.plot_repetition_total_runtime(config, self.data[key]["data"],
-                             diagram_folder)
-
-        # plot brain to robot ratio for all  ttasks in repetition
-        self.plot_repetition_braintorobot_ratio(config, self.data[key]["data"],
-                                diagram_folder)
-
-        # plot total time for all ntasks in repetition
-        self.plot_repetition_realtime_factor(config, self.data[key]["data"],
-                             diagram_folder)
-
-        # plot metadata for all ntasks in repetition
-        self.plot_repetition_metadata(config, self.data[key]["data"],
-                             diagram_folder)
 
         # plot metadata for all ntasks in repetition
         self.plot_repetition_metadata(config, self.data[key]["data"],
@@ -203,90 +163,6 @@ class BenchmarkProcessor:
         data_run_ntasks["cle_time_profile"] = df
 
 
-
-    def plot_run_ntasks_cle_time_profiler(self, data_run_ntasks, folder, ntasks):
-        """
-        Plots the cle time profile for individual ntasks runs
-        :param data_run_ntasks: data for this run and ntasks number
-        :param folder: folder path to save figure in
-        :param ntasks: number of tasks in this run
-        """
-        cle_time_profile = data_run_ntasks['cle_time_profile']
-
-        fig_all_one, ax_all_one = plt.subplots(figsize=figsize)
-        fig_all_multi, ax_all_multi = plt.subplots(5, figsize=figsize)
-        fig_all_one_second, ax_all_one_second = plt.subplots(figsize=figsize)
-
-        for i, column in enumerate(cle_profiler_columns):
-            fig_single, ax_single = plt.subplots()
-
-            title = f"CLE time profile - {ntasks} NEST processes"
-            subtitle = f"{column}"
-            fig_single.suptitle(f'{title}', fontsize=18)
-            ax_single.set_title(f'{subtitle}', fontsize=14, pad=10)
-            fig_single.canvas.manager.set_window_title(f'{title} - {subtitle}')
-            #ax_single.setp(plt.legend().get_texts(), color='#666')
-            ax_single.set_xlabel('cle step', color='#666')
-            ax_single.set_ylabel('time (s)', color='#666')
-            ax_single.grid(True, axis='y')
-            fig_single.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-
-            if column=='transfer_function':
-                # Todo: Only true if brain takes longer than robot step
-                data = [a - b for a, b in zip(cle_time_profile['cle_step'], cle_time_profile['brain_refresh'])]
-            else:
-                data = cle_time_profile[column]
-
-            ax_single.plot(cle_time_profile.index, data, label=column)
-            ax_single.legend(loc="upper right")
-            fig_single.savefig(f'{folder}/cle_time_profile-{column}.jpg')
-
-            ax_all_one.plot(cle_time_profile.index, data, label=column)
-            ax_all_one_second.plot(cle_time_profile.index[1:], data[1:], label=column)
-
-            ax_all_multi[i].plot(cle_time_profile.index, data, label=column)
-            ax_all_multi[i].set_title(f'{subtitle}', fontsize=16, pad=10)
-            ax_all_multi[i].set_xlabel('cle step', color='#666')
-            ax_all_multi[i].set_ylabel('time (s)', color='#666')
-            ax_all_multi[i].grid(True, axis='y')
-            ax_all_multi[i].legend(loc="upper right")
-
-
-        title = f"CLE time profile ({ntasks} NEST processes)"
-        #fig_all_one.set_title(f'{title}')
-        fig_all_one.suptitle(f'{title}', fontsize=20)
-        fig_all_one.canvas.manager.set_window_title(f'{title} - all')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all_one.set_xlabel('cle step', color='#666')
-        ax_all_one.set_ylabel('time (s)', color='#666')
-        ax_all_one.grid(True, axis='y')
-        ax_all_one.legend(loc="upper right")
-        fig_all_one.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_one.savefig(f'{folder}/cle_time_profile-all-one.jpg')
-
-        title = f"CLE time profile without first step ({ntasks} NEST processes)"
-        #fig_all_one.set_title(f'{title}')
-        fig_all_one_second.suptitle(f'{title}', fontsize=20)
-        fig_all_one_second.canvas.manager.set_window_title(f'{title} - all')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all_one_second.set_xlabel('cle step', color='#666')
-        ax_all_one_second.set_ylabel('time (s)', color='#666')
-        ax_all_one_second.grid(True, axis='y')
-        ax_all_one_second.legend(loc="upper right")
-        fig_all_one_second.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_one_second.savefig(f'{folder}/cle_time_profile-all-one-second.jpg')
-
-        title = f"CLE time profile multi - {ntasks} NEST processes"
-        #fig_all_multi.set_title(f'{title}')
-        fig_all_multi.suptitle(f'{title}', fontsize=20)
-        fig_all_multi.canvas.manager.set_window_title(f'{title} - all')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        fig_all_multi.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_multi.savefig(f'{folder}/cle_time_profile-all-multi.jpg')
-
-        plt.close('all')
-        #plt.show()
-
     def plot_run_cle_time_profiler(self, data_run, folder):
         """
         Plots the cle time profile for all ntasks runs
@@ -297,156 +173,57 @@ class BenchmarkProcessor:
         for column in cle_profiler_columns:
 
             fig_column_one, ax_column_one = plt.subplots(figsize=figsize)
-            fig_column_one_second, ax_column_one_second = plt.subplots(figsize=figsize)
-            fig_column_multi, ax_column_multi = plt.subplots(len(data_run), figsize=figsize)
+
+            max_time_list = []
+            min_time_list = []
+            first_time_list = []
 
             for i, ntasks in enumerate(data_run):
                 cle_time_profile = data_run[ntasks]['cle_time_profile']
 
                 if column=='transfer_function':
-                    # Todo: Only true if brain takes longer than robot step
-                    data = [a - b for a, b in zip(cle_time_profile['cle_step'], cle_time_profile['brain_refresh'])]
+                    data = [a - b for a, b in
+                            zip(cle_time_profile['cle_step'],
+                                list(map(max, zip(cle_time_profile['brain_refresh'] , cle_time_profile['robot_step']))))]
                 else:
                     data = cle_time_profile[column]
 
-                ax_column_multi[i].plot(cle_time_profile.index, data, label=ntasks)
-                ax_column_multi[i].set_xlabel('cle step', color='#666')
-                ax_column_multi[i].set_ylabel('time (s)', color='#666')
-                ax_column_multi[i].grid(True, axis='y')
-                #ax_column_multi[i].set_title(ntasks)
-                ax_column_multi[i].legend(loc="upper right")
+                max_time_list.append(max(data[1:]))
+                first_time_list.append(data[0])
+                min_time_list.append(max(data[1:]))
 
-                ax_column_one.plot(cle_time_profile.index, data, label=f"{ntasks[0:2]} NEST tasks")
-                ax_column_one_second.plot(cle_time_profile.index[1:], data[1:], label=f"{ntasks[0:2]} NEST tasks")
+                ax_column_one.plot(cle_time_profile.index, data, label=f"{ntasks[0:2]} NEST proc.", linewidth=6.0)
 
+            bottom, top = ax_column_one.get_ylim()
+            if max(max_time_list) > max(first_time_list):
+                top = max(max_time_list)
+            else:
+                top = min(max(max_time_list) * 1.6, max(first_time_list))
+
+            ax_column_one.set_ylim(bottom=max(bottom, 0), top=top)
 
             title = f"CLE time profile"
             subtitle = f"{column}"
-            fig_column_one.suptitle(f'{title}', fontsize=20)
-            ax_column_one.set_title(f'{subtitle}', fontsize=16, pad=10)
+            fig_column_one.suptitle(f'{title}', fontsize=30)
+            ax_column_one.set_title(f'{subtitle}', fontsize=25, pad=10)
             fig_column_one.canvas.manager.set_window_title(f'{title} - {subtitle}')
-            #ax_single.setp(plt.legend().get_texts(), color='#666')
-            ax_column_one.set_xlabel('cle step', color='#666')
-            ax_column_one.set_ylabel('time (s)', color='#666')
+            ax_column_one.set_xlabel('cle step', color='#666', fontsize=22)
+            ax_column_one.set_ylabel('time (s)', color='#666', fontsize=22)
+            ax_column_one.tick_params(axis='both', which='major', labelsize=18)
+            if robobrain_exp:
+                for xc in robobrain_tf_switch_times:
+                    ax_column_one.axvline(x=xc, color='black', linestyle='--')
             ax_column_one.grid(True, axis='y')
             fig_column_one.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
 
-            ax_column_one.legend(loc="upper right")
-            fig_column_one.savefig(f'{folder}/cle_time_profile-{column}-one.jpg')
+            if column=='transfer_function':
+                ax_column_one.legend(loc="upper right", fontsize=18)
+                ax_column_one.set_ylim(bottom=0.00005) # hpc_benchmark
+                ax_column_one.set_ylim(bottom=0.035) # robobrain
 
-
-            title = f"CLE time profile"
-            subtitle = f"{column}"
-            fig_column_one_second.suptitle(f'{title}', fontsize=20)
-            ax_column_one_second.set_title(f'{subtitle}', fontsize=16, pad=10)
-            fig_column_one_second.canvas.manager.set_window_title(f'{title} - {subtitle}')
-            #ax_single.setp(plt.legend().get_texts(), color='#666')
-            ax_column_one_second.set_xlabel('cle step', color='#666')
-            ax_column_one_second.set_ylabel('time (s)', color='#666')
-            ax_column_one_second.grid(True, axis='y')
-            fig_column_one_second.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-
-            ax_column_one_second.legend(loc="upper right")
-            fig_column_one_second.savefig(f'{folder}/cle_time_profile-{column}-one-second.jpg')
-
-            title = f"CLE time profile - {column}"
-            fig_column_multi.suptitle(f'{title}', fontsize=20)
-            #ax_column_multi.set_title(f'{subtitle}', fontsize=16, pad=10)
-            fig_column_one.canvas.manager.set_window_title(f'{title} - {subtitle}')
-            #ax_single.setp(plt.legend().get_texts(), color='#666')
-            fig_column_multi.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-            fig_column_multi.savefig(f'{folder}/cle_time_profile-{column}-multi.jpg')
+            fig_column_one.savefig(f'{folder}/cle_time_profile-{column}.svg')
 
         plt.close('all')
-
-
-    def plot_run_realtime_factor(self, config, data_run, folder):
-        """
-        Plots the realtime factor for all ntasks runs
-        :param data_run: data for this run
-        :param folder: folder path to save figure in
-        """
-
-        fig_all, ax_all = plt.subplots(figsize=figsize)
-
-        real_time_factors = [0.02 / data_run[ntasks]['cle_time_profile']['cle_step'][1:].mean() for ntasks in data_run]
-        linear_inv = self.get_linear_expectation_inv(config, min(real_time_factors))
-
-        xticks = set()
-        x = config["n_tasks"]
-        ax_all.plot(x, real_time_factors, lw=2, c=f"C{i}", label='Realtime Factor')
-        ax_all.plot(x, linear_inv, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-        ax_all.legend(loc="upper right")
-        for n in config["n_tasks"]:
-            xticks.add(n)
-            # TODO: get number of neurons and connections from metadata and use in
-            # subtitle
-
-        title = "Realtime Factor"
-        fig_all.suptitle(f'{title}', fontsize=20)
-        fig_all.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of NEST processes', color='#666')
-        ax_all.set_xscale('log')
-        ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-        ax_all.set_xticks(list(xticks))
-        ax_all.set_ylabel('factor sim/real', color='#666')
-        ax_all.grid(True, axis='y')
-        fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all.savefig(f'{folder}/realtime_factor.jpg')
-
-        plt.close('all')
-
-
-    def plot_run_braintorobot_ratio(self, config, data_run, folder):
-        """
-        Plots the brain to robot ratio for all ntasks runs
-        :param data_run: data for this run
-        :param folder: folder path to save figure in
-        """
-
-        fig_all, ax_all = plt.subplots(figsize=figsize)
-
-        robot_times = [data_run[ntasks]['cle_time_profile']['robot_step'][1:].mean() for ntasks in data_run]
-        brain_times = [data_run[ntasks]['cle_time_profile']['brain_step'][1:].mean() for ntasks in data_run]
-        runs = len(robot_times)
-
-        robot_percent = []
-        brain_percent = []
-        for i in range(runs):
-            sum_times = robot_times[i] + brain_times[i]
-            robot_percent.append(100 * (robot_times[i] / sum_times))
-            brain_percent.append(100 * (brain_times[i] / sum_times))
-
-        x = config['n_tasks']
-        xticks = set()
-
-        for n in config["n_tasks"]:
-            xticks.add(n)
-
-        c = 0.2
-        ax_all.bar(x, robot_percent, width=c*np.array(x), bottom=brain_percent, color='black')
-        ax_all.bar(x, brain_percent, width=c*np.array(x), color='red')
-
-        ax_all.axhline(y=50, color='black', linestyle='--')
-
-        ax_all.legend(labels=['optimal split', 'robot', 'brain'], loc="lower right")
-
-        title = "Brain to Robot Ratio"
-        fig_all.suptitle(f'{title}', fontsize=20)
-        fig_all.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of NEST processes', color='#666')
-        ax_all.set_xscale('log')
-        ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-        ax_all.set_xticks(list(xticks))
-        ax_all.set_ylabel('percentage (%)', color='#666')
-        ax_all.grid(True, axis='y')
-        fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all.savefig(f'{folder}/braintorobot_ratio.jpg')
-
-        plt.close('all')
-
 
 
     def get_linear_expectation(self, config, max):
@@ -459,135 +236,6 @@ class BenchmarkProcessor:
         linear = [min*f for f in factors]
         return linear
 
-    def plot_run_total_runtime(self, config, data_run, folder):
-        """
-        Plots the total runtime for all ntasks in a run
-        :param config: Configuration for this run
-        :param data_run: data for this run
-        :param folder: folder to save the figure in
-        """
-        fig_all, ax_all = plt.subplots(figsize=figsize)
-
-        runtimes = [data_run[ntasks]['runtime'] for ntasks in data_run]
-        linear = self.get_linear_expectation(config, float(list(data_run.values())[0]['runtime']))
-
-        xticks = set()
-        x = config["n_tasks"]
-        ax_all.plot(x, runtimes, lw=2, c=f"C{i}", label='runtime')
-        ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-        ax_all.legend(loc="upper right")
-        for n in config["n_tasks"]:
-            xticks.add(n)
-            # TODO: get number of neurons and connections from metadata and use in
-            # subtitle
-
-        title = "Runtime"
-        fig_all.suptitle(f'{title}', fontsize=20)
-        fig_all.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of NEST processes', color='#666')
-        ax_all.set_xscale('log')
-        ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-        ax_all.set_xticks(list(xticks))
-        ax_all.set_ylabel('time (s)', color='#666')
-        ax_all.grid(True, axis='y')
-        fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all.savefig(f'{folder}/total_runtime.jpg')
-
-        plt.close('all')
-
-    def plot_run_nodehours(self, config, data_run, folder):
-        """
-        Plots the nodehours used for all ntasks in a run
-        :param config: Configuration for this run
-        :param data_run: data for this run
-        :param folder: folder to save the figure in
-        """
-        fig_all, ax_all = plt.subplots(figsize=figsize)
-
-        runtimes = [data_run[ntasks]['runtime']/3600 for ntasks in data_run]
-        ntasks = [int(ntasks.replace("_ntasks", "")) for ntasks in data_run]
-        nodehours = [a * b for a, b in zip(ntasks, runtimes)]
-
-        linear = self.get_linear_expectation_inv(config, nodehours[0]) #float(list(data_run.values())[0]['runtime']))
-
-        xticks = set()
-        x = config["n_tasks"]
-        ax_all.plot(x, nodehours, lw=2, c=f"C{i}", label='runtime')
-        ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-        ax_all.legend(loc="upper right")
-        for n in config["n_tasks"]:
-            xticks.add(n)
-            # TODO: get number of neurons and connections from metadata and use in
-            # subtitle
-
-        title = "Node Hours"
-        fig_all.suptitle(f'{title}', fontsize=20)
-        fig_all.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of NEST processes', color='#666')
-        ax_all.set_xscale('log')
-        ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-        ax_all.set_xticks(list(xticks))
-        ax_all.set_ylabel('node hours (h)', color='#666')
-        ax_all.grid(True, axis='y')
-        fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all.savefig(f'{folder}/nodehours.jpg')
-
-        plt.close('all')
-
-    def plot_run_metadata(self, config, data_run, folder):
-        """
-        Plots the total runtime for all ntasks in a run
-        :param config: Configuration for this run
-        :param data_run: data for this run
-        :param folder: folder to save the figure in
-        """
-        for type in ['nest_time_connect', 'nest_time_create', 'nest_time_last_simulate',
-                     'sacct_averss', 'sacct_elapsed', 'sacct_maxrss', 'sacct_consumedenergy']:
-
-            fig_all, ax_all = plt.subplots(figsize=figsize)
-
-            values = [data_run[ntasks]['metadata'][type] for ntasks in data_run]
-            linear = self.get_linear_expectation(config, float(list(data_run.values())[0]['metadata'][type]))
-            linear_inv = self.get_linear_expectation_inv(config, float(list(data_run.values())[0]['metadata'][type]))
-
-            xticks = set()
-            x = config["n_tasks"]
-            ax_all.plot(x, values, lw=2, c=f"C{i}", label='runtime')
-            if type in ['sacct_consumedenergy']:
-                ax_all.plot(x, linear_inv, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-            else:
-                ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-
-            ax_all.legend(loc="upper right")
-
-            for n in config["n_tasks"]:
-                xticks.add(n)
-                # TODO: get number of neurons and connections from metadata and use in
-                # subtitle
-
-            title = type
-            fig_all.suptitle(f'{title}', fontsize=20)
-            fig_all.canvas.manager.set_window_title(f'{title}')
-            #fig_all.setp(plt.legend().get_texts(), color='#666')
-            ax_all.set_xlabel('number of NEST tasks', color='#666')
-            ax_all.set_xscale('log')
-            ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-            ax_all.set_xticks(list(xticks))
-            ax_all.set_ylabel('time (s)', color='#666')
-            if type in ['sacct_averss', 'sacct_maxrss']:
-                ax_all.set_ylabel('RAM (kB)', color='#666')
-            if type in ['sacct_consumedenergy']:
-                ax_all.set_ylabel('energy (kJ)', color='#666')
-
-            ax_all.grid(True, axis='y')
-            fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-            fig_all.savefig(f'{folder}/{type}.jpg')
-
-        plt.close('all')
-
-
     def plot_repetition_total_runtime(self, config, data, folder):
         """
         Plots the total runtime for all ntasks in a all repetitions
@@ -595,62 +243,55 @@ class BenchmarkProcessor:
         :param data: data for all repetitions
         :param folder: folder to save the figure in
         """
-        fig_all_multi, ax_all_multi = plt.subplots(config['repetitions'], figsize=figsize)
         fig_all_one, ax_all_one = plt.subplots(figsize=figsize)
 
         first_values = []
+        ax_colors = []
         for rep in range(1, config['repetitions']+1, 1):
             runtimes = [data[f"{rep}"][ntasks]['runtime'] for ntasks in data[f"{rep}"]]
             first_values.append(float(list(data[f"{rep}"].values())[0]['runtime']))
 
-            linear_multi = self.get_linear_expectation(config, float(list(data[f"{rep}"].values())[0]['runtime']))
-
             xticks = set()
             x = config["n_tasks"]
-            ax_all_multi[rep-1].plot(x, runtimes, lw=2, c=f"C{i}", label=f"run{rep}")
-            ax_all_multi[rep-1].plot(x, linear_multi, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-            ax_all_multi[rep-1].legend(loc="upper right")
             for n in config["n_tasks"]:
                 xticks.add(n)
-                # TODO: get number of neurons and connections from metadata and use in
-                # subtitle
 
-            ax_all_multi[rep-1].set_xlabel('number of NEST processes', color='#666')
-            ax_all_multi[rep-1].set_xscale('log')
-            ax_all_multi[rep-1].get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-            ax_all_multi[rep-1].set_xticks(list(xticks))
-            ax_all_multi[rep-1].set_ylabel('time (s)', color='#666')
-            ax_all_multi[rep-1].grid(True, axis='y')
-
-            ax_all_one.plot(x, runtimes, lw=2, c=f"C{rep}", label=f"run{rep}")
+            ax_plot, = ax_all_one.plot(x, runtimes, c=f"C{rep}", label=f"run{rep}", linewidth=6.0)
+            ax_colors.append(ax_plot.get_color())
 
         first_values_cleaned = self.remove_outliers(first_values)
         linear = self.get_linear_expectation(config, sum(first_values_cleaned)/len(first_values_cleaned))
 
-        ax_all_one.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-        ax_all_one.legend(loc="upper right")
+        ax_all_one.plot(x, linear, c=f"black", alpha=0.25, label='linear', linewidth=8.0)
+
+
+        patches = []
+        for color in ax_colors:
+            patches.append(Patch(facecolor=color, edgecolor='black'))
+        for i in [1, 3, 5, 7, 9, 11, 13]:
+            patches.insert(i, Patch(facecolor='white', edgecolor='white'))
+        patches.insert(15, Line2D([0], [0], color=f"black", alpha=0.25, lw=4))
+        leg = ax_all_one.legend(handles=patches,
+                          labels=14*[''] + ['runs 1-8', 'linear'],
+                          ncol=8, handletextpad=0.5, handlelength=1.0, columnspacing=-0.17,
+                          loc="upper right", fontsize=18)
+        leg._legend_box.align = "left"
+
         for n in config["n_tasks"]:
             xticks.add(n)
 
         title = "Runtime"
-        fig_all_one.suptitle(f'{title}', fontsize=20)
+        fig_all_one.suptitle(f'{title}', fontsize=30)
         fig_all_one.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all_one.set_xlabel('number of NEST processes', color='#666')
+        ax_all_one.set_xlabel('number of NEST processes', color='#666', fontsize=22)
         ax_all_one.set_xscale('log')
         ax_all_one.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
         ax_all_one.set_xticks(list(xticks))
-        ax_all_one.set_ylabel('time (s)', color='#666')
+        ax_all_one.set_ylabel('time (s)', color='#666', fontsize=22)
         ax_all_one.grid(True, axis='y')
+        ax_all_one.tick_params(axis='both', which='major', labelsize=18)
         fig_all_one.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_one.savefig(f'{folder}/total_runtime-one.jpg')
-
-
-        title = "Runtime"
-        fig_all_multi.suptitle(f'{title}', fontsize=20)
-        fig_all_multi.canvas.manager.set_window_title(f'{title}')
-        fig_all_multi.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_multi.savefig(f'{folder}/total_runtime-multi.jpg')
+        fig_all_one.savefig(f'{folder}/total_runtime.svg')
 
         plt.close('all')
 
@@ -663,8 +304,10 @@ class BenchmarkProcessor:
 
         fig_all, ax_all = plt.subplots(figsize=figsize)
 
-        robot_times = [[data[f"{rep}"][ntasks]['cle_time_profile']['robot_step'][1:].mean() for rep in range(1, config['repetitions']+1, 1)] for ntasks in data[f"1"]]
-        brain_times = [[data[f"{rep}"][ntasks]['cle_time_profile']['brain_step'][1:].mean() for rep in range(1, config['repetitions']+1, 1)] for ntasks in data[f"1"]]
+        robot_times = [[data[f"{rep}"][ntasks]['cle_time_profile']['robot_step'][1:].mean()
+                        for rep in range(1, config['repetitions']+1, 1)] for ntasks in data[f"1"]]
+        brain_times = [[data[f"{rep}"][ntasks]['cle_time_profile']['brain_refresh'][1:].mean()
+                         for rep in range(1, config['repetitions']+1, 1)] for ntasks in data[f"1"]]
 
         robot_means = [sum(x)/len(x) for x in robot_times]
         brain_means = [sum(x)/len(x) for x in brain_times]
@@ -693,19 +336,21 @@ class BenchmarkProcessor:
 
         ax_all.axhline(y=50, color='black', linestyle='--')
 
-        ax_all.legend(labels=['optimal split', 'robot', 'brain'], loc="lower right")
+        if hpc_exp:
+            ax_all.legend(labels=['optimal split', 'robot', 'brain'],
+                          loc="lower right", fontsize=18)
 
         title = "Brain to Robot Ratio"
-        fig_all.suptitle(f'{title}', fontsize=20)
+        fig_all.suptitle(f'{title}', fontsize=25)
         fig_all.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of NEST processes', color='#666')
+        ax_all.set_xlabel('number of NEST processes', color='#666', fontsize=22)
         ax_all.set_xticks(list(xticks))
         ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-        ax_all.set_ylabel('percentage (%)', color='#666')
+        ax_all.set_ylabel('percentage (%)', color='#666', fontsize=22)
         ax_all.grid(True, axis='y')
+        ax_all.tick_params(axis='both', which='major', labelsize=18)
         fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all.savefig(f'{folder}/braintorobot_ratio.jpg')
+        fig_all.savefig(f'{folder}/braintorobot_ratio.svg')
 
         plt.close('all')
 
@@ -716,7 +361,6 @@ class BenchmarkProcessor:
         :param data: data for all repetitions
         :param folder: folder to save the figure in
         """
-        fig_all_multi, ax_all_multi = plt.subplots(config['repetitions'], figsize=figsize)
         fig_all_one, ax_all_one = plt.subplots(figsize=figsize)
 
         first_values = []
@@ -724,52 +368,32 @@ class BenchmarkProcessor:
 
             real_time_factors = [0.02 / data[f"{rep}"][ntasks]['cle_time_profile']['cle_step'][1:].mean() for ntasks in data[f"{rep}"]]
             first_values.append(real_time_factors[0])
-            linear_multi = self.get_linear_expectation_inv(config, real_time_factors[0])
 
             xticks = set()
             x = config["n_tasks"]
-            ax_all_multi[rep-1].plot(x, real_time_factors, lw=2, c=f"C{i}", label=f"run{rep}")
-            ax_all_multi[rep-1].plot(x, linear_multi, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-            ax_all_multi[rep-1].legend(loc="upper right")
             for n in config["n_tasks"]:
                 xticks.add(n)
-                # TODO: get number of neurons and connections from metadata and use in
-                # subtitle
 
-            ax_all_multi[rep-1].set_xlabel('number of NEST processes', color='#666')
-            ax_all_multi[rep-1].set_xscale('log')
-            ax_all_multi[rep-1].get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-            ax_all_multi[rep-1].set_xticks(list(xticks))
-            ax_all_multi[rep-1].set_ylabel('factor sim/real', color='#666')
-            ax_all_multi[rep-1].grid(True, axis='y')
-
-            ax_all_one.plot(x, real_time_factors, lw=2, c=f"C{rep}", label=f"run{rep}")
+            ax_all_one.plot(x, real_time_factors, c=f"C{rep}", label=f"run{rep}", linewidth=6.0)
 
         first_values_cleaned = self.remove_outliers(first_values)
         linear = self.get_linear_expectation_inv(config, sum(first_values_cleaned)/len(first_values_cleaned))
-        ax_all_one.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-        ax_all_one.legend(loc="upper right")
+        ax_plot, =  ax_all_one.plot(x, linear, c=f"black", alpha=0.25, label='linear', linewidth=8.0)
         for n in config["n_tasks"]:
             xticks.add(n)
 
         title = "Realtime Factor"
-        fig_all_one.suptitle(f'{title}', fontsize=20)
+        fig_all_one.suptitle(f'{title}', fontsize=30)
         fig_all_one.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all_one.set_xlabel('number of NEST processes', color='#666')
+        ax_all_one.set_xlabel('number of NEST processes', color='#666', fontsize=22)
         ax_all_one.set_xscale('log')
         ax_all_one.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
         ax_all_one.set_xticks(list(xticks))
-        ax_all_one.set_ylabel('factor sim/real', color='#666')
+        ax_all_one.set_ylabel('factor sim/real', color='#666', fontsize=22)
         ax_all_one.grid(True, axis='y')
+        ax_all_one.tick_params(axis='both', which='major', labelsize=18)
         fig_all_one.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_one.savefig(f'{folder}/realtime_factors-one.jpg')
-
-        title = "Realtime Factor"
-        fig_all_multi.suptitle(f'{title}', fontsize=20)
-        fig_all_multi.canvas.manager.set_window_title(f'{title}')
-        fig_all_multi.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-        fig_all_multi.savefig(f'{folder}/realtime_factors-multi.jpg')
+        fig_all_one.savefig(f'{folder}/realtime_factors.svg')
 
         plt.close('all')
 
@@ -781,86 +405,109 @@ class BenchmarkProcessor:
         :param folder: folder to save the figure in
         """
 
-        for type in ['nest_time_connect', 'nest_time_create', 'nest_time_last_simulate',
+        for type in ['nest_time_build', 'nest_time_connect', 'nest_time_create', 'nest_time_last_simulate',
                      'sacct_averss', 'sacct_elapsed', 'sacct_maxrss', 'sacct_consumedenergy']:
-
-            fig_all_multi, ax_all_multi = plt.subplots(config['repetitions'], figsize=figsize)
 
             fig_all_one, ax_all_one = plt.subplots(figsize=figsize)
 
             first_values = []
+            ax_colors = []
             for rep in range(1, config['repetitions']+1, 1):
 
-                    values = [data[f"{rep}"][ntasks]['metadata'][type] for ntasks in data[f"{rep}"]]
-                    first_values.append(float(list(data[f"{rep}"].values())[0]['metadata'][type]))
-                    linear_multi = self.get_linear_expectation(config, float(list(data[f"{rep}"].values())[0]['metadata'][type]))
-                    linear_inv_multi = self.get_linear_expectation_inv(config, float(list(data[f"{rep}"].values())[0]['metadata'][type]))
+                    if type == 'nest_time_build':
+                        values = [data[f"{rep}"][ntasks]['metadata']['nest_time_create']
+                                  + data[f"{rep}"][ntasks]['metadata']['nest_time_connect']
+                                  for ntasks in data[f"{rep}"]]
+                    else:
+                        values = [data[f"{rep}"][ntasks]['metadata'][type] for ntasks in data[f"{rep}"]]
+
+                    if type in ['sacct_averss', 'sacct_maxrss']:
+                        values = [x / 1000000 for x in values]
+
+                    if type == 'sacct_consumedenergy':
+                        values[-1] = values[-1] * 1000
+
+                    if type == 'nest_time_build':
+                        first_data = float(list(data[f"{rep}"].values())[0]['metadata']['nest_time_create']) \
+                                           + float(list(data[f"{rep}"].values())[0]['metadata']['nest_time_connect'])
+                    elif type in ['sacct_averss', 'sacct_maxrss']:
+                        first_data = float(list(data[f"{rep}"].values())[0]['metadata'][type]) / 1000000
+                    else:
+                        first_data = float(list(data[f"{rep}"].values())[0]['metadata'][type])
+
+                    first_values.append(first_data)
 
                     xticks = set()
                     x = config["n_tasks"]
-                    ax_all_multi[rep-1].plot(x, values, lw=2, c=f"C{i}", label=f"run{rep}")
-                    if type in ['sacct_consumedenergy']:
-                        ax_all_multi[rep-1].plot(x, linear_inv_multi, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-                    else:
-                        ax_all_multi[rep-1].plot(x, linear_multi, lw=4, c=f"C{i}", alpha=0.25, label='linear')
-
-                    ax_all_multi[rep-1].legend(loc="upper right")
 
                     for n in config["n_tasks"]:
                         xticks.add(n)
-                        # TODO: get number of neurons and connections from metadata and use in
-                        # subtitle
 
-
-                    ax_all_multi[rep-1].set_xlabel('number of NEST tasks', color='#666')
-                    ax_all_multi[rep-1].set_xscale('log')
-                    ax_all_multi[rep-1].get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-                    ax_all_multi[rep-1].set_xticks(list(xticks))
-                    ax_all_multi[rep-1].set_ylabel('time (s)', color='#666')
-                    if type in ['sacct_averss', 'sacct_maxrss']:
-                        ax_all_multi[rep-1].set_ylabel('RAM (kB)', color='#666')
-                    if type in ['sacct_consumedenergy']:
-                        ax_all_multi[rep-1].set_ylabel('energy (kJ)', color='#666')
-                    ax_all_multi[rep-1].grid(True, axis='y')
-
-                    ax_all_one.plot(x, values, lw=2, c=f"C{rep}", label=f"run{rep}")
+                    ax_plot, = ax_all_one.plot(x, values, c=f"C{rep}", label=f"run{rep}", linewidth=6.0)
+                    ax_colors.append(ax_plot.get_color())
 
             first_values_cleaned = self.remove_outliers(first_values)
             linear = self.get_linear_expectation(config, sum(first_values_cleaned)/len(first_values_cleaned))
             linear_inv = self.get_linear_expectation_inv(config, sum(first_values_cleaned)/len(first_values_cleaned))
 
             if type in ['sacct_consumedenergy']:
-                ax_all_one.plot(x, linear_inv, lw=4, c=f"C{i}", alpha=0.25, label='linear')
+                lin, = ax_all_one.plot(x, linear_inv, c=f"black", alpha=0.25, label='linear', linewidth=8.0)
             else:
-                ax_all_one.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
+                lin, = ax_all_one.plot(x, linear, c=f"black", alpha=0.25, label='linear', linewidth=8.0)
 
-            ax_all_one.legend(loc="upper right")
+            if type in ['nest_time_build']:
+                patches = []
+                for color in ax_colors:
+                    patches.append(Patch(facecolor=color, edgecolor='black'))
+                for i in [1, 3, 5, 7, 9, 11, 13]:
+                    patches.insert(i, Patch(facecolor='white', edgecolor='white'))
+                patches.insert(15, Line2D([0], [0], color=f"black", alpha=0.25, lw=4))
+                leg = ax_all_one.legend(handles=patches,
+                                  labels=14*[''] + ['runs 1-8', 'linear'],
+                                  ncol=8, handletextpad=0.5, handlelength=1.0, columnspacing=-0.17,
+                                  loc="upper right", fontsize=18)
+                leg._legend_box.align = "left"
+
             for n in config["n_tasks"]:
                 xticks.add(n)
 
             title = type
-            fig_all_one.suptitle(f'{title}', fontsize=20)
+            fig_all_one.suptitle(f'{title}', fontsize=30)
+
+            if title is 'nest_time_build':
+                fig_title = 'NEST network building time'
+            elif title is 'nest_time_connect':
+                fig_title = 'NEST network connection time'
+            elif title is 'nest_time_create':
+                fig_title = 'NEST network creation time'
+            elif title is 'nest_time_last_simulate':
+                fig_title = 'NEST time of last simulation step'
+            elif title is 'sacct_averss':
+                fig_title = 'Job average resident set size'
+            elif title is 'sacct_elapsed':
+                fig_title = 'Job elapsed time'
+            elif title is 'sacct_maxrss':
+                fig_title = 'Job maximum resident set size'
+            elif title is 'sacct_consumedenergy':
+                fig_title = 'Job total consumed energy'
+
+            fig_all_one.suptitle(fig_title, fontsize=30)
+
             fig_all_one.canvas.manager.set_window_title(f'{title}')
-            #fig_all.setp(plt.legend().get_texts(), color='#666')
-            ax_all_one.set_xlabel('number of NEST processes', color='#666')
+            ax_all_one.set_xlabel('number of NEST processes', color='#666', fontsize=22)
             ax_all_one.set_xscale('log')
             ax_all_one.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
             ax_all_one.set_xticks(list(xticks))
-            ax_all_one.set_ylabel('time (s)', color='#666')
+            ax_all_one.set_ylabel('time (s)', color='#666', fontsize=22)
             if type in ['sacct_averss', 'sacct_maxrss']:
-                ax_all_one.set_ylabel('RAM (kB)', color='#666')
+                ax_all_one.set_ylabel('RAM (GB)', color='#666')
             if type in ['sacct_consumedenergy']:
                 ax_all_one.set_ylabel('energy (kJ)', color='#666')
 
             ax_all_one.grid(True, axis='y')
+            ax_all_one.tick_params(axis='both', which='major', labelsize=18)
             fig_all_one.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-            fig_all_one.savefig(f'{folder}/{type}-one.jpg')
-
-            title = type
-            fig_all_multi.suptitle(f'{title}', fontsize=20)
-            fig_all_multi.canvas.manager.set_window_title(f'{title}')
-            fig_all_multi.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
-            fig_all_multi.savefig(f'{folder}/{type}-multi.jpg')
+            fig_all_one.savefig(f'{folder}/{type}.svg')
 
             plt.close('all')
 
@@ -875,6 +522,7 @@ class BenchmarkProcessor:
         fig_all, ax_all = plt.subplots(figsize=figsize)
 
         first_values = []
+        ax_colors = []
         for rep in range(1, config['repetitions']+1, 1):
 
             runtimes = [data[f"{rep}"][ntasks]['runtime']/3600 for ntasks in data[f"{rep}"]]
@@ -884,31 +532,43 @@ class BenchmarkProcessor:
 
             xticks = set()
             x = config["n_tasks"]
-            ax_all.plot(x, nodehours, lw=2, c=f"C{rep}", label=f"run{rep}")
+            ax_plot, = ax_all.plot(x, nodehours, c=f"C{rep}", label=f"run{rep}", linewidth=6.0)
+            ax_colors.append(ax_plot.get_color())
 
         first_values_cleaned = self.remove_outliers(first_values)
-        linear = self.get_linear_expectation_inv(config, sum(first_values_cleaned)/len(first_values_cleaned)) #float(list(data_run.values())[0]['runtime']))
-        ax_all.plot(x, linear, lw=4, c=f"C{i}", alpha=0.25, label='linear')
+        linear = self.get_linear_expectation_inv(config, sum(first_values_cleaned)/len(first_values_cleaned))
+        ax_all.plot(x, linear, c=f"black", alpha=0.25, label='linear', linewidth=8.0)
 
-        ax_all.legend(loc="upper right")
+        patches = []
+        for color in ax_colors:
+            patches.append(Patch(facecolor=color, edgecolor='black'))
+        for i in [1, 3, 5, 7, 9, 11, 13]:
+            patches.insert(i, Patch(facecolor='white', edgecolor='white'))
+        patches.insert(15, Line2D([0], [0], color=f"black", alpha=0.25, lw=4))
+        if hpc_exp:
+            leg = ax_all.legend(handles=patches,
+                              labels=14*[''] + ['runs 1-8', 'linear'],
+                              ncol=8, handletextpad=0.5, handlelength=1.0, columnspacing=-0.17,
+                              loc="upper left", fontsize=18)
+            leg._legend_box.align = "left"
+
         for n in config["n_tasks"]:
             xticks.add(n)
-            # TODO: get number of neurons and connections from metadata and use in
-            # subtitle
 
         title = "Node Hours"
-        fig_all.suptitle(f'{title}', fontsize=20)
+        fig_all.suptitle(f'{title}', fontsize=25)
         fig_all.canvas.manager.set_window_title(f'{title}')
-        #fig_all.setp(plt.legend().get_texts(), color='#666')
-        ax_all.set_xlabel('number of NEST processes', color='#666')
+        ax_all.set_xlabel('number of NEST processes', color='#666', fontsize=22)
         ax_all.set_xscale('log')
         ax_all.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
         ax_all.set_xticks(list(xticks))
-        ax_all.set_ylabel('node hours (h)', color='#666')
+        ax_all.set_ylabel('node hours (h)', color='#666', fontsize=22)
         ax_all.grid(True, axis='y')
+        ax_all.tick_params(axis='both', which='major', labelsize=18)
         fig_all.tight_layout(pad=0.6, w_pad=0.25, h_pad=0.25)
 
-        fig_all.savefig(f'{folder}/nodehours.jpg')
+        fig_all.savefig(f'{folder}/nodehours.svg')
+
 
         plt.close('all')
 
@@ -918,18 +578,18 @@ if __name__ == "__main__":
         print(f"Usage: {sys.argv[0]} <datadir1> [<datadir2> ...]")
 
     data_dirs = sys.argv[1:]
+
+    robobrain_exp = False
+    hpc_exp = False
+    for dir in data_dirs:
+         if "robobrain" in dir:
+             robobrain_exp = True
+         if "hpc" in dir:
+             hpc_exp = True
+
+
     processor = BenchmarkProcessor()
 
     for i, data_dir in enumerate(data_dirs):
-        # loop for all data dirs
-
-        # process data for every run
+        # loop for all data dirs and process data for every run
         processor.process_data_runs(i, data_dir)
-
-
-        # plot total run times per run in batch
-        #processor.plot_total_runtime()
-
-        # plot total run times per run in batch
-
-        # plot
