@@ -2,20 +2,20 @@
 
 This folder contains the code and results of the NRP + NEST Server benchmark
 experiments run on Piz Daint and are described in detail in [Feldotto et al.,
-2021](XXX).
+2022](XXX).
 
 ## Introduction
 
-Due to the many parts of the HBP Neurorobotics Platform, running benchmarks on
-it is not completely trivial and requires a number of steps:
+Running benchmarks with the Neurorobotics Platform and distributed NEST-server
+on High Performance Computing resources requires basically three steps:
 
-1. a job has to be allocated using `salloc`
+1. a HPC job has to be allocated using `salloc`
 1. the NRP container and the tunnel to the frontend machine have to be run on
    the first node of the allocation
 1. the NEST container has to be deployed on all but the first nodes using
    `srun`
 
-The first three steps are independent of the concrete parallelization setup of
+The first two steps are independent of the concrete parallelization setup of
 NEST, while the last one uses different numbers of nodes, MPI processes, and/or
 threads per process for each benchmark step.
 
@@ -23,37 +23,29 @@ threads per process for each benchmark step.
 
 The benchmark runner and analysis/plotting scripts require a number of Python
 modules. They are listed in the file `requirements.txt` and can be easily
-installed using
+installed on Piz Daint using
 
 ```bash
 module load cray-python/3.8.5.1
 pip3 install -r requirements.txt
 ```
 
-The benchmarks runs using the NRP are run using the commandline interface
-[VirtualCoach](https://bitbucket.org/hbpneurorobotics/virtualcoach). It can be
-installed into a Python virtual environment using the following sequence of
-commands:
+The benchmarks are executed using the NRP Virtual Coach
+[VirtualCoach](https://bitbucket.org/hbpneurorobotics/virtualcoach), a python
+module to script experiment execution.
+It can be installed into a Python virtual environment using pip:
 
 ```bash
 virtualenv pynrp
 source pynrp/bin/activate
 pip3 install pynrp
-
-cd pynrp/lib64/python3.6/site-packages/pynrp
-vp_url="https://bitbucket.org/hbpneurorobotics/virtualcoach"
-vp_githash="b4d8c119170a89621ffb298ba47a0345d7b0c7ae"
-vp_path="hbp_nrp_virtual_coach/pynrp"
-for file in config.json config.py virtual_coach.py; do
-  wget -o $file $vp_url/$vp_githash/$vp_path/$file
-done
 ```
 
 The environment is activated from within `job.sh` before the actual benchmark
 scripts are run.
 
-To install the necessary Docker containers, the following commands can be
-used:
+To install the necessary Docker containers from the EBRAINS harbor registry
+the following commands can be used:
 
 ```bash
 module load sarus
@@ -61,12 +53,12 @@ module use /scratch/snx3000/bignamic/EasyBuildInstall/modules/all/
 module load skopeo
 
 skopeo copy --insecure-policy \
-       docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:caadd07080aa455c8c0ed4139117136f5d0a209aac0ad6d547108c06a683acbf \
+       docker://docker-registry.ebrains.eu/nrp-daint/nrp@sha256:2e249d2a3cfd3d6df27fded8a03b5d74e9f485e4de4249648ccdea3dfce9587e \
        docker-archive:nrp_nest_client.tar
 sarus load nrp_nest_client.tar nrp_nest_client
 
 skopeo copy --insecure-policy \
-       docker://docker-registry.ebrains.eu/nest/nest-simulator@sha256:68e9c269f31f2c7a72a8c01497a130971bff0cf1681bce4f96e7fdb335054ff7 \
+       docker://docker-registry.ebrains.eu/nrp-daint/nest_server@sha256:68e9c269f31f2c7a72a8c01497a130971bff0cf1681bce4f96e7fdb335054ff7 \
        docker-archive:nest_latest_daint.tar
 sarus load nest_latest_daint.tar nest_latest_daint
 ```
@@ -118,25 +110,24 @@ Large memory machines (i.e., having 128 GB) can be obtained by additionally
 specifying `--mem=120GB`. More detailed information on the options can be
 found in the [`salloc` man page](https://slurm.schedmd.com/salloc.html].
 
-The following snippet of bash code is a good starting point for allocating a
-job for running the benchmarks
+All parameter configurations for the benchmark runs can be found in the
+config.yaml file.
 
-```bash
-salloc --constraint mc -A ich004m --time=200 \
-       --nodes 33 --ntasks 66 --cpus-per-task 36 --hint=multithread \
-       job.sh config.yaml
-```
-
-The allocation can be triggered with the bash.sh skript. In here it is possible 
-execute multiple repetitions of the same benchmark run.
 
 ## Main job script
 
-The main runner for the benchmarks is implemented in `job.sh`. It will first
-check commandline arguments, call the `prepare_benchmark.py` script to
-templatize the secondary run scripts and then run them on the first node of
-the allocation using `ssh`. After a short waiting time to let the NRP and the
-tunnel become available, it starts the main loop that is contained in
+We run experiments in batches, that means every benchmark experiment run
+is executed x times in order to prove reproducibility of results.
+Benchmark experiment runs can be started with the following command, passing
+the configuration file to the batch run script:
+
+./batch config.yaml
+
+The main runner of an individual benchmark run is implemented in `job.sh`.
+It will first check commandline arguments, call the `prepare_benchmark.py`
+script to templatize the secondary run scripts and then run them on the first
+node of the allocation using `ssh`. After a short waiting time to let the NRP
+and the tunnel become available, it starts the main loop that is contained in
 `run_benchmark.sh`.
 
 Please note that even thought the allocation is set up so that it provides the
@@ -149,12 +140,20 @@ brain simulation script itself.
 ## Plotting and analysis
 
 The result data generated by job runs can be plotted by the script
-`process_benchmark_data.py`. It can be supplied with the names of one or more
-data directories. An example invocation looks like this:
+`process_benchmark_data.py RESULT_FOLDER`. It can be supplied with the name
+of a result data directory generated from an benchmark batch run. Generated
+diagrams are dropped in a dedicated diagrams folder of the benchmark run results.
+An example invocation looks like this:
 
 ```bash
-python3 process_benchmark_data.py data_notf data_baseline
+python3 process_benchmark_data.py Results_paper/3_robobrain/2022-02-03_12-03-15-robobrain_fullbrain
 ```
+
+Two additional scripts can be found in this repository that have been implemented
+to generate the figures of the referenced paper, `create_paper_figures.py` to
+assemble multiple diagrams of a benchmark run, and `create_comparison.py` to
+generate a comparison figure of different benchmark runs.
+
 
 ## Thread pinning tester
 
@@ -176,7 +175,7 @@ srun --nodes 2 --ntasks 4 --ntasks-per-node=2 \
 The benchmark suite consists of two main components: a rather synthetic (but
 well controllable) brain simulation test case in the form of a [random
 balanced network](http://www.yger.net/the-balanced-network/) (directory
-`HPC_benchmark`), and a robotic simulation coupled with a motor-cortex brain
-simulation (directory `RoboBrain`)
+`HPC_benchmark`), and an embodied multi-region rodent brain simulation
+(directory `RoboBrain`).
 
-The benchmarks are explained in more detail in the corresponding directories.
+The benchmarks are explained in more detail in the referenced paper.
