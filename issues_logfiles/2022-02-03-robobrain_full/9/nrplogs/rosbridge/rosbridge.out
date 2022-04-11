@@ -1,0 +1,53 @@
+[1;31m+-------------------------- Neurorobotics Platform warning ---------------------------+
+| Dear Neurorobotics user, your PYTHONPATH contains previous paths.                   |
+| This might cause the Neurorobotics Platform to malfunction.                         |
+| If you are experiencing problems (like MPI.so not finding function references), add |
+|   export PYTHONPATH=                                                                |
+| to your ~/.bashrc                                                                   |
++-------------------------------------------------------------------------------------+[0m
+2022-02-04 05:24:36+0100 [-] Log opened.
+2022-02-04 05:24:37+0100 [-] registered capabilities (classes):
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.call_service.CallService'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.advertise.Advertise'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.publish.Publish'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.subscribe.Subscribe'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.defragmentation.Defragment'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.advertise_service.AdvertiseService'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.service_response.ServiceResponse'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.unadvertise_service.UnadvertiseService'>
+2022-02-04 05:24:37+0100 [-]  - <class 'rosbridge_library.capabilities.ros_commander.ExecuteRosCommand'>
+2022-02-04 05:24:37+0100 [-] WebSocketServerFactory starting on 9090
+2022-02-04 05:24:37+0100 [-] Starting factory <autobahn.twisted.websocket.WebSocketServerFactory object at 0x2aaaae658b20>
+2022-02-04 05:24:37+0100 [-] [INFO] [1643948677.361096, 0.000000]: Rosbridge WebSocket server started at ws://0.0.0.0:9090
+2022-02-04 05:33:26+0100 [-] [INFO] [1643949206.219537, 0.000000]: Client connected.  1 clients total.
+2022-02-04 05:33:27+0100 [-] [INFO] [1643949207.741081, 0.020000]: [Client 0] Subscribed to /ros_cle_simulation/status
+2022-02-04 05:33:27+0100 [-] [INFO] [1643949207.762803, 0.020000]: [Client 0] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 05:37:57+0100 [-] [INFO] [1643949477.309891, 1.000000]: Client disconnected. 0 clients total.
+2022-02-04 05:37:57+0100 [-] [INFO] [1643949477.314134, 1.000000]: [Client 0] Unsubscribed from /ros_cle_simulation/status
+2022-02-04 05:51:34+0100 [-] [INFO] [1643950294.063616, 1.000000]: Client connected.  1 clients total.
+2022-02-04 05:51:34+0100 [-] [INFO] [1643950294.991706, 1.000000]: [Client 1] Subscribed to /ros_cle_simulation/status
+2022-02-04 05:51:35+0100 [-] [INFO] [1643950295.035632, 0.010000]: [Client 1] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 05:54:52+0100 [-] [INFO] [1643950492.166292, 1.000000]: Client disconnected. 0 clients total.
+2022-02-04 05:54:52+0100 [-] [INFO] [1643950492.169610, 1.000000]: [Client 1] Unsubscribed from /ros_cle_simulation/status
+2022-02-04 06:07:23+0100 [-] [INFO] [1643951243.711318, 1.000000]: Client connected.  1 clients total.
+2022-02-04 06:07:24+0100 [-] [INFO] [1643951244.636911, 1.000000]: [Client 2] Subscribed to /ros_cle_simulation/status
+2022-02-04 06:07:24+0100 [-] [INFO] [1643951244.682971, 0.010000]: [Client 2] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 06:09:24+0100 [-] [INFO] [1643951364.690243, 1.000000]: Client disconnected. 0 clients total.
+2022-02-04 06:21:14+0100 [-] [INFO] [1643952074.698656, 1.000000]: Client connected.  1 clients total.
+2022-02-04 06:21:15+0100 [-] [INFO] [1643952075.631104, 1.000000]: [Client 3] Subscribed to /ros_cle_simulation/status
+2022-02-04 06:21:15+0100 [-] [INFO] [1643952075.674884, 0.010000]: [Client 3] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 06:22:33+0100 [-] [INFO] [1643952153.624063, 1.000000]: Client disconnected. 0 clients total.
+2022-02-04 06:22:33+0100 [-] [INFO] [1643952153.631879, 1.000000]: [Client 3] Unsubscribed from /ros_cle_simulation/status
+2022-02-04 06:34:12+0100 [-] [INFO] [1643952852.871483, 1.000000]: Client connected.  1 clients total.
+2022-02-04 06:34:13+0100 [-] [INFO] [1643952853.796792, 1.000000]: [Client 4] Subscribed to /ros_cle_simulation/status
+2022-02-04 06:34:13+0100 [-] [INFO] [1643952853.810504, 1.000000]: [Client 4] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 06:35:09+0100 [-] [INFO] [1643952909.829309, 1.000000]: Client disconnected. 0 clients total.
+2022-02-04 06:35:09+0100 [-] [INFO] [1643952909.833119, 1.000000]: [Client 4] Unsubscribed from /ros_cle_simulation/status
+2022-02-04 06:46:35+0100 [-] [INFO] [1643953595.802336, 1.000000]: Client connected.  1 clients total.
+2022-02-04 06:46:36+0100 [-] [INFO] [1643953596.713520, 1.000000]: [Client 5] Subscribed to /ros_cle_simulation/status
+2022-02-04 06:46:36+0100 [-] [INFO] [1643953596.758677, 0.010000]: [Client 5] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 06:47:20+0100 [-] [INFO] [1643953640.625052, 1.000000]: Client disconnected. 0 clients total.
+2022-02-04 06:58:46+0100 [-] [INFO] [1643954326.141593, 1.000000]: Client connected.  1 clients total.
+2022-02-04 06:58:47+0100 [-] [INFO] [1643954327.072079, 1.000000]: [Client 6] Subscribed to /ros_cle_simulation/status
+2022-02-04 06:58:47+0100 [-] [INFO] [1643954327.087081, 1.000000]: [Client 6] Subscribed to /ros_cle_simulation/cle_error
+2022-02-04 06:59:22+0100 [-] [INFO] [1643954362.956789, 1.000000]: Client disconnected. 0 clients total.

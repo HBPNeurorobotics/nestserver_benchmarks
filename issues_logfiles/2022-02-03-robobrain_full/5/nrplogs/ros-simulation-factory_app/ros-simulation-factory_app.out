@@ -1,0 +1,1416 @@
+/home_daint/bbpnrsoa
+/home_daint/bbpnrsoa/nrp/src/GazeboRosPackages/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages:/home_daint/bbpnrsoa/nrp/src/GazeboRosPackages/devel/lib/python3.8/dist-packages:/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle:/home_daint/bbpnrsoa/nrp/src/ExperimentControl/hbp_nrp_excontrol:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_backend:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_cleserver:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_commons:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp_nrp_watchdog:/home_daint/bbpnrsoa/nrp/src/ExDBackend/hbp-flask-restful-swagger-master:/home_daint/bbpnrsoa/nrp/src/VirtualCoach/hbp_nrp_virtual_coach:/home_daint/bbpnrsoa/nrp/src/BrainSimulation/hbp_nrp_distributed_nest:/home_daint/bbpnrsoa/.local/lib/python3.8/site-packages:/home_daint/bbpnrsoa/.local/lib/x86_64-linux-gnu/python3.8/site-packages
+[1;31m+-------------------------- Neurorobotics Platform warning ---------------------------+
+| Dear Neurorobotics user, your PYTHONPATH contains previous paths.                   |
+| This might cause the Neurorobotics Platform to malfunction.                         |
+| If you are experiencing problems (like MPI.so not finding function references), add |
+|   export PYTHONPATH=                                                                |
+| to your ~/.bashrc                                                                   |
++-------------------------------------------------------------------------------------+[0m
+[INFO] [2022.2.3 18:58:9 /home_daint/bbpnrsoa/nrp/src/nest-simulator/nestkernel/rng_manager.cpp:217 @ Network::create_rngs_] : Creating default RNGs
+[INFO] [2022.2.3 18:58:9 /home_daint/bbpnrsoa/nrp/src/nest-simulator/nestkernel/rng_manager.cpp:260 @ Network::create_grng_] : Creating new default global RNG
+
+              -- N E S T --
+  Copyright (C) 2004 The NEST Initiative
+
+ Version: nest-2.18.0
+ Built: Nov 15 2021 12:00:34
+
+ This program is provided AS IS and comes with
+ NO WARRANTY. See the file LICENSE for details.
+
+ Problems or suggestions?
+   Visit https://www.nest-simulator.org
+
+ Type 'nest.help()' to find out more about NEST.
+
+CSAConnector: libneurosim support not available in NEST.
+Falling back on PyNN's default CSAConnector.
+Please re-compile NEST using --with-libneurosim=PATH
+2022-02-03 18:58:11,362 [Thread-3    ] [rospy.intern] [INFO]  topic[/rosout] adding connection to [/rosout], count 0
+2022-02-03 19:01:51,870 [Thread-7    ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-03 19:01:51,870 [Thread-7    ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.0.gzztgcjr/experiment_configuration.exc config file
+2022-02-03 19:01:51,887 [Thread-7    ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.0.gzztgcjr/bibi_configuration.bibi
+2022-02-03 19:01:51,893 [Thread-7    ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-03 19:01:51,893 [Thread-7    ] [SimConfig   ] [INFO]  Using physics engine opensim
+2022-02-03 19:01:51,894 [Thread-7    ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-03 19:01:51,894 [Thread-7    ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.0.gzztgcjr
+2022-02-03 19:01:51,894 [Thread-7    ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-03 19:01:51,894 [Thread-7    ] [hbp_nrp_cles] [INFO]  RNG seed = 7984468098344554162
+2022-02-03 19:01:51,894 [Thread-7    ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-03 19:01:51,901 [Thread-7    ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-03 19:01:51,901 [Thread-7    ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-03 19:01:51,927 [Thread-7    ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 7984468098344554162 -e opensim /tmp/nrp.0.gzztgcjr/robobrain_world_holodeck.sdf
+2022-02-03 19:01:51,927 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1643911316.807471761]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1643911316.813569728]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1643911316.839368468]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1643911316.855731643]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-03 19:01:57,505 [Thread-11   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.64:46049/], count 0
+2022-02-03 19:01:57,914 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1643911317.512162045]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1643911317.701203557]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-03 19:01:59,940 [Thread-7    ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2022-02-03 19:01:59,946 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Adding robot robobrain_mouse_with_joystick from /tmp/nrp.0.gzztgcjr/robobrain_mouse_with_joystick/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 1e-12
+  minimum Quaternion distance squared between successive messages: 1e-12
+--------------------------------------------------------------
+Thu Feb 03 2022 19:02:00 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-03 19:02:00,317 [Thread-7    ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-03 19:02:00,346 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-03 19:02:00,372 [Thread-7    ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-03 19:02:00,372 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-03 19:02:00,372 [Thread-7    ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:02:00,372 [Thread-7    ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-03 19:02:00,372 [Thread-7    ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.0.gzztgcjr/robobrain.py
+[0m[ INFO] [1643911320.269012768]: Added new topic (robobrain_mouse_with_joystick/Foot1/cmd_activation) for muscle Foot1 (0x2aac00aea610)[0m
+[0m[ INFO] [1643911320.288239190]: Added new topic (robobrain_mouse_with_joystick/Foot2/cmd_activation) for muscle Foot2 (0x2aac00ae5300)[0m
+[0m[ INFO] [1643911320.305766347]: Added new topic (robobrain_mouse_with_joystick/Radius1/cmd_activation) for muscle Radius1 (0x2aac00edf770)[0m
+[0m[ INFO] [1643911320.324264281]: Added new topic (robobrain_mouse_with_joystick/Radius2/cmd_activation) for muscle Radius2 (0x2aac00a849b0)[0m
+[0m[ INFO] [1643911320.342919135]: Added new topic (robobrain_mouse_with_joystick/Humerus1/cmd_activation) for muscle Humerus1 (0x2aac00ae5ba0)[0m
+[0m[ INFO] [1643911320.360345887]: Added new topic (robobrain_mouse_with_joystick/Humerus2/cmd_activation) for muscle Humerus2 (0x2aac00ae6460)[0m
+[0m[ INFO] [1643911320.377280017]: Added new topic (robobrain_mouse_with_joystick/Humerus3/cmd_activation) for muscle Humerus3 (0x2aac00bbf380)[0m
+[0m[ INFO] [1643911320.394091039]: Added new topic (robobrain_mouse_with_joystick/Humerus4/cmd_activation) for muscle Humerus4 (0x2aac00bbfd30)[0m
+[0m[ INFO] [1643911320.400429481]: ROS muscle interface: get_activations service installed![0m
+[0m[ INFO] [1643911320.403510922]: ROS muscle interface: set_activations service installed![0m
+[0m[ INFO] [1643911320.406457565]: ROS muscle interface: get_states service installed![0m
+2022-02-03 19:06:55,037 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-03 19:06:55,037 [Thread-7    ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-03 19:06:55,037 [Thread-7    ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:06:55,038 [Thread-7    ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:06:55,049 [Thread-7    ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:06:55,052 [Thread-13   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [http://148.187.37.64:41455/], count 0
+2022-02-03 19:06:55,052 [Thread-14   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [http://148.187.37.64:39967/], count 0
+2022-02-03 19:06:55,054 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [/ros_cle_simulation_285_1643911090986], count 0
+2022-02-03 19:06:55,058 [Thread-7    ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:06:55,103 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-03 19:06:55,115 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17ad90>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17ad30>]
+2022-02-03 19:06:55,122 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function a_muscle_feedback transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotSubscriber object at 0x2aabda17aaf0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17aa00>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17aee0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17ae80>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17aac0>]
+2022-02-03 19:06:55,129 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS subscriber created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states, topic type = <class 'gazebo_ros_muscle_interface.msg._MuscleStates.MuscleStates'>
+2022-02-03 19:06:55,131 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function b_muscle_controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda17a6a0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2250>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2e50>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2340>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2ac0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2400>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2760>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a21c0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda9a2730>]
+2022-02-03 19:06:55,131 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,135 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,139 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,139 [Thread-19   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] adding connection to [http://148.187.37.64:46049/], count 0
+2022-02-03 19:06:55,143 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,146 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,149 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,153 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,156 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:06:55,161 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function jointeffort transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9aad30>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9aac70>]
+2022-02-03 19:06:55,161 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function neuronMonitor monitors (root).M1_L1_ENGC.__add__((root).M1_L1_SBC[slice(0, 400, None)])
+2022-02-03 19:06:55,162 [Thread-7    ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /monitor/spike_recorder, topic type = <class 'cle_ros_msgs.msg._SpikeEventArray.SpikeEventArray'>
+2022-02-03 19:06:55,176 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ISpikeRecorder'>" requested (device)
+2022-02-03 19:06:55,203 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function manualInput transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda1883a0>]
+2022-02-03 19:06:55,208 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Initialize transfer function braintobody transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa29400>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa29310>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa29100>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa29070>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabdaa29250>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabdaa29460>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabdaa296d0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29760>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29820>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29850>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29a00>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29c40>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29940>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29d00>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29430>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa297c0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa297f0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa29f70>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c41c0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c40a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c4430>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c42e0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c4100>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c46a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c4640>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabda9c46d0>]
+2022-02-03 19:06:55,220 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:06:55,239 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:06:55,272 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:06:55,304 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,335 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,364 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,407 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,424 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,424 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,425 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,425 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,426 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,426 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,427 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:55,437 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,465 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,494 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,523 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,553 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,582 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,610 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,638 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,669 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,700 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,734 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,763 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,793 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,835 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,864 [Thread-7    ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:06:55,882 [Thread-7    ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-03 19:06:55,887 [Thread-7    ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-03 19:06:55,889 [Thread-7    ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-03 19:06:55,967 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-03 19:06:55,967 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-03 19:06:55,967 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-03 19:06:55,967 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-03 19:06:55,967 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda16e100>' after transition.
+2022-02-03 19:06:56,434 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:06:57,023 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-03 19:06:57,024 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:06:57,024 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-03 19:06:57,024 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-03 19:06:57,024 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-03 19:06:57,025 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-03 19:06:57,025 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda16e490>' after transition.
+2022-02-03 19:06:57,789 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:06:57,809 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:09:02,674 [CLE_THREAD  ] [hbp_nrp_cles] [ERROR]  Error in Transfer Function (Runtime): This method was not implemented in the concrete implementation
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 252, in run
+    self.__handler(t)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 185, in __send_spike_recorder
+    neuron_id_min, neuron_id_max = self.__get_neurons_range()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 280, in __get_neurons_range
+    return self.device.neuron_id_range
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/BrainInterface.py", line 284, in neuron_id_range
+    raise NotImplementedError("This method was not implemented in the concrete implementation")
+NotImplementedError: This method was not implemented in the concrete implementation
+2022-02-03 19:11:24,811 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-03 19:11:24,811 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-03 19:11:24,811 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-03 19:11:24,811 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-03 19:11:24,811 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-03 19:11:25,281 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-03 19:11:25,281 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-03 19:11:25,812 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/0/lifecycle...
+2022-02-03 19:11:25,813 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to http://148.187.37.64:41455/
+2022-02-03 19:11:25,814 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to http://148.187.37.64:39967/
+2022-02-03 19:11:25,818 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/0/lifecycle...
+2022-02-03 19:11:25,818 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to /ros_cle_simulation_285_1643911090986
+2022-02-03 19:11:25,818 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/0/lifecycle] removing connection to /nrp_backend
+2022-02-03 19:11:25,822 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda16e790>' after transition.
+2022-02-03 19:11:25,822 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-03 19:11:26,814 [Thread-36   ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-03 19:11:26,814 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-03 19:11:26,814 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-03 19:11:26,818 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-03 19:11:29,589 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-03 19:11:29,590 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation...
+2022-02-03 19:11:29,590 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,594 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation...
+2022-02-03 19:11:29,594 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,599 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation...
+2022-02-03 19:11:29,599 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,603 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation...
+2022-02-03 19:11:29,603 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,607 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation...
+2022-02-03 19:11:29,607 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,611 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation...
+2022-02-03 19:11:29,611 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,615 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation...
+2022-02-03 19:11:29,615 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,619 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation...
+2022-02-03 19:11:29,619 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:11:29,623 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /monitor/spike_recorder...
+2022-02-03 19:11:29,627 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states...
+2022-02-03 19:11:29,627 [Thread-36   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] removing connection to http://148.187.37.64:46049/
+2022-02-03 19:11:29,631 [Thread-36   ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-03 19:11:29,631 [Thread-36   ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-03 19:11:29,631 [Thread-36   ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-03 19:11:31,634 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-03 19:11:31,641 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-03 19:11:31,645 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-03 19:11:31,648 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-03 19:11:31,652 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-03 19:11:31,655 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-03 19:11:31,659 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-03 19:11:31,662 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:11:31,666 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:11:31,669 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-03 19:11:31,673 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-03 19:11:31,676 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-03 19:11:31,679 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-03 19:11:31,683 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-03 19:11:31,686 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-03 19:11:31,690 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-03 19:11:31,733 [Thread-36   ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-03 19:11:31,740 [Thread-36   ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 1848:  OK.
+2022-02-03 19:11:31,758 [Thread-36   ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-03 19:11:31,758 [Thread-36   ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-03 19:11:31,758 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-03 19:11:31,760 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.64:46049/
+2022-02-03 19:11:31,762 [Thread-36   ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-03 19:11:31,762 [Thread-36   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-03 19:11:31,770 [Thread-36   ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-03 19:22:17,560 [Thread-65   ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-03 19:22:17,560 [Thread-65   ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.1.v1unk12u/experiment_configuration.exc config file
+2022-02-03 19:22:17,569 [Thread-65   ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.1.v1unk12u/bibi_configuration.bibi
+2022-02-03 19:22:17,574 [Thread-65   ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-03 19:22:17,574 [Thread-65   ] [SimConfig   ] [INFO]  Using physics engine opensim
+2022-02-03 19:22:17,576 [Thread-65   ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-03 19:22:17,576 [Thread-65   ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.1.v1unk12u
+2022-02-03 19:22:17,576 [Thread-65   ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-03 19:22:17,576 [Thread-65   ] [hbp_nrp_cles] [INFO]  RNG seed = 6033444193964591086
+2022-02-03 19:22:17,576 [Thread-65   ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-03 19:22:17,583 [Thread-65   ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-03 19:22:17,583 [Thread-65   ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-03 19:22:17,609 [Thread-65   ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 6033444193964591086 -e opensim /tmp/nrp.1.v1unk12u/robobrain_world_holodeck.sdf
+2022-02-03 19:22:17,609 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1643912540.353833196]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1643912540.360439433]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1643912540.382436383]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1643912540.399123648]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-03 19:22:21,021 [Thread-69   ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.64:41891/], count 0
+2022-02-03 19:22:21,471 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1643912541.060086264]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1643912541.258912075]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-03 19:22:23,490 [Thread-65   ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2022-02-03 19:22:23,495 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Adding robot robobrain_mouse_with_joystick from /tmp/nrp.1.v1unk12u/robobrain_mouse_with_joystick/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 1e-12
+  minimum Quaternion distance squared between successive messages: 1e-12
+--------------------------------------------------------------
+Thu Feb 03 2022 19:22:23 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-03 19:22:23,794 [Thread-65   ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-03 19:22:23,824 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-03 19:22:23,847 [Thread-65   ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-03 19:22:23,847 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-03 19:22:23,847 [Thread-65   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:22:23,847 [Thread-65   ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-03 19:22:23,847 [Thread-65   ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.1.v1unk12u/robobrain.py
+[0m[ INFO] [1643912543.760555297]: Added new topic (robobrain_mouse_with_joystick/Foot1/cmd_activation) for muscle Foot1 (0x2aad5cadcb60)[0m
+[0m[ INFO] [1643912543.784804929]: Added new topic (robobrain_mouse_with_joystick/Foot2/cmd_activation) for muscle Foot2 (0x2aad5cad7850)[0m
+[0m[ INFO] [1643912543.805027160]: Added new topic (robobrain_mouse_with_joystick/Radius1/cmd_activation) for muscle Radius1 (0x2aad5ced4dd0)[0m
+[0m[ INFO] [1643912543.824797691]: Added new topic (robobrain_mouse_with_joystick/Radius2/cmd_activation) for muscle Radius2 (0x2aad5ca76eb0)[0m
+[0m[ INFO] [1643912543.842864105]: Added new topic (robobrain_mouse_with_joystick/Humerus1/cmd_activation) for muscle Humerus1 (0x2aad5cad80a0)[0m
+[0m[ INFO] [1643912543.861815008]: Added new topic (robobrain_mouse_with_joystick/Humerus2/cmd_activation) for muscle Humerus2 (0x2aad5cad8a10)[0m
+[0m[ INFO] [1643912543.879888129]: Added new topic (robobrain_mouse_with_joystick/Humerus3/cmd_activation) for muscle Humerus3 (0x2aad5cad9470)[0m
+[0m[ INFO] [1643912543.898230746]: Added new topic (robobrain_mouse_with_joystick/Humerus4/cmd_activation) for muscle Humerus4 (0x2aad5cad9e20)[0m
+[0m[ INFO] [1643912543.904825472]: ROS muscle interface: get_activations service installed![0m
+[0m[ INFO] [1643912543.908224677]: ROS muscle interface: set_activations service installed![0m
+[0m[ INFO] [1643912543.911491929]: ROS muscle interface: get_states service installed![0m
+2022-02-03 19:24:58,611 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-03 19:24:58,611 [Thread-65   ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-03 19:24:58,611 [Thread-65   ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:24:58,611 [Thread-65   ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:24:58,625 [Thread-65   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:24:58,628 [Thread-72   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [http://148.187.37.64:39967/], count 0
+2022-02-03 19:24:58,630 [Thread-71   ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [http://148.187.37.64:41455/], count 1
+2022-02-03 19:24:58,631 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [/ros_cle_simulation_285_1643911090986], count 0
+2022-02-03 19:24:58,632 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-03 19:24:58,636 [Thread-65   ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:24:58,699 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa18bb0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa18850>]
+2022-02-03 19:24:58,701 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function a_muscle_feedback transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotSubscriber object at 0x2aaaf76ee040>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee160>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee1c0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee2b0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee220>]
+2022-02-03 19:24:58,709 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS subscriber created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states, topic type = <class 'gazebo_ros_muscle_interface.msg._MuscleStates.MuscleStates'>
+2022-02-03 19:24:58,711 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function b_muscle_controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee7f0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf76ee640>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf76eed00>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708970>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708b50>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708f10>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708c70>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf76eef10>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf77088b0>]
+2022-02-03 19:24:58,712 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,717 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,720 [Thread-77   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] adding connection to [http://148.187.37.64:41891/], count 0
+2022-02-03 19:24:58,722 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,725 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,730 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,735 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,740 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,744 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:24:58,749 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function jointeffort transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf77087c0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf77089a0>]
+2022-02-03 19:24:58,750 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function neuronMonitor monitors (root).M1_L1_ENGC.__add__((root).M1_L1_SBC[slice(0, 400, None)])
+2022-02-03 19:24:58,750 [Thread-65   ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /monitor/spike_recorder, topic type = <class 'cle_ros_msgs.msg._SpikeEventArray.SpikeEventArray'>
+2022-02-03 19:24:58,767 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ISpikeRecorder'>" requested (device)
+2022-02-03 19:24:58,791 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function manualInput transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee2e0>]
+2022-02-03 19:24:58,797 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Initialize transfer function braintobody transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76eeaf0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee280>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76ee340>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76eea00>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf7708760>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf7746190>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf77463a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746280>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746460>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf77466a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746580>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746760>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf77469a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746880>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746a60>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746ca0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746b80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746d60>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746fa0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746e80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746940>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746dc0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746640>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7746040>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf77463d0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7740070>]
+2022-02-03 19:24:58,808 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:24:58,831 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:24:58,868 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:24:58,889 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,889 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,890 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,891 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,891 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,892 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,905 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:58,939 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:58,974 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:58,989 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:58,990 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:24:59,022 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,054 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,086 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,117 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,151 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,182 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,214 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,247 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,279 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,313 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,348 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,384 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,417 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,451 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,497 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,529 [Thread-65   ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:24:59,549 [Thread-65   ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-03 19:24:59,556 [Thread-65   ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-03 19:24:59,556 [Thread-65   ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-03 19:24:59,630 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-03 19:24:59,631 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-03 19:24:59,631 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-03 19:24:59,631 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-03 19:24:59,631 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda9bed00>' after transition.
+2022-02-03 19:25:00,655 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:25:00,692 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-03 19:25:00,692 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:25:00,693 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-03 19:25:00,693 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-03 19:25:00,693 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-03 19:25:00,693 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-03 19:25:00,693 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda9be700>' after transition.
+2022-02-03 19:25:00,702 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:26:35,695 [CLE_THREAD  ] [hbp_nrp_cles] [ERROR]  Error in Transfer Function (Runtime): This method was not implemented in the concrete implementation
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 252, in run
+    self.__handler(t)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 185, in __send_spike_recorder
+    neuron_id_min, neuron_id_max = self.__get_neurons_range()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 280, in __get_neurons_range
+    return self.device.neuron_id_range
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/BrainInterface.py", line 284, in neuron_id_range
+    raise NotImplementedError("This method was not implemented in the concrete implementation")
+NotImplementedError: This method was not implemented in the concrete implementation
+2022-02-03 19:27:51,693 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-03 19:27:51,693 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-03 19:27:51,693 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-03 19:27:51,693 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-03 19:27:51,694 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-03 19:27:51,843 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-03 19:27:51,843 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-03 19:27:52,695 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/1/lifecycle...
+2022-02-03 19:27:52,695 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to http://148.187.37.64:39967/
+2022-02-03 19:27:52,696 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to http://148.187.37.64:41455/
+2022-02-03 19:27:52,700 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/1/lifecycle...
+2022-02-03 19:27:52,700 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to /ros_cle_simulation_285_1643911090986
+2022-02-03 19:27:52,700 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/1/lifecycle] removing connection to /nrp_backend
+2022-02-03 19:27:52,704 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda9be0a0>' after transition.
+2022-02-03 19:27:52,705 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-03 19:27:53,696 [Thread-95   ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-03 19:27:53,696 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-03 19:27:53,697 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-03 19:27:53,701 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-03 19:27:56,263 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-03 19:27:56,264 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation...
+2022-02-03 19:27:56,264 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,268 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation...
+2022-02-03 19:27:56,268 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,272 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation...
+2022-02-03 19:27:56,273 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,277 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation...
+2022-02-03 19:27:56,277 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,281 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation...
+2022-02-03 19:27:56,281 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,285 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation...
+2022-02-03 19:27:56,285 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,289 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation...
+2022-02-03 19:27:56,289 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,294 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation...
+2022-02-03 19:27:56,294 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:27:56,298 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /monitor/spike_recorder...
+2022-02-03 19:27:56,302 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states...
+2022-02-03 19:27:56,302 [Thread-95   ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] removing connection to http://148.187.37.64:41891/
+2022-02-03 19:27:56,306 [Thread-95   ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-03 19:27:56,306 [Thread-95   ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-03 19:27:56,306 [Thread-95   ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-03 19:27:58,309 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-03 19:27:58,316 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-03 19:27:58,320 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-03 19:27:58,324 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-03 19:27:58,328 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-03 19:27:58,331 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-03 19:27:58,335 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-03 19:27:58,339 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:27:58,343 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:27:58,346 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-03 19:27:58,350 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-03 19:27:58,353 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-03 19:27:58,357 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-03 19:27:58,360 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-03 19:27:58,364 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-03 19:27:58,367 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-03 19:27:58,409 [Thread-95   ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-03 19:27:58,416 [Thread-95   ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 3125:  OK.
+2022-02-03 19:27:58,427 [Thread-95   ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-03 19:27:58,427 [Thread-95   ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-03 19:27:58,427 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-03 19:27:58,431 [Thread-95   ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-03 19:27:58,431 [Thread-95   ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-03 19:27:58,437 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.64:41891/
+2022-02-03 19:27:58,441 [Thread-95   ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-03 19:38:42,354 [Thread-123  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-03 19:38:42,354 [Thread-123  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.2.4ofrf9if/experiment_configuration.exc config file
+2022-02-03 19:38:42,363 [Thread-123  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.2.4ofrf9if/bibi_configuration.bibi
+2022-02-03 19:38:42,368 [Thread-123  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-03 19:38:42,368 [Thread-123  ] [SimConfig   ] [INFO]  Using physics engine opensim
+2022-02-03 19:38:42,369 [Thread-123  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-03 19:38:42,369 [Thread-123  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.2.4ofrf9if
+2022-02-03 19:38:42,369 [Thread-123  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-03 19:38:42,370 [Thread-123  ] [hbp_nrp_cles] [INFO]  RNG seed = 5927682612783092328
+2022-02-03 19:38:42,370 [Thread-123  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-03 19:38:42,376 [Thread-123  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-03 19:38:42,377 [Thread-123  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-03 19:38:42,400 [Thread-123  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 5927682612783092328 -e opensim /tmp/nrp.2.4ofrf9if/robobrain_world_holodeck.sdf
+2022-02-03 19:38:42,400 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1643913525.140612793]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1643913525.147261504]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1643913525.176936571]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1643913525.192987022]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-03 19:38:45,846 [Thread-127  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.64:43191/], count 0
+2022-02-03 19:38:45,958 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1643913525.843998533]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1643913526.041804567]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-03 19:38:47,977 [Thread-123  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2022-02-03 19:38:47,981 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Adding robot robobrain_mouse_with_joystick from /tmp/nrp.2.4ofrf9if/robobrain_mouse_with_joystick/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 1e-12
+  minimum Quaternion distance squared between successive messages: 1e-12
+--------------------------------------------------------------
+Thu Feb 03 2022 19:38:48 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-03 19:38:48,372 [Thread-123  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-03 19:38:48,403 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-03 19:38:48,427 [Thread-123  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-03 19:38:48,427 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-03 19:38:48,428 [Thread-123  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:38:48,428 [Thread-123  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-03 19:38:48,428 [Thread-123  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.2.4ofrf9if/robobrain.py
+[0m[ INFO] [1643913528.341797840]: Added new topic (robobrain_mouse_with_joystick/Foot1/cmd_activation) for muscle Foot1 (0x2aad5cadce20)[0m
+[0m[ INFO] [1643913528.360466110]: Added new topic (robobrain_mouse_with_joystick/Foot2/cmd_activation) for muscle Foot2 (0x2aad5cad7b10)[0m
+[0m[ INFO] [1643913528.378350756]: Added new topic (robobrain_mouse_with_joystick/Radius1/cmd_activation) for muscle Radius1 (0x2aad5ced4e10)[0m
+[0m[ INFO] [1643913528.399467302]: Added new topic (robobrain_mouse_with_joystick/Radius2/cmd_activation) for muscle Radius2 (0x2aad5cad5560)[0m
+[0m[ INFO] [1643913528.418124347]: Added new topic (robobrain_mouse_with_joystick/Humerus1/cmd_activation) for muscle Humerus1 (0x2aad5ca77620)[0m
+[0m[ INFO] [1643913528.437129424]: Added new topic (robobrain_mouse_with_joystick/Humerus2/cmd_activation) for muscle Humerus2 (0x2aad5cad8cd0)[0m
+[0m[ INFO] [1643913528.454918991]: Added new topic (robobrain_mouse_with_joystick/Humerus3/cmd_activation) for muscle Humerus3 (0x2aad5cad9730)[0m
+[0m[ INFO] [1643913528.472343466]: Added new topic (robobrain_mouse_with_joystick/Humerus4/cmd_activation) for muscle Humerus4 (0x2aad5cada140)[0m
+[0m[ INFO] [1643913528.478803435]: ROS muscle interface: get_activations service installed![0m
+[0m[ INFO] [1643913528.481842192]: ROS muscle interface: set_activations service installed![0m
+[0m[ INFO] [1643913528.484986327]: ROS muscle interface: get_states service installed![0m
+2022-02-03 19:40:14,838 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-03 19:40:14,839 [Thread-123  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-03 19:40:14,839 [Thread-123  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:40:14,839 [Thread-123  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:40:14,852 [Thread-123  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:40:14,856 [Thread-129  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [http://148.187.37.64:41455/], count 0
+2022-02-03 19:40:14,857 [Thread-130  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [http://148.187.37.64:39967/], count 1
+2022-02-03 19:40:14,859 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [/ros_cle_simulation_285_1643911090986], count 0
+2022-02-03 19:40:14,862 [Thread-123  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:40:14,886 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-03 19:40:14,922 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9aa4f0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9aa580>]
+2022-02-03 19:40:14,925 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function a_muscle_feedback transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotSubscriber object at 0x2aabda9a2c10>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2c40>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2f10>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2310>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a27f0>]
+2022-02-03 19:40:14,931 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS subscriber created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states, topic type = <class 'gazebo_ros_muscle_interface.msg._MuscleStates.MuscleStates'>
+2022-02-03 19:40:14,933 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function b_muscle_controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa195b0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabdaa19f10>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabdaa19c70>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708d90>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf77088e0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708bb0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf77089d0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708520>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aaaf7708730>]
+2022-02-03 19:40:14,934 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,938 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,942 [Thread-135  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] adding connection to [http://148.187.37.64:43191/], count 0
+2022-02-03 19:40:14,943 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,946 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,950 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,953 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,957 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,960 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:40:14,965 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function jointeffort transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9aaf70>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9aa400>]
+2022-02-03 19:40:14,965 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function neuronMonitor monitors (root).M1_L1_ENGC.__add__((root).M1_L1_SBC[slice(0, 400, None)])
+2022-02-03 19:40:14,965 [Thread-123  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /monitor/spike_recorder, topic type = <class 'cle_ros_msgs.msg._SpikeEventArray.SpikeEventArray'>
+2022-02-03 19:40:14,981 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ISpikeRecorder'>" requested (device)
+2022-02-03 19:40:14,999 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function manualInput transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd98e7100>]
+2022-02-03 19:40:15,005 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function braintobody transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2790>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2eb0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2640>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda9a2550>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabda9a2730>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabda9a2e50>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabda9a27c0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5a00>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f52e0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5460>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5f10>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5a30>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5d30>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76900d0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7690280>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76901f0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76903a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7690580>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76904f0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76906a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7690880>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76907f0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76909a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7690b80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7690af0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7690ca0>]
+2022-02-03 19:40:15,025 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:40:15,047 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:40:15,085 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:40:15,121 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,155 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,185 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,201 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,201 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,201 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,202 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,202 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,203 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,203 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,203 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:40:15,229 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,261 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,293 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,324 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,356 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,386 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,416 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,450 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,482 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,516 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,551 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,587 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,619 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,653 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,698 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,728 [Thread-123  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:40:15,748 [Thread-123  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-03 19:40:15,755 [Thread-123  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-03 19:40:15,755 [Thread-123  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-03 19:40:15,828 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-03 19:40:15,828 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-03 19:40:15,828 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-03 19:40:15,828 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-03 19:40:15,828 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda17aaf0>' after transition.
+2022-02-03 19:40:16,853 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:40:16,868 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-03 19:40:16,868 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:40:16,868 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-03 19:40:16,869 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-03 19:40:16,869 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-03 19:40:16,869 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-03 19:40:16,869 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda17ad90>' after transition.
+2022-02-03 19:40:16,880 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:41:29,705 [CLE_THREAD  ] [hbp_nrp_cles] [ERROR]  Error in Transfer Function (Runtime): This method was not implemented in the concrete implementation
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 252, in run
+    self.__handler(t)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 185, in __send_spike_recorder
+    neuron_id_min, neuron_id_max = self.__get_neurons_range()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 280, in __get_neurons_range
+    return self.device.neuron_id_range
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/BrainInterface.py", line 284, in neuron_id_range
+    raise NotImplementedError("This method was not implemented in the concrete implementation")
+NotImplementedError: This method was not implemented in the concrete implementation
+2022-02-03 19:42:15,678 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-03 19:42:15,678 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-03 19:42:15,678 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-03 19:42:15,678 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-03 19:42:15,679 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-03 19:42:16,046 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-03 19:42:16,046 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-03 19:42:16,680 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/2/lifecycle...
+2022-02-03 19:42:16,680 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to http://148.187.37.64:41455/
+2022-02-03 19:42:16,681 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to http://148.187.37.64:39967/
+2022-02-03 19:42:16,685 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/2/lifecycle...
+2022-02-03 19:42:16,685 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to /ros_cle_simulation_285_1643911090986
+2022-02-03 19:42:16,685 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/2/lifecycle] removing connection to /nrp_backend
+2022-02-03 19:42:16,689 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdaa3ba00>' after transition.
+2022-02-03 19:42:16,690 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-03 19:42:17,681 [Thread-153  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-03 19:42:17,681 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-03 19:42:17,681 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-03 19:42:17,686 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-03 19:42:21,181 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-03 19:42:21,181 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation...
+2022-02-03 19:42:21,181 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,186 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation...
+2022-02-03 19:42:21,187 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,190 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation...
+2022-02-03 19:42:21,191 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,195 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation...
+2022-02-03 19:42:21,195 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,199 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation...
+2022-02-03 19:42:21,199 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,203 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation...
+2022-02-03 19:42:21,203 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,207 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation...
+2022-02-03 19:42:21,207 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,212 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation...
+2022-02-03 19:42:21,212 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:42:21,217 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /monitor/spike_recorder...
+2022-02-03 19:42:21,220 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states...
+2022-02-03 19:42:21,221 [Thread-153  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] removing connection to http://148.187.37.64:43191/
+2022-02-03 19:42:21,225 [Thread-153  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-03 19:42:21,225 [Thread-153  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-03 19:42:21,226 [Thread-153  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-03 19:42:23,228 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-03 19:42:23,236 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-03 19:42:23,241 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-03 19:42:23,245 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-03 19:42:23,248 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-03 19:42:23,253 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-03 19:42:23,257 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-03 19:42:23,261 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:42:23,264 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:42:23,268 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-03 19:42:23,271 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-03 19:42:23,275 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-03 19:42:23,279 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-03 19:42:23,283 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-03 19:42:23,286 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-03 19:42:23,290 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-03 19:42:23,330 [Thread-153  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-03 19:42:23,336 [Thread-153  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 4387:  OK.
+2022-02-03 19:42:23,348 [Thread-153  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-03 19:42:23,348 [Thread-153  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-03 19:42:23,348 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-03 19:42:23,352 [Thread-153  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-03 19:42:23,352 [Thread-153  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-03 19:42:23,356 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.64:43191/
+2022-02-03 19:42:23,361 [Thread-153  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-03 19:53:09,154 [Thread-181  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-03 19:53:09,154 [Thread-181  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.3.2t4zxnmy/experiment_configuration.exc config file
+2022-02-03 19:53:09,164 [Thread-181  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.3.2t4zxnmy/bibi_configuration.bibi
+2022-02-03 19:53:09,169 [Thread-181  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-03 19:53:09,169 [Thread-181  ] [SimConfig   ] [INFO]  Using physics engine opensim
+2022-02-03 19:53:09,170 [Thread-181  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-03 19:53:09,170 [Thread-181  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.3.2t4zxnmy
+2022-02-03 19:53:09,170 [Thread-181  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-03 19:53:09,171 [Thread-181  ] [hbp_nrp_cles] [INFO]  RNG seed = 1444972351969356115
+2022-02-03 19:53:09,171 [Thread-181  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-03 19:53:09,178 [Thread-181  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-03 19:53:09,178 [Thread-181  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-03 19:53:09,202 [Thread-181  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 1444972351969356115 -e opensim /tmp/nrp.3.2t4zxnmy/robobrain_world_holodeck.sdf
+2022-02-03 19:53:09,202 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1643914392.349210628]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1643914392.355488602]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1643914392.376242716]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1643914392.393537275]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-03 19:53:13,020 [Thread-185  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.64:41713/], count 0
+2022-02-03 19:53:13,366 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1643914393.074087375]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1643914393.262453594]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-03 19:53:15,387 [Thread-181  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2022-02-03 19:53:15,392 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Adding robot robobrain_mouse_with_joystick from /tmp/nrp.3.2t4zxnmy/robobrain_mouse_with_joystick/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 1e-12
+  minimum Quaternion distance squared between successive messages: 1e-12
+--------------------------------------------------------------
+Thu Feb 03 2022 19:53:15 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-03 19:53:15,794 [Thread-181  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-03 19:53:15,825 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-03 19:53:15,852 [Thread-181  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-03 19:53:15,852 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-03 19:53:15,852 [Thread-181  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:53:15,852 [Thread-181  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-03 19:53:15,852 [Thread-181  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.3.2t4zxnmy/robobrain.py
+[0m[ INFO] [1643914395.763585283]: Added new topic (robobrain_mouse_with_joystick/Foot1/cmd_activation) for muscle Foot1 (0x2aad68adcf70)[0m
+[0m[ INFO] [1643914395.783286693]: Added new topic (robobrain_mouse_with_joystick/Foot2/cmd_activation) for muscle Foot2 (0x2aad68ad7c60)[0m
+[0m[ INFO] [1643914395.802458396]: Added new topic (robobrain_mouse_with_joystick/Radius1/cmd_activation) for muscle Radius1 (0x2aad68ed4f40)[0m
+[0m[ INFO] [1643914395.821438332]: Added new topic (robobrain_mouse_with_joystick/Radius2/cmd_activation) for muscle Radius2 (0x2aad68b43040)[0m
+[0m[ INFO] [1643914395.840339553]: Added new topic (robobrain_mouse_with_joystick/Humerus1/cmd_activation) for muscle Humerus1 (0x2aad68a77770)[0m
+[0m[ INFO] [1643914395.859886242]: Added new topic (robobrain_mouse_with_joystick/Humerus2/cmd_activation) for muscle Humerus2 (0x2aad68ad8dd0)[0m
+[0m[ INFO] [1643914395.877429739]: Added new topic (robobrain_mouse_with_joystick/Humerus3/cmd_activation) for muscle Humerus3 (0x2aad68ad9830)[0m
+[0m[ INFO] [1643914395.895067543]: Added new topic (robobrain_mouse_with_joystick/Humerus4/cmd_activation) for muscle Humerus4 (0x2aad68ada240)[0m
+[0m[ INFO] [1643914395.901443842]: ROS muscle interface: get_activations service installed![0m
+[0m[ INFO] [1643914395.904738417]: ROS muscle interface: set_activations service installed![0m
+[0m[ INFO] [1643914395.907963220]: ROS muscle interface: get_states service installed![0m
+2022-02-03 19:54:56,428 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-03 19:54:56,429 [Thread-181  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-03 19:54:56,429 [Thread-181  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 19:54:56,429 [Thread-181  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:54:56,442 [Thread-181  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:54:56,446 [Thread-188  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [http://148.187.37.64:39967/], count 0
+2022-02-03 19:54:56,447 [Thread-187  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [http://148.187.37.64:41455/], count 0
+2022-02-03 19:54:56,448 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [/ros_cle_simulation_285_1643911090986], count 0
+2022-02-03 19:54:56,453 [Thread-181  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 19:54:56,466 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-03 19:54:56,518 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf768b2b0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf768b610>]
+2022-02-03 19:54:56,520 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function a_muscle_feedback transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotSubscriber object at 0x2aabd9f77e20>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f77f70>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f77be0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f772b0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f77e80>]
+2022-02-03 19:54:56,527 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS subscriber created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states, topic type = <class 'gazebo_ros_muscle_interface.msg._MuscleStates.MuscleStates'>
+2022-02-03 19:54:56,529 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function b_muscle_controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76901c0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda193490>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda1931f0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda193820>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda1934c0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda1935e0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda193c40>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda193b80>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda193850>]
+2022-02-03 19:54:56,530 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,534 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,538 [Thread-193  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] adding connection to [http://148.187.37.64:41713/], count 0
+2022-02-03 19:54:56,538 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,542 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,545 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,549 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,553 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,556 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 19:54:56,561 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function jointeffort transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda1747c0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda174c70>]
+2022-02-03 19:54:56,562 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function neuronMonitor monitors (root).M1_L1_ENGC.__add__((root).M1_L1_SBC[slice(0, 400, None)])
+2022-02-03 19:54:56,562 [Thread-181  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /monitor/spike_recorder, topic type = <class 'cle_ros_msgs.msg._SpikeEventArray.SpikeEventArray'>
+2022-02-03 19:54:56,591 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ISpikeRecorder'>" requested (device)
+2022-02-03 19:54:56,608 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function manualInput transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf768bc40>]
+2022-02-03 19:54:56,614 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function braintobody transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76f5df0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76f5400>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd98d03d0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76f5ac0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf76f5790>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf76f5190>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf76f51c0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5280>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615130>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615100>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615190>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615340>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615520>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615280>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615640>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615820>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615580>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615940>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615b20>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615880>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615c40>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615e20>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615b80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615f10>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615eb0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7615bb0>]
+2022-02-03 19:54:56,627 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:54:56,648 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:54:56,699 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 19:54:56,739 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,774 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,792 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,793 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,793 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,794 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,794 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,795 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,795 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:56,806 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,850 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,883 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,914 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,947 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:56,981 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,013 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,045 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,077 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,108 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,141 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,176 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,212 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,245 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,279 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,323 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,355 [Thread-181  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 19:54:57,375 [Thread-181  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-03 19:54:57,381 [Thread-181  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-03 19:54:57,381 [Thread-181  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-03 19:54:57,456 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-03 19:54:57,456 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-03 19:54:57,456 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-03 19:54:57,456 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-03 19:54:57,457 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f428b0>' after transition.
+2022-02-03 19:54:57,810 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 19:54:58,480 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:54:58,511 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-03 19:54:58,511 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 19:54:58,511 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-03 19:54:58,511 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-03 19:54:58,511 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-03 19:54:58,512 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-03 19:54:58,512 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabd9f426d0>' after transition.
+2022-02-03 19:54:58,524 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 19:55:43,123 [CLE_THREAD  ] [hbp_nrp_cles] [ERROR]  Error in Transfer Function (Runtime): This method was not implemented in the concrete implementation
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 252, in run
+    self.__handler(t)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 185, in __send_spike_recorder
+    neuron_id_min, neuron_id_max = self.__get_neurons_range()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 280, in __get_neurons_range
+    return self.device.neuron_id_range
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/BrainInterface.py", line 284, in neuron_id_range
+    raise NotImplementedError("This method was not implemented in the concrete implementation")
+NotImplementedError: This method was not implemented in the concrete implementation
+2022-02-03 19:56:13,809 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-03 19:56:13,809 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-03 19:56:13,809 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-03 19:56:13,809 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-03 19:56:13,810 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-03 19:56:14,612 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-03 19:56:14,612 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-03 19:56:14,811 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/3/lifecycle...
+2022-02-03 19:56:14,811 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to http://148.187.37.64:39967/
+2022-02-03 19:56:14,812 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to http://148.187.37.64:41455/
+2022-02-03 19:56:14,816 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/3/lifecycle...
+2022-02-03 19:56:14,816 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to /ros_cle_simulation_285_1643911090986
+2022-02-03 19:56:14,816 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/3/lifecycle] removing connection to /nrp_backend
+2022-02-03 19:56:14,820 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabdaa188b0>' after transition.
+2022-02-03 19:56:14,820 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-03 19:56:15,812 [Thread-210  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-03 19:56:15,812 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-03 19:56:15,813 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-03 19:56:15,817 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-03 19:56:17,648 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-03 19:56:17,648 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation...
+2022-02-03 19:56:17,648 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,652 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation...
+2022-02-03 19:56:17,652 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,657 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation...
+2022-02-03 19:56:17,657 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,661 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation...
+2022-02-03 19:56:17,661 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,666 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation...
+2022-02-03 19:56:17,666 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,670 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation...
+2022-02-03 19:56:17,670 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,675 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation...
+2022-02-03 19:56:17,675 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,679 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation...
+2022-02-03 19:56:17,679 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] removing connection to /gazebo
+2022-02-03 19:56:17,682 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /monitor/spike_recorder...
+2022-02-03 19:56:17,686 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states...
+2022-02-03 19:56:17,686 [Thread-210  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] removing connection to http://148.187.37.64:41713/
+2022-02-03 19:56:17,690 [Thread-210  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-03 19:56:17,690 [Thread-210  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-03 19:56:17,690 [Thread-210  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-03 19:56:19,693 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-03 19:56:19,700 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-03 19:56:19,704 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-03 19:56:19,708 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-03 19:56:19,712 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-03 19:56:19,716 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-03 19:56:19,720 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-03 19:56:19,724 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:56:19,728 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 19:56:19,732 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-03 19:56:19,735 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-03 19:56:19,739 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-03 19:56:19,744 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-03 19:56:19,748 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-03 19:56:19,751 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-03 19:56:19,755 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-03 19:56:19,795 [Thread-210  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-03 19:56:19,802 [Thread-210  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 5649:  OK.
+2022-02-03 19:56:19,813 [Thread-210  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-03 19:56:19,813 [Thread-210  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-03 19:56:19,813 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-03 19:56:19,816 [Thread-210  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-03 19:56:19,816 [Thread-210  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-03 19:56:19,819 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.64:41713/
+2022-02-03 19:56:19,825 [Thread-210  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-03 20:07:07,744 [Thread-239  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-03 20:07:07,745 [Thread-239  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.4.yr62ig6d/experiment_configuration.exc config file
+2022-02-03 20:07:07,753 [Thread-239  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.4.yr62ig6d/bibi_configuration.bibi
+2022-02-03 20:07:07,758 [Thread-239  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-03 20:07:07,759 [Thread-239  ] [SimConfig   ] [INFO]  Using physics engine opensim
+2022-02-03 20:07:07,760 [Thread-239  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-03 20:07:07,760 [Thread-239  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.4.yr62ig6d
+2022-02-03 20:07:07,760 [Thread-239  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-03 20:07:07,760 [Thread-239  ] [hbp_nrp_cles] [INFO]  RNG seed = 448632307420411781
+2022-02-03 20:07:07,760 [Thread-239  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-03 20:07:07,767 [Thread-239  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-03 20:07:07,767 [Thread-239  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-03 20:07:07,789 [Thread-239  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 448632307420411781 -e opensim /tmp/nrp.4.yr62ig6d/robobrain_world_holodeck.sdf
+2022-02-03 20:07:07,789 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1643915230.931955791]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1643915230.938239175]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1643915230.968813752]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1643915230.985455147]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-03 20:07:11,662 [Thread-243  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.64:46327/], count 0
+2022-02-03 20:07:11,952 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1643915231.662384280]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1643915231.856951348]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-03 20:07:13,976 [Thread-239  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2022-02-03 20:07:13,981 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Adding robot robobrain_mouse_with_joystick from /tmp/nrp.4.yr62ig6d/robobrain_mouse_with_joystick/model.sdf: 
+2022-02-03 20:07:14,185 [Thread-239  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-03 20:07:14,216 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 1e-12
+  minimum Quaternion distance squared between successive messages: 1e-12
+--------------------------------------------------------------
+2022-02-03 20:07:14,244 [Thread-239  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-03 20:07:14,244 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-03 20:07:14,244 [Thread-239  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 20:07:14,244 [Thread-239  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-03 20:07:14,245 [Thread-239  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.4.yr62ig6d/robobrain.py
+Thu Feb 03 2022 20:07:14 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+[0m[ INFO] [1643915234.156282078]: Added new topic (robobrain_mouse_with_joystick/Foot1/cmd_activation) for muscle Foot1 (0x2aad70adc090)[0m
+[0m[ INFO] [1643915234.175016956]: Added new topic (robobrain_mouse_with_joystick/Foot2/cmd_activation) for muscle Foot2 (0x2aad70ad6d80)[0m
+[0m[ INFO] [1643915234.192894196]: Added new topic (robobrain_mouse_with_joystick/Radius1/cmd_activation) for muscle Radius1 (0x2aad70ed4190)[0m
+[0m[ INFO] [1643915234.212162018]: Added new topic (robobrain_mouse_with_joystick/Radius2/cmd_activation) for muscle Radius2 (0x2aad70a761e0)[0m
+[0m[ INFO] [1643915234.229960027]: Added new topic (robobrain_mouse_with_joystick/Humerus1/cmd_activation) for muscle Humerus1 (0x2aad70ad75d0)[0m
+[0m[ INFO] [1643915234.249436664]: Added new topic (robobrain_mouse_with_joystick/Humerus2/cmd_activation) for muscle Humerus2 (0x2aad70ad7e80)[0m
+[0m[ INFO] [1643915234.268319164]: Added new topic (robobrain_mouse_with_joystick/Humerus3/cmd_activation) for muscle Humerus3 (0x2aad70ad88a0)[0m
+[0m[ INFO] [1643915234.287164130]: Added new topic (robobrain_mouse_with_joystick/Humerus4/cmd_activation) for muscle Humerus4 (0x2aad70ad9250)[0m
+[0m[ INFO] [1643915234.294131099]: ROS muscle interface: get_activations service installed![0m
+[0m[ INFO] [1643915234.297498792]: ROS muscle interface: set_activations service installed![0m
+[0m[ INFO] [1643915234.300883333]: ROS muscle interface: get_states service installed![0m
+2022-02-03 20:08:34,342 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Saving brain source
+2022-02-03 20:08:34,343 [Thread-239  ] [hbp_nrp_cle ] [INFO]  Resetting TFs
+2022-02-03 20:08:34,343 [Thread-239  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 20:08:34,343 [Thread-239  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 20:08:34,355 [Thread-239  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 20:08:34,358 [Thread-245  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [http://148.187.37.64:41455/], count 0
+2022-02-03 20:08:34,359 [Thread-246  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [http://148.187.37.64:39967/], count 0
+2022-02-03 20:08:34,360 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [/ros_cle_simulation_285_1643911090986], count 0
+2022-02-03 20:08:34,364 [Thread-239  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 20:08:34,402 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-03 20:08:34,427 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76153d0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf7615550>]
+2022-02-03 20:08:34,429 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function a_muscle_feedback transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotSubscriber object at 0x2aabdaa195e0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa198b0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa198e0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa19370>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa195b0>]
+2022-02-03 20:08:34,436 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS subscriber created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states, topic type = <class 'gazebo_ros_muscle_interface.msg._MuscleStates.MuscleStates'>
+2022-02-03 20:08:34,438 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function b_muscle_controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa19b50>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188d30>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188f70>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188910>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188b50>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188880>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda1882e0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188df0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabda188280>]
+2022-02-03 20:08:34,438 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,442 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,446 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,447 [Thread-251  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] adding connection to [http://148.187.37.64:46327/], count 0
+2022-02-03 20:08:34,451 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,454 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,458 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,461 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,465 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 20:08:34,470 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function jointeffort transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf760ecd0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf760e820>]
+2022-02-03 20:08:34,471 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function neuronMonitor monitors (root).M1_L1_ENGC.__add__((root).M1_L1_SBC[slice(0, 400, None)])
+2022-02-03 20:08:34,471 [Thread-239  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /monitor/spike_recorder, topic type = <class 'cle_ros_msgs.msg._SpikeEventArray.SpikeEventArray'>
+2022-02-03 20:08:34,488 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ISpikeRecorder'>" requested (device)
+2022-02-03 20:08:34,501 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function manualInput transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf760e430>]
+2022-02-03 20:08:34,508 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function braintobody transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f779d0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f770a0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f77d00>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd9f77c40>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabd9f775e0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabd9f77640>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aabd9f77310>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77610>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77670>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77a90>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77130>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77820>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77370>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77ca0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f773d0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77910>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77220>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77b80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabd9f77eb0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5a00>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5eb0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5490>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5fd0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5bb0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76f5e80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aabdaa3b340>]
+2022-02-03 20:08:34,520 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 20:08:34,546 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 20:08:34,583 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.IPoissonSpikeGenerator'>" requested (device)
+2022-02-03 20:08:34,621 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,657 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,694 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,719 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,727 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,728 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,728 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,729 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,729 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,730 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:34,745 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,777 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,809 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,845 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,878 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,910 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,944 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:34,975 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,005 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,041 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,079 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,115 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,147 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,182 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,237 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,273 [Thread-239  ] [hbp_nrp_cle.] [INFO]  Communication object with type "<class 'hbp_nrp_cle.brainsim.BrainInterface.ILeakyIntegratorAlpha'>" requested (device)
+2022-02-03 20:08:35,292 [Thread-239  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-03 20:08:35,298 [Thread-239  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-03 20:08:35,298 [Thread-239  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-03 20:08:35,369 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-03 20:08:35,369 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-03 20:08:35,369 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-03 20:08:35,369 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-03 20:08:35,369 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aaaf7690310>' after transition.
+2022-02-03 20:08:35,730 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 20:08:36,392 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 20:08:36,408 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] adding connection to [/rosbridge_websocket], count 0
+2022-02-03 20:08:36,423 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state paused to state started...
+2022-02-03 20:08:36,424 [CLE_THREAD  ] [hbp_nrp_cle ] [WARNING]  Logging brain simulation configuration is not supported for <class 'hbp_nrp_cle.brainsim.nest_client.NestClientCommunicationAdapter.NestClientCommunicationAdapter'> 
+2022-02-03 20:08:36,424 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'start' before transition.
+2022-02-03 20:08:36,424 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop started
+2022-02-03 20:08:36,424 [/ros_cle_sim] [transitions.] [INFO]  Exited state paused
+2022-02-03 20:08:36,425 [/ros_cle_sim] [transitions.] [INFO]  Entered state started
+2022-02-03 20:08:36,425 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aaaf7690f10>' after transition.
+2022-02-03 20:09:07,906 [CLE_THREAD  ] [hbp_nrp_cles] [ERROR]  Error in Transfer Function (Runtime): This method was not implemented in the concrete implementation
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 252, in run
+    self.__handler(t)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 185, in __send_spike_recorder
+    neuron_id_min, neuron_id_max = self.__get_neurons_range()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_NeuronMonitor.py", line 280, in __get_neurons_range
+    return self.device.neuron_id_range
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/BrainInterface.py", line 284, in neuron_id_range
+    raise NotImplementedError("This method was not implemented in the concrete implementation")
+NotImplementedError: This method was not implemented in the concrete implementation
+2022-02-03 20:09:31,981 [CLE_THREAD  ] [transitions.] [INFO]  Initiating transition from state started to state stopped...
+2022-02-03 20:09:31,981 [CLE_THREAD  ] [transitions.] [INFO]  Executing callback 'stop' before transition.
+2022-02-03 20:09:31,981 [CLE_THREAD  ] [transitions.] [INFO]  Exited state started
+2022-02-03 20:09:31,982 [CLE_THREAD  ] [transitions.] [INFO]  Entered state stopped
+2022-02-03 20:09:31,982 [CLE_THREAD  ] [hbp_nrp_comm] [INFO]  Changing simulation lifecycle state from started to stopped
+2022-02-03 20:09:32,538 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/status] removing connection to /rosbridge_websocket
+2022-02-03 20:09:32,538 [Thread-2    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/cle_error] removing connection to /rosbridge_websocket
+2022-02-03 20:09:32,983 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/4/lifecycle...
+2022-02-03 20:09:32,983 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to http://148.187.37.64:41455/
+2022-02-03 20:09:32,984 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to http://148.187.37.64:39967/
+2022-02-03 20:09:32,988 [CLE_THREAD  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/4/lifecycle...
+2022-02-03 20:09:32,988 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to /ros_cle_simulation_285_1643911090986
+2022-02-03 20:09:32,988 [CLE_THREAD  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/4/lifecycle] removing connection to /nrp_backend
+2022-02-03 20:09:32,992 [CLE_THREAD  ] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aaaf7708640>' after transition.
+2022-02-03 20:09:32,992 [CLE_THREAD  ] [hbp_nrp_cle ] [INFO]  Simulation loop ended
+2022-02-03 20:09:33,984 [Thread-268  ] [hbp_nrp_cles] [INFO]  Finished main loop
+2022-02-03 20:09:33,984 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutdown simulation
+2022-02-03 20:09:33,985 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder services
+2022-02-03 20:09:33,988 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down simulation recorder
+2022-02-03 20:09:35,524 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down the closed loop service
+2022-02-03 20:09:35,525 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation...
+2022-02-03 20:09:35,525 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,529 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation...
+2022-02-03 20:09:35,529 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,533 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation...
+2022-02-03 20:09:35,533 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,537 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation...
+2022-02-03 20:09:35,537 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,541 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation...
+2022-02-03 20:09:35,541 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,545 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation...
+2022-02-03 20:09:35,545 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,549 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation...
+2022-02-03 20:09:35,549 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,553 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation...
+2022-02-03 20:09:35,553 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] removing connection to /gazebo
+2022-02-03 20:09:35,557 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /monitor/spike_recorder...
+2022-02-03 20:09:35,561 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states...
+2022-02-03 20:09:35,561 [Thread-268  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] removing connection to http://148.187.37.64:46327/
+2022-02-03 20:09:35,565 [Thread-268  ] [hbp_nrp_cle.] [INFO]  Shutting down the world simulation
+2022-02-03 20:09:35,565 [Thread-268  ] [hbp_nrp_cle.] [INFO]  Robot control adapter stopped
+2022-02-03 20:09:35,566 [Thread-268  ] [hbp_nrp_cle.] [INFO]  neuronal simulator ended
+2022-02-03 20:09:37,568 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down get_transfer_functions service
+2022-02-03 20:09:37,576 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down activate_transfer_function service
+2022-02-03 20:09:37,580 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down add_transfer_function service
+2022-02-03 20:09:37,584 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down set_transfer_function services
+2022-02-03 20:09:37,587 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down delete_transfer_function services
+2022-02-03 20:09:37,591 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down get_brain service
+2022-02-03 20:09:37,594 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down set_brain service
+2022-02-03 20:09:37,598 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 20:09:37,601 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down get_populations service
+2022-02-03 20:09:37,605 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down get_CSV_recorders_files service
+2022-02-03 20:09:37,609 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down clean_CSV_recorders_files service
+2022-02-03 20:09:37,612 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down get_robots service
+2022-02-03 20:09:37,616 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down add_robot service
+2022-02-03 20:09:37,620 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down delete_robot service
+2022-02-03 20:09:37,623 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down set_robot_initial_pose service
+2022-02-03 20:09:37,627 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down prepare_custom_model service
+2022-02-03 20:09:37,666 [Thread-268  ] [hbp_nrp_cle.] [INFO]  Stopping Gazebo web client communication adapter
+Stopping node:  OK.
+2022-02-03 20:09:37,672 [Thread-268  ] [hbp_nrp_cle.] [INFO]  Stopping gzserver
+Stopping 6913:  OK.
+2022-02-03 20:09:37,684 [Thread-268  ] [hbp_nrp_cles] [INFO]  Shutting down ROS notificator
+2022-02-03 20:09:37,684 [Thread-268  ] [hbp_nrp_cles] [INFO]  Unregister error/transfer_function topic
+2022-02-03 20:09:37,684 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/cle_error...
+2022-02-03 20:09:37,687 [Thread-268  ] [hbp_nrp_cles] [INFO]  Unregister status topic
+2022-02-03 20:09:37,688 [Thread-268  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /ros_cle_simulation/status...
+2022-02-03 20:09:37,691 [/clock      ] [rospy.intern] [INFO]  topic[/clock] removing connection to http://148.187.37.64:46327/
+2022-02-03 20:09:37,697 [Thread-268  ] [hbp_nrp_cles] [INFO]  Cleaning up ROS nodes and services
+killing /gazebo
+killed
+2022-02-03 20:20:25,538 [Thread-297  ] [hbp_nrp_cles] [INFO]  Create new simulation request
+2022-02-03 20:20:25,538 [Thread-297  ] [hbp_nrp_cles] [INFO]  Preparing new simulation with /tmp/nrp.5.mo6wrxta/experiment_configuration.exc config file
+2022-02-03 20:20:25,547 [Thread-297  ] [SimConfig   ] [INFO]  Bibi absolute path: /tmp/nrp.5.mo6wrxta/bibi_configuration.bibi
+2022-02-03 20:20:25,552 [Thread-297  ] [SimConfig   ] [INFO]  Gazebo's lockstep mode set to False
+2022-02-03 20:20:25,552 [Thread-297  ] [SimConfig   ] [INFO]  Using physics engine opensim
+2022-02-03 20:20:25,553 [Thread-297  ] [hbp_nrp_cles] [INFO]  Starting the experiment closed loop engine.
+2022-02-03 20:20:25,553 [Thread-297  ] [hbp_nrp_cles] [INFO]  Path is /tmp/nrp.5.mo6wrxta
+2022-02-03 20:20:25,553 [Thread-297  ] [hbp_nrp_cles] [INFO]  No RNG seed specified in the exc, using random value.
+2022-02-03 20:20:25,553 [Thread-297  ] [hbp_nrp_cles] [INFO]  RNG seed = 6574474605134527556
+2022-02-03 20:20:25,553 [Thread-297  ] [hbp_nrp_cles] [INFO]  Setting up backend Notificator
+2022-02-03 20:20:25,561 [Thread-297  ] [hbp_nrp_cles] [INFO]  ROS notificator initialized
+2022-02-03 20:20:25,561 [Thread-297  ] [hbp_nrp_cles] [INFO]  Creating CLE Server
+2022-02-03 20:20:25,586 [Thread-297  ] [hbp_nrp_cles] [INFO]  gzserver arguments:  --seed 6574474605134527556 -e opensim /tmp/nrp.5.mo6wrxta/robobrain_world_holodeck.sdf
+2022-02-03 20:20:25,586 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Starting gzserver
+Found /home_daint/bbpnrsoa/.local/bin/gzserver
+Starting gzserver:  OK.
+
+[0m[ INFO] [1643916028.560454540]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[ INFO] [1643916028.566723396]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[ INFO] [1643916028.587750841]: Gazebo ROS Recording Plugin initialized.[0m
+[0m[ INFO] [1643916028.603727143]: Gazebo ROS Playback Plugin initialized.[0m
+2022-02-03 20:20:29,286 [Thread-301  ] [rospy.intern] [INFO]  topic[/clock] adding connection to [http://148.187.37.64:34789/], count 0
+2022-02-03 20:20:29,446 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Restarting Gazebo web client communication adapter
+[0m[ INFO] [1643916029.263189441]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[ INFO] [1643916029.462720647]: Physics dynamic reconfigure ready.[0m
+Found /home_daint/bbpnrsoa/nrp/src/gzweb/gzbridge/server.js
+Starting node:  OK.
+
+2022-02-03 20:20:31,466 [Thread-297  ] [hbp_nrp_cles] [INFO]  Non-existent textures or folder!
+2022-02-03 20:20:31,471 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Adding robot robobrain_mouse_with_joystick from /tmp/nrp.5.mo6wrxta/robobrain_mouse_with_joystick/model.sdf: 
+Pose message filter parameters: 
+  minimum seconds between successive messages: 0.02
+  minimum XYZ distance squared between successive messages: 1e-12
+  minimum Quaternion distance squared between successive messages: 1e-12
+--------------------------------------------------------------
+Thu Feb 03 2022 20:20:31 GMT+0100 (CET) gzbridge Websocket is listening on port: 7681
+2022-02-03 20:20:31,812 [Thread-297  ] [hbp_nrp_cles] [INFO]  Preparing CLE Server
+2022-02-03 20:20:31,843 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Robot control adapter initialized
+2022-02-03 20:20:31,874 [Thread-297  ] [hbp_nrp_cle.] [INFO]  neuronal simulator initialized
+2022-02-03 20:20:31,874 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer functions node tfnode
+2022-02-03 20:20:31,874 [Thread-297  ] [hbp_nrp_cle.] [INFO]  NESTClient communication adapter initialized
+2022-02-03 20:20:31,874 [Thread-297  ] [hbp_nrp_cle.] [WARNING]  ROS node already initialized with another name
+2022-02-03 20:20:31,874 [Thread-297  ] [hbp_nrp_cle ] [INFO]  Recreating brain from file /tmp/nrp.5.mo6wrxta/robobrain.py
+[0m[ INFO] [1643916031.787403457]: Added new topic (robobrain_mouse_with_joystick/Foot1/cmd_activation) for muscle Foot1 (0x2aad5cadbd90)[0m
+[0m[ INFO] [1643916031.808259614]: Added new topic (robobrain_mouse_with_joystick/Foot2/cmd_activation) for muscle Foot2 (0x2aad5cad6a80)[0m
+[0m[ INFO] [1643916031.830279586]: Added new topic (robobrain_mouse_with_joystick/Radius1/cmd_activation) for muscle Radius1 (0x2aad5ced3ff0)[0m
+[0m[ INFO] [1643916031.849695397]: Added new topic (robobrain_mouse_with_joystick/Radius2/cmd_activation) for muscle Radius2 (0x2aad5ca76060)[0m
+[0m[ INFO] [1643916031.870517059]: Added new topic (robobrain_mouse_with_joystick/Humerus1/cmd_activation) for muscle Humerus1 (0x2aad5cad36e0)[0m
+[0m[ INFO] [1643916031.889152060]: Added new topic (robobrain_mouse_with_joystick/Humerus2/cmd_activation) for muscle Humerus2 (0x2aad5cad7b30)[0m
+[0m[ INFO] [1643916031.905535446]: Added new topic (robobrain_mouse_with_joystick/Humerus3/cmd_activation) for muscle Humerus3 (0x2aad5cad8590)[0m
+[0m[ INFO] [1643916031.921711022]: Added new topic (robobrain_mouse_with_joystick/Humerus4/cmd_activation) for muscle Humerus4 (0x2aad5cad8fa0)[0m
+[0m[ INFO] [1643916031.927819685]: ROS muscle interface: get_activations service installed![0m
+[0m[ INFO] [1643916031.930809118]: ROS muscle interface: set_activations service installed![0m
+[0m[ INFO] [1643916031.933615398]: ROS muscle interface: get_states service installed![0m
+2022-02-03 22:13:19,291 [Thread-297  ] [hbp_nrp_cle ] [ERROR]  Compiling Error during loading the brain(/tmp/nrp.5.mo6wrxta/robobrain.py): ConnectionError(ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.8/http/client.py", line 1344, in getresponse
+    response.begin()
+  File "/usr/lib/python3.8/http/client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.8/http/client.py", line 276, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 410, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/packages/six.py", line 734, in reraise
+    raise value.with_traceback(tb)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.8/http/client.py", line 1344, in getresponse
+    response.begin()
+  File "/usr/lib/python3.8/http/client.py", line 307, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.8/http/client.py", line 276, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/cle/DeterministicClosedLoopEngine.py", line 160, in initialize
+    self.load_brain(brain_file, configuration)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/cle/DeterministicClosedLoopEngineProfiler.py", line 285, in load_brain
+    super(DeterministicClosedLoopEngineProfiler, self).load_brain(brain_file,
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/cle/DeterministicClosedLoopEngine.py", line 212, in load_brain
+    self.bca.load_brain(brain_file, brain_populations)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestClientControlAdapter.py", line 104, in load_brain
+    self.__load_py_brain(brain_file)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestClientControlAdapter.py", line 124, in __load_py_brain
+    tf_config.brain_root = NestBrainLoader.load_py_network(brain_file, self._nest_client)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestPythonBrainLoader.py", line 49, in load_py_network
+    populations = nest_client.load_network(path)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/nest_client_rest.py", line 62, in load_network
+    response = requests.post(self.url + 'exec', json=json_dict, headers=self.headers)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2022-02-03 22:13:19,623 [Thread-297  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 22:13:19,626 [Thread-304  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [http://148.187.37.64:39967/], count 0
+2022-02-03 22:13:19,626 [Thread-303  ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [http://148.187.37.64:41455/], count 0
+2022-02-03 22:13:19,628 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [/ros_cle_simulation_285_1643911090986], count 0
+2022-02-03 22:13:19,632 [Thread-297  ] [hbp_nrp_cles] [INFO]  Registering ROS Service handlers
+2022-02-03 22:13:19,643 [Thread-3    ] [rospy.intern] [INFO]  topic[/ros_cle_simulation/5/lifecycle] adding connection to [/nrp_backend], count 1
+2022-02-03 22:13:19,699 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd98e7220>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd98e7970>]
+2022-02-03 22:13:19,702 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function a_muscle_feedback transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotSubscriber object at 0x2aaaf7690550>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf7690c70>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76907c0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf76901f0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf7690700>]
+2022-02-03 22:13:19,711 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS subscriber created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states, topic type = <class 'gazebo_ros_muscle_interface.msg._MuscleStates.MuscleStates'>
+2022-02-03 22:13:19,713 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function b_muscle_controller transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabd98e0910>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabd98e7730>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabd98e7af0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabdaa18070>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabdaa18a60>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabdaa18190>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabdaa184f0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabd98e7bb0>, <hbp_nrp_cle.tf_framework._Robot2Neuron.MapRobotPublisher object at 0x2aabd98e7670>]
+2022-02-03 22:13:19,714 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,719 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,722 [Thread-309  ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/muscle_states] adding connection to [http://148.187.37.64:34789/], count 0
+2022-02-03 22:13:19,723 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,727 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,731 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,735 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,739 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,742 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation, topic type = <class 'std_msgs.msg._Float64.Float64'>
+2022-02-03 22:13:19,747 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function jointeffort transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda193d00>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabda1933d0>]
+2022-02-03 22:13:19,748 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function neuronMonitor monitors (root).M1_L1_ENGC.__add__((root).M1_L1_SBC[slice(0, 400, None)])
+2022-02-03 22:13:19,749 [Thread-297  ] [hbp_nrp_cle.] [INFO]  ROS publisher created: topic name = /monitor/spike_recorder, topic type = <class 'cle_ros_msgs.msg._SpikeEventArray.SpikeEventArray'>
+2022-02-03 22:13:19,762 [Thread-297  ] [hbp_nrp_cle.] [ERROR]  Error while loading new transfer function
+2022-02-03 22:13:19,762 [Thread-297  ] [hbp_nrp_cle.] [ERROR]  HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aabd98e79d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x2aabd98e79d0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aabd98e79d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/__init__.py", line 472, in set_transfer_function
+    config.active_node.initialize_tf(tf, activation)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_TransferFunctionManager.py", line 285, in initialize_tf
+    tf.params[i] = tf.params[i].create_adapter(self)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_Neuron2Robot.py", line 116, in create_adapter
+    return adapter.register_spike_sink(neurons,
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestClientCommunicationAdapter.py", line 132, in register_spike_sink
+    device = self.__register_device(populations, spike_detector_type, **params)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestClientCommunicationAdapter.py", line 108, in __register_device
+    device = concrete_type.create_new_device(populations, self._nest_client, **params)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__AbstractNestBrainDevice.py", line 59, in create_new_device
+    return cls(nest_client, **params)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestSpikeRecorder.py", line 62, in __init__
+    self.create_device()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestSpikeRecorder.py", line 104, in create_device
+    self._recorder = self._nest_client.create_device('spike_recorder', 1)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/nest_client_rest.py", line 79, in create_device
+    return self.Create(model=device_model, n=n, params=parameters)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/nest_client_rest.py", line 24, in method
+    response = requests.post(self.url + 'api/' + call, json=kwargs, headers=self.headers)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aabd98e79d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-02-03 22:13:19,764 [Thread-297  ] [rospy.intern] [INFO]  topic impl's ref count is zero, deleting topic /monitor/spike_recorder...
+2022-02-03 22:13:19,768 [Thread-297  ] [hbp_nrp_cles] [ERROR]  neuronMonitor: "HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aabd98e79d0>: Failed to establish a new connection: [Errno 111] Connection refused'))" (TF Loading Exception)
+2022-02-03 22:13:19,768 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function manualInput transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa18be0>]
+2022-02-03 22:13:19,774 [Thread-297  ] [hbp_nrp_cle.] [INFO]  Initialize transfer function braintobody transfers to neurons [-inf, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf768b7c0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf768b6d0>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aabdaa18e20>, <hbp_nrp_cle.tf_framework._GlobalData.MapVariable object at 0x2aaaf768b970>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf768b5e0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf768b760>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSource object at 0x2aaaf768ba90>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b1f0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768bb80>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b520>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768bc40>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b2b0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b4f0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768bbb0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b880>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b130>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf768b940>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648040>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648130>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648310>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648280>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648430>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648640>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf76486a0>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648760>, <hbp_nrp_cle.tf_framework._Neuron2Robot.MapSpikeSink object at 0x2aaaf7648940>]
+2022-02-03 22:13:19,782 [Thread-297  ] [hbp_nrp_cle.] [ERROR]  Error while loading new transfer function
+2022-02-03 22:13:19,782 [Thread-297  ] [hbp_nrp_cle.] [ERROR]  HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aaaf76959d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.8/http/client.py", line 1252, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1298, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1247, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.8/http/client.py", line 1007, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.8/http/client.py", line 947, in send
+    self.connect()
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x2aaaf76959d0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aaaf76959d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/__init__.py", line 472, in set_transfer_function
+    config.active_node.initialize_tf(tf, activation)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_TransferFunctionManager.py", line 285, in initialize_tf
+    tf.params[i] = tf.params[i].create_adapter(self)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/tf_framework/_Neuron2Robot.py", line 143, in create_adapter
+    return adapter.register_spike_source(neurons,
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestClientCommunicationAdapter.py", line 154, in register_spike_source
+    device = self.__register_device(populations, spike_generator_type, **params)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/NestClientCommunicationAdapter.py", line 108, in __register_device
+    device = concrete_type.create_new_device(populations, self._nest_client, **params)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__AbstractNestBrainDevice.py", line 59, in create_new_device
+    return cls(nest_client, **params)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestPoissonSpikeGenerator.py", line 73, in __init__
+    self.create_device()
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/devices/__NestPoissonSpikeGenerator.py", line 106, in create_device
+    self._generator = self._nest_client.create_device('poisson_generator',
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/nest_client_rest.py", line 79, in create_device
+    return self.Create(model=device_model, n=n, params=parameters)
+  File "/home_daint/bbpnrsoa/nrp/src/CLE/hbp_nrp_cle/hbp_nrp_cle/brainsim/nest_client/nest_client_rest.py", line 24, in method
+    response = requests.post(self.url + 'api/' + call, json=kwargs, headers=self.headers)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/api.py", line 117, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/home_daint/bbpnrsoa/.opt/platform_venv/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aaaf76959d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2022-02-03 22:13:19,783 [Thread-297  ] [hbp_nrp_cles] [ERROR]  braintobody: "HTTPConnectionPool(host='nid01334', port=5000): Max retries exceeded with url: /api/Create (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x2aaaf76959d0>: Failed to establish a new connection: [Errno 111] Connection refused'))" (TF Loading Exception)
+2022-02-03 22:13:19,788 [Thread-297  ] [hbp_nrp_cles] [INFO]  CLELauncher Finished.
+2022-02-03 22:13:19,795 [Thread-297  ] [hbp_nrp_cles] [INFO]  Initialization done
+2022-02-03 22:13:19,795 [Thread-297  ] [hbp_nrp_cles] [INFO]  Spawning new thread that will manage the experiment execution.
+2022-02-03 22:13:19,871 [/ros_cle_sim] [transitions.] [INFO]  Initiating transition from state created to state paused...
+2022-02-03 22:13:19,871 [/ros_cle_sim] [transitions.] [INFO]  Executing callback 'initialize' before transition.
+2022-02-03 22:13:19,871 [/ros_cle_sim] [transitions.] [INFO]  Exited state created
+2022-02-03 22:13:19,871 [/ros_cle_sim] [transitions.] [INFO]  Entered state paused
+2022-02-03 22:13:19,871 [/ros_cle_sim] [transitions.] [INFO]  Executed callback '<transitions.extensions.locking.LockedMethod object at 0x2aabda174820>' after transition.
+2022-02-03 22:13:19,959 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,960 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Foot2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,960 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,961 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus2/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,961 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus3/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,962 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Humerus4/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,962 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius1/cmd_activation] adding connection to [/gazebo], count 0
+2022-02-03 22:13:19,963 [Thread-3    ] [rospy.intern] [INFO]  topic[/gazebo_muscle_interface/robobrain_mouse_with_joystick/Radius2/cmd_activation] adding connection to [/gazebo], count 0
