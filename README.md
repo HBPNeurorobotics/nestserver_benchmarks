@@ -2,7 +2,7 @@
 
 This folder contains the code and results of the NRP + NEST Server benchmark
 experiments run on Piz Daint and are described in detail in [Feldotto et al.,
-2022](XXX).
+2022](https://doi.org/10.3389/fninf.2022.884180).
 
 ## Introduction
 
