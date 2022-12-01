@@ -11,7 +11,7 @@ import time
 import sys
 import os
 import math
-import shutil 
+import shutil
 
 import helpers
 import ast
@@ -80,7 +80,7 @@ class BenchmarkRunner:
         Collects benchmark relevant data from sacct
         :param job_step_id: ID of the current job
         """
-        
+
         fmt = "--format=Elapsed,AveRSS,MaxRSS,ConsumedEnergy"
         sacct_cmd = ["sacct", "-j", job_step_id, "-p", "--noheader", fmt]
         output = subprocess.check_output(sacct_cmd)
@@ -111,7 +111,7 @@ class BenchmarkRunner:
             "nest_local_num_threads": response.json()["local_num_threads"],
             "nest_time_simulated": response.json()["biological_time"],
         }
-   
+
     def run(self):
         """
         Runs the benchmark
@@ -132,11 +132,11 @@ class BenchmarkRunner:
             self.stop_nest()
 
         logger.info("Benchmarks done!")
- 
+
     def run_nrp_benchmark(self, experiment_path):
         """
         Runs a benchmark experiment in the NRP
-        :param experiment_path: Experiment path of the experiment that shall be 
+        :param experiment_path: Experiment path of the experiment that shall be
                                 imported and run.
         """
 
@@ -153,7 +153,7 @@ class BenchmarkRunner:
         self.experiment = dict_content['destFolderName']
         vc.print_cloned_experiments()
         time.sleep(30)
-        
+
         # Launch Experiment
         self.tic = time.time()
         self.sim = vc.launch_experiment(self.experiment, server='148.187.148.198-port-8080', profiler='cle_step')
@@ -173,7 +173,7 @@ class BenchmarkRunner:
 
     def stop_cb(self, status):
         """
-        NRP callback of the VirtualCoach as a helper executed when experiment 
+        NRP callback of the VirtualCoach as a helper executed when experiment
         status changes.
         :param status: New status of the experiment
         """
@@ -212,6 +212,14 @@ class BenchmarkRunner:
         # vc.get_experiment_run_file('experiment_name_id', 'profiler', 0, 'cle_time_profile.csv')
         # vc.print_last_run_files('experiment_name_id', 'profiler')
         # vc.get_last_run_file('experiment_name_id', 'profiler', 'cle_time_profile.csv')
+
+
+    def run_idle(self, ntasks):
+        """
+        Keeps the NRP running for 2 hours without running any experiment 
+        """
+        time.sleep(7200)
+
 
     def run_hpcbench_baseline(self, ntasks):
         """
@@ -288,7 +296,7 @@ class BenchmarkRunner:
         rodent model with 8 muscles and a brain model with 1Million+ Neurons.
         """
         logger.info(f"Running NRP - RoboBrain benchmark with TF with {ntasks} processes, 2 per node")
-        
+
         # remove old log files
         logger.info(f"RoboBrain: Removing log folder")
         robobrain_log_path = os.path.join(self.working_dir, "Experiments/RoboBrain_benchmark/1_nrpexperiment_robobrain_mouse/resources/log")
@@ -318,4 +326,3 @@ if __name__ == '__main__':
     logger.info('BF in here')
     runner = BenchmarkRunner(rundir)
     runner.run()
-    
